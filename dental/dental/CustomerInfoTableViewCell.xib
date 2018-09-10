@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="108" id="KGk-i7-Jjw" customClass="CustomerInfoTableViewCell" customModule="dental" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZM1-dT-qCC">
+                        <rect key="frame" x="0.0" y="21.5" width="320" height="66"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Nguyen Van A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGy-Dw-rTG">
+                                <rect key="frame" x="16" y="12" width="96.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.10980392160000001" green="0.1764705882" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27t" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3h-Mq-LYm">
+                                <rect key="frame" x="284.5" y="14" width="19.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                <color key="textColor" red="0.56470588239999997" green="0.59607843140000005" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nha E A23 quan 7 TP HCM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wi8-ny-dgY">
+                                <rect key="frame" x="16" y="38" width="288" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                <color key="textColor" red="0.56470588239999997" green="0.59607843140000005" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Df5-BP-lTh">
+                                <rect key="frame" x="116.5" y="10.5" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="0V8-QJ-ndI"/>
+                                    <constraint firstAttribute="width" constant="16" id="gdG-gX-crh"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DGy-Dw-rTG" firstAttribute="top" secondItem="ZM1-dT-qCC" secondAttribute="top" constant="12" id="2Z3-vm-pXC"/>
+                            <constraint firstItem="wi8-ny-dgY" firstAttribute="top" secondItem="DGy-Dw-rTG" secondAttribute="bottom" constant="8" id="CiH-31-fsX"/>
+                            <constraint firstAttribute="trailing" secondItem="wi8-ny-dgY" secondAttribute="trailing" constant="16" id="GGE-s7-gBR"/>
+                            <constraint firstItem="Df5-BP-lTh" firstAttribute="baseline" secondItem="DGy-Dw-rTG" secondAttribute="baseline" id="ITi-uH-iNs"/>
+                            <constraint firstItem="DGy-Dw-rTG" firstAttribute="leading" secondItem="ZM1-dT-qCC" secondAttribute="leading" constant="16" id="NzB-em-siW"/>
+                            <constraint firstAttribute="bottom" secondItem="wi8-ny-dgY" secondAttribute="bottom" constant="12" id="dGn-08-w7z"/>
+                            <constraint firstItem="L3h-Mq-LYm" firstAttribute="baseline" secondItem="DGy-Dw-rTG" secondAttribute="baseline" id="flm-Kw-WLt"/>
+                            <constraint firstAttribute="trailing" secondItem="L3h-Mq-LYm" secondAttribute="trailing" constant="16" id="ouf-QX-g0v"/>
+                            <constraint firstItem="Df5-BP-lTh" firstAttribute="leading" secondItem="DGy-Dw-rTG" secondAttribute="trailing" constant="4" id="pxt-Us-4So"/>
+                            <constraint firstItem="wi8-ny-dgY" firstAttribute="leading" secondItem="ZM1-dT-qCC" secondAttribute="leading" constant="16" id="uAk-02-87s"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="ZM1-dT-qCC" secondAttribute="bottom" constant="2" id="Ry9-Mo-jvm"/>
+                    <constraint firstItem="ZM1-dT-qCC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="U0G-a7-OgP"/>
+                    <constraint firstAttribute="trailing" secondItem="ZM1-dT-qCC" secondAttribute="trailing" id="qcV-zy-HMO"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imgGender" destination="Df5-BP-lTh" id="b9c-y8-tEy"/>
+                <outlet property="lbAddress" destination="wi8-ny-dgY" id="kVq-1t-7IX"/>
+                <outlet property="lbAge" destination="L3h-Mq-LYm" id="Ry8-ve-HmI"/>
+                <outlet property="lbName" destination="DGy-Dw-rTG" id="hkN-pc-RzV"/>
+            </connections>
+            <point key="canvasLocation" x="32" y="138"/>
+        </tableViewCell>
+    </objects>
+</document>

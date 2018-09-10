@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListAgencyViewController" customModule="dental" customModuleProvider="target">
+            <connections>
+                <outlet property="btnOK" destination="F1b-Li-2rO" id="Fal-gr-W5X"/>
+                <outlet property="tbView" destination="seq-CR-lkP" id="cRt-fD-WvY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1b-Li-2rO">
+                    <rect key="frame" x="40" y="605" width="295" height="46"/>
+                    <color key="backgroundColor" red="0.0" green="0.4823529411764706" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="YfU-fs-i6S"/>
+                    </constraints>
+                    <state key="normal" title="OK">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="btnOKAction:" destination="-1" eventType="touchUpInside" id="8u3-UI-sib"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="seq-CR-lkP">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="589"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="seq-CR-lkP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="37p-V2-hSp"/>
+                <constraint firstAttribute="trailing" secondItem="seq-CR-lkP" secondAttribute="trailing" id="3vs-Um-5gz"/>
+                <constraint firstItem="seq-CR-lkP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8hI-pT-A9D"/>
+                <constraint firstItem="F1b-Li-2rO" firstAttribute="top" secondItem="seq-CR-lkP" secondAttribute="bottom" constant="16" id="A25-ub-p3a"/>
+                <constraint firstAttribute="trailing" secondItem="F1b-Li-2rO" secondAttribute="trailing" constant="40" id="S0A-WE-TPw"/>
+                <constraint firstItem="F1b-Li-2rO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="WGC-XY-efP"/>
+                <constraint firstAttribute="bottom" secondItem="F1b-Li-2rO" secondAttribute="bottom" constant="16" id="lRJ-jf-WnV"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

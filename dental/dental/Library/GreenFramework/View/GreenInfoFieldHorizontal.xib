@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GreenInfoFieldHorizontal" customModule="MiBook" customModuleProvider="target">
+            <connections>
+                <outlet property="leftView" destination="hXd-CX-H18" id="YOZ-yl-zc1"/>
+                <outlet property="rightView" destination="3tl-Ai-w4G" id="egk-tL-usS"/>
+                <outlet property="tvLeft" destination="9LM-k2-35V" id="Mr8-p2-q3u"/>
+                <outlet property="tvRight" destination="EwM-cV-VvG" id="yIh-Rr-VA8"/>
+                <outlet property="view" destination="iN0-l3-epB" id="TNx-fr-12L"/>
+                <outlet property="widthRatio" destination="s68-EK-Sbo" id="8D9-O1-BZc"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tl-Ai-w4G" customClass="GCleanView" customModule="MiBook" customModuleProvider="target">
+                    <rect key="frame" x="166.5" y="0.0" width="208.5" height="104"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et " translatesAutoresizingMaskIntoConstraints="NO" id="EwM-cV-VvG" customClass="GreenTextView" customModule="MiBook" customModuleProvider="target">
+                            <rect key="frame" x="4" y="0.0" width="204.5" height="104"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="EwM-cV-VvG" secondAttribute="trailing" id="EYF-DH-A91"/>
+                        <constraint firstItem="EwM-cV-VvG" firstAttribute="leading" secondItem="3tl-Ai-w4G" secondAttribute="leading" constant="4" id="MI9-t8-TeG"/>
+                        <constraint firstItem="EwM-cV-VvG" firstAttribute="top" secondItem="3tl-Ai-w4G" secondAttribute="top" id="dRz-YP-DzZ"/>
+                        <constraint firstAttribute="bottom" secondItem="EwM-cV-VvG" secondAttribute="bottom" id="php-Oh-thw"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXd-CX-H18" customClass="GCleanView" customModule="MiBook" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="166.5" height="104"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Title" translatesAutoresizingMaskIntoConstraints="NO" id="9LM-k2-35V" customClass="GreenTextView" customModule="MiBook" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="166.5" height="104"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="9LM-k2-35V" secondAttribute="trailing" id="NRv-MJ-ulP"/>
+                        <constraint firstItem="9LM-k2-35V" firstAttribute="top" secondItem="hXd-CX-H18" secondAttribute="top" id="OlT-z4-rbD"/>
+                        <constraint firstItem="9LM-k2-35V" firstAttribute="leading" secondItem="hXd-CX-H18" secondAttribute="leading" id="dJU-OF-WiY"/>
+                        <constraint firstAttribute="bottom" secondItem="9LM-k2-35V" secondAttribute="bottom" id="r4S-id-2u5"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="3tl-Ai-w4G" secondAttribute="trailing" id="D8H-4m-os6"/>
+                <constraint firstItem="3tl-Ai-w4G" firstAttribute="leading" secondItem="hXd-CX-H18" secondAttribute="trailing" id="Jdt-5a-EMY"/>
+                <constraint firstItem="hXd-CX-H18" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="NOx-Hi-Tqo"/>
+                <constraint firstAttribute="bottom" secondItem="3tl-Ai-w4G" secondAttribute="bottom" id="OAa-Lu-5VO"/>
+                <constraint firstAttribute="bottom" secondItem="hXd-CX-H18" secondAttribute="bottom" id="TmR-5q-teI"/>
+                <constraint firstItem="3tl-Ai-w4G" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aZg-3b-I3q"/>
+                <constraint firstItem="hXd-CX-H18" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pwl-Vc-G3d"/>
+                <constraint firstItem="hXd-CX-H18" firstAttribute="width" secondItem="3tl-Ai-w4G" secondAttribute="width" multiplier="0.8" id="s68-EK-Sbo"/>
+                <constraint firstItem="3tl-Ai-w4G" firstAttribute="leading" secondItem="hXd-CX-H18" secondAttribute="trailing" id="tEY-iJ-Iua"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="43.5" y="-281"/>
+        </view>
+    </objects>
+</document>

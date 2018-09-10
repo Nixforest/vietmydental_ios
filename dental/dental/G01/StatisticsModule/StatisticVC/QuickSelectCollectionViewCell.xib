@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="QuickSelectCollectionViewCell" customModule="dental" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3i-RZ-YAN">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bi-qx-B9A">
+                                <rect key="frame" x="12" y="15" width="26" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.4823529412" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0bi-qx-B9A" secondAttribute="trailing" constant="12" id="EcN-78-beJ"/>
+                            <constraint firstItem="0bi-qx-B9A" firstAttribute="leading" secondItem="r3i-RZ-YAN" secondAttribute="leading" constant="12" id="V5e-I6-s1V"/>
+                            <constraint firstItem="0bi-qx-B9A" firstAttribute="centerY" secondItem="r3i-RZ-YAN" secondAttribute="centerY" id="Xao-mT-ruZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="r3i-RZ-YAN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5SB-uM-S8W"/>
+                <constraint firstAttribute="trailing" secondItem="r3i-RZ-YAN" secondAttribute="trailing" id="9yM-Zu-aaZ"/>
+                <constraint firstItem="r3i-RZ-YAN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UfX-su-EjL"/>
+                <constraint firstAttribute="bottom" secondItem="r3i-RZ-YAN" secondAttribute="bottom" id="iQN-f6-CfA"/>
+            </constraints>
+            <connections>
+                <outlet property="lb" destination="0bi-qx-B9A" id="YPW-az-bUl"/>
+                <outlet property="viewBorder" destination="r3i-RZ-YAN" id="bkn-hG-1OD"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

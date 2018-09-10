@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GreenInfoField" customModule="NCMobileERP_iOS" customModuleProvider="target">
+            <connections>
+                <outlet property="btHeader" destination="JLf-97-Pe5" id="YiQ-7n-aV6"/>
+                <outlet property="btMain" destination="Zu7-sX-Z42" id="VKd-Wv-rKR"/>
+                <outlet property="lbTitle" destination="S02-gH-coV" id="tvP-lr-Iii"/>
+                <outlet property="leadingContent" destination="uPH-V8-gAt" id="Nzn-XF-SRf"/>
+                <outlet property="leadingLine" destination="E4d-m3-ZYO" id="LIp-hE-TIK"/>
+                <outlet property="leadingTitle" destination="SQf-DD-f8o" id="cc3-TV-shR"/>
+                <outlet property="lineView" destination="yDu-ge-ghl" id="GgT-kU-hXg"/>
+                <outlet property="rightWidthContraint" destination="iuA-oh-3Mn" id="Orr-RE-S3a"/>
+                <outlet property="tightButton" destination="KdS-HF-Iy5" id="3XQ-dT-vny"/>
+                <outlet property="treadingLine" destination="Lv3-dI-cGK" id="i6c-XN-kwT"/>
+                <outlet property="tvContent" destination="pPz-Vs-MtG" id="fzw-lv-qee"/>
+                <outlet property="view" destination="iN0-l3-epB" id="3ak-bw-BBt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="345" height="112"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywp-4e-n56" customClass="GreenClearView" customModule="NCMobileERP_iOS" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="345" height="24"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S02-gH-coV" customClass="GreenLabel" customModule="NCMobileERP_iOS" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="345" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLf-97-Pe5">
+                            <rect key="frame" x="0.0" y="0.0" width="345" height="24"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                            <connections>
+                                <action selector="titleAction:" destination="-1" eventType="touchUpInside" id="Kmq-ja-JCg"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="S02-gH-coV" secondAttribute="trailing" id="1GI-ys-mUZ"/>
+                        <constraint firstAttribute="height" constant="24" id="8QO-f1-H7g"/>
+                        <constraint firstItem="JLf-97-Pe5" firstAttribute="top" secondItem="ywp-4e-n56" secondAttribute="top" id="Dnz-bP-g1X"/>
+                        <constraint firstItem="S02-gH-coV" firstAttribute="top" secondItem="ywp-4e-n56" secondAttribute="top" id="JmB-eN-3TN"/>
+                        <constraint firstItem="JLf-97-Pe5" firstAttribute="leading" secondItem="ywp-4e-n56" secondAttribute="leading" id="S8W-Ni-7gR"/>
+                        <constraint firstItem="S02-gH-coV" firstAttribute="leading" secondItem="ywp-4e-n56" secondAttribute="leading" id="SQf-DD-f8o"/>
+                        <constraint firstAttribute="bottom" secondItem="S02-gH-coV" secondAttribute="bottom" id="b3d-dJ-EOs"/>
+                        <constraint firstAttribute="bottom" secondItem="JLf-97-Pe5" secondAttribute="bottom" id="jK9-1J-qdH"/>
+                        <constraint firstAttribute="trailing" secondItem="JLf-97-Pe5" secondAttribute="trailing" id="uPQ-yj-fdp"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ce2-YR-Lf6" customClass="GreenClearView" customModule="NCMobileERP_iOS" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="24" width="345" height="88"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pPz-Vs-MtG">
+                            <rect key="frame" x="0.0" y="0.0" width="305" height="84"/>
+                            <color key="textColor" red="0.5450980392" green="0.5450980392" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KdS-HF-Iy5" customClass="GreenButtonCenter" customModule="NCMobileERP_iOS" customModuleProvider="target">
+                            <rect key="frame" x="305" y="0.0" width="40" height="88"/>
+                            <color key="backgroundColor" red="0.0" green="0.48567033679999999" blue="0.011113797809999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="iuA-oh-3Mn"/>
+                            </constraints>
+                        </view>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zu7-sX-Z42">
+                            <rect key="frame" x="0.0" y="0.0" width="345" height="88"/>
+                            <connections>
+                                <action selector="mainTouch:" destination="-1" eventType="touchUpInside" id="4Kz-cM-QSl"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="pPz-Vs-MtG" secondAttribute="bottom" constant="4" id="0tS-Bl-AWB"/>
+                        <constraint firstAttribute="trailing" secondItem="KdS-HF-Iy5" secondAttribute="trailing" id="6wL-sC-ocZ"/>
+                        <constraint firstAttribute="trailing" secondItem="Zu7-sX-Z42" secondAttribute="trailing" id="8PM-Qy-9b3"/>
+                        <constraint firstItem="KdS-HF-Iy5" firstAttribute="leading" secondItem="pPz-Vs-MtG" secondAttribute="trailing" id="HmV-KR-BZt"/>
+                        <constraint firstItem="KdS-HF-Iy5" firstAttribute="top" secondItem="Ce2-YR-Lf6" secondAttribute="top" id="T7N-te-KEL"/>
+                        <constraint firstItem="Zu7-sX-Z42" firstAttribute="leading" secondItem="Ce2-YR-Lf6" secondAttribute="leading" id="Tgy-DO-ja6"/>
+                        <constraint firstItem="Zu7-sX-Z42" firstAttribute="top" secondItem="Ce2-YR-Lf6" secondAttribute="top" id="faB-IB-OPy"/>
+                        <constraint firstAttribute="bottom" secondItem="Zu7-sX-Z42" secondAttribute="bottom" id="htP-7W-UTE"/>
+                        <constraint firstItem="pPz-Vs-MtG" firstAttribute="top" secondItem="Ce2-YR-Lf6" secondAttribute="top" id="tLG-b0-eNH"/>
+                        <constraint firstItem="pPz-Vs-MtG" firstAttribute="leading" secondItem="Ce2-YR-Lf6" secondAttribute="leading" id="uPH-V8-gAt"/>
+                        <constraint firstItem="KdS-HF-Iy5" firstAttribute="leading" secondItem="pPz-Vs-MtG" secondAttribute="trailing" id="vNh-rA-9Fe"/>
+                        <constraint firstAttribute="bottom" secondItem="KdS-HF-Iy5" secondAttribute="bottom" id="yHa-el-s8r"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDu-ge-ghl">
+                    <rect key="frame" x="0.0" y="112" width="345" height="0.0"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="q6g-7U-2rk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Ce2-YR-Lf6" secondAttribute="trailing" id="5DA-wX-SUS"/>
+                <constraint firstItem="Ce2-YR-Lf6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Cyy-61-t4p"/>
+                <constraint firstItem="yDu-ge-ghl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="E4d-m3-ZYO"/>
+                <constraint firstAttribute="bottom" secondItem="yDu-ge-ghl" secondAttribute="bottom" id="FGB-xF-EDy"/>
+                <constraint firstAttribute="trailing" secondItem="yDu-ge-ghl" secondAttribute="trailing" id="Lv3-dI-cGK"/>
+                <constraint firstItem="ywp-4e-n56" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QG4-5u-cap"/>
+                <constraint firstAttribute="bottom" secondItem="Ce2-YR-Lf6" secondAttribute="bottom" id="TCg-L6-QBy"/>
+                <constraint firstAttribute="trailing" secondItem="ywp-4e-n56" secondAttribute="trailing" id="kHn-Yg-kFO"/>
+                <constraint firstItem="Ce2-YR-Lf6" firstAttribute="top" secondItem="ywp-4e-n56" secondAttribute="bottom" id="oLc-Re-daj"/>
+                <constraint firstItem="ywp-4e-n56" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rD1-Gi-tKM"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-127.5" y="436"/>
+        </view>
+    </objects>
+</document>

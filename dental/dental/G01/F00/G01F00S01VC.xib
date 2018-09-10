@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="G01F00S01VC" customModule="dental" customModuleProvider="target">
+            <connections>
+                <outlet property="_tblInfo" destination="oFZ-06-p2l" id="gkI-tZ-BFF"/>
+                <outlet property="searchBar" destination="boA-Vm-nFM" id="Ffq-T1-SEn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewNoData" destination="cmW-FE-ErN" id="47N-qs-e1d"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oFZ-06-p2l">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <inset key="separatorInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Tìm kiếm theo ngày" id="boA-Vm-nFM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </searchBar>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmW-FE-ErN">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Không tìm thấy bệnh nhân" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGN-cw-AKf">
+                            <rect key="frame" x="73.5" y="321.5" width="228" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" red="0.10980392160000001" green="0.1764705882" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ZGN-cw-AKf" firstAttribute="centerY" secondItem="cmW-FE-ErN" secondAttribute="centerY" id="1K6-48-htV"/>
+                        <constraint firstItem="ZGN-cw-AKf" firstAttribute="centerX" secondItem="cmW-FE-ErN" secondAttribute="centerX" id="MoU-Ed-622"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="oFZ-06-p2l" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Mpm-cJ-E6c"/>
+                <constraint firstItem="cmW-FE-ErN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PVg-ro-tNu"/>
+                <constraint firstAttribute="bottom" secondItem="oFZ-06-p2l" secondAttribute="bottom" id="RRr-jp-o9m"/>
+                <constraint firstAttribute="trailing" secondItem="oFZ-06-p2l" secondAttribute="trailing" id="Up8-Us-edw"/>
+                <constraint firstAttribute="trailing" secondItem="cmW-FE-ErN" secondAttribute="trailing" id="a5z-2U-Yf9"/>
+                <constraint firstAttribute="bottom" secondItem="cmW-FE-ErN" secondAttribute="bottom" id="kQV-fl-5fl"/>
+                <constraint firstItem="oFZ-06-p2l" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qUU-RR-HEa"/>
+                <constraint firstItem="cmW-FE-ErN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wnW-Bv-svm"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

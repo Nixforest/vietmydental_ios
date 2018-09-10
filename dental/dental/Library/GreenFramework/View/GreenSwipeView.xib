@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GreenSwipeView" customModule="Hey_Go" customModuleProvider="target">
+            <connections>
+                <outlet property="btWidthContraits" destination="a5v-4t-fYb" id="0Xl-ma-mkr"/>
+                <outlet property="contenView" destination="pXe-32-Vu7" id="Yjj-mo-FYa"/>
+                <outlet property="heightContraits" destination="bCe-kI-k61" id="fmP-L3-l82"/>
+                <outlet property="indicator" destination="7M3-9X-OlY" id="9iS-mc-Phu"/>
+                <outlet property="leftView" destination="Xyx-lW-yh7" id="dgi-sZ-p0M"/>
+                <outlet property="rightView" destination="xgm-Fg-HqW" id="QoP-dg-6rv"/>
+                <outlet property="scrollView" destination="1pp-wW-Q11" id="QKh-tA-LrU"/>
+                <outlet property="view" destination="nhj-py-DoD" id="ncA-Ab-ikv"/>
+                <outlet property="witdhContraits" destination="sbq-Ae-rjJ" id="RgB-3X-u8s"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="nhj-py-DoD">
+            <rect key="frame" x="0.0" y="0.0" width="264" height="58"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RI8-xW-w8i">
+                    <rect key="frame" x="30" y="0.0" width="204" height="58"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1pp-wW-Q11">
+                            <rect key="frame" x="0.0" y="0.0" width="204" height="58"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXe-32-Vu7">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="58"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="58" id="bCe-kI-k61"/>
+                                        <constraint firstAttribute="width" id="sbq-Ae-rjJ"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="pXe-32-Vu7" firstAttribute="leading" secondItem="1pp-wW-Q11" secondAttribute="leading" id="4tt-yf-XZw"/>
+                                <constraint firstAttribute="trailing" secondItem="pXe-32-Vu7" secondAttribute="trailing" id="M5p-1f-xbf"/>
+                                <constraint firstItem="pXe-32-Vu7" firstAttribute="top" secondItem="1pp-wW-Q11" secondAttribute="top" id="YZl-gl-qFO"/>
+                                <constraint firstAttribute="bottom" secondItem="pXe-32-Vu7" secondAttribute="bottom" id="sej-fn-N1H"/>
+                            </constraints>
+                        </scrollView>
+                        <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="7M3-9X-OlY">
+                            <rect key="frame" x="82" y="31" width="39" height="37"/>
+                        </pageControl>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="7M3-9X-OlY" secondAttribute="bottom" constant="-10" id="MMh-RI-Bpz"/>
+                        <constraint firstAttribute="bottom" secondItem="1pp-wW-Q11" secondAttribute="bottom" id="OFw-DS-kJN"/>
+                        <constraint firstItem="1pp-wW-Q11" firstAttribute="leading" secondItem="RI8-xW-w8i" secondAttribute="leading" id="Tqb-Ik-inb"/>
+                        <constraint firstItem="1pp-wW-Q11" firstAttribute="top" secondItem="RI8-xW-w8i" secondAttribute="top" id="fWZ-PG-K3O"/>
+                        <constraint firstAttribute="trailing" secondItem="1pp-wW-Q11" secondAttribute="trailing" id="fmI-9J-2O3"/>
+                        <constraint firstItem="7M3-9X-OlY" firstAttribute="centerX" secondItem="RI8-xW-w8i" secondAttribute="centerX" id="pd6-Ir-gPY"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgm-Fg-HqW" customClass="GreenButtonCenter" customModule="Hey_Go" customModuleProvider="target">
+                    <rect key="frame" x="234" y="0.0" width="30" height="58"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xyx-lW-yh7" customClass="GreenButtonCenter" customModule="Hey_Go" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="30" height="58"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="a5v-4t-fYb"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xgm-Fg-HqW" firstAttribute="top" secondItem="nhj-py-DoD" secondAttribute="top" id="AaP-IW-fgX"/>
+                <constraint firstItem="Xyx-lW-yh7" firstAttribute="top" secondItem="nhj-py-DoD" secondAttribute="top" id="D07-C9-LIU"/>
+                <constraint firstAttribute="bottom" secondItem="Xyx-lW-yh7" secondAttribute="bottom" id="DnQ-wH-poU"/>
+                <constraint firstItem="RI8-xW-w8i" firstAttribute="top" secondItem="nhj-py-DoD" secondAttribute="top" id="Qif-XV-aqd"/>
+                <constraint firstAttribute="bottom" secondItem="RI8-xW-w8i" secondAttribute="bottom" id="ZC3-9k-SIg"/>
+                <constraint firstItem="xgm-Fg-HqW" firstAttribute="width" secondItem="Xyx-lW-yh7" secondAttribute="width" id="cUc-Ab-x0m"/>
+                <constraint firstItem="xgm-Fg-HqW" firstAttribute="leading" secondItem="RI8-xW-w8i" secondAttribute="trailing" id="cZ0-1b-gEl"/>
+                <constraint firstItem="Xyx-lW-yh7" firstAttribute="leading" secondItem="nhj-py-DoD" secondAttribute="leading" id="cel-Jm-jOG"/>
+                <constraint firstAttribute="trailing" secondItem="xgm-Fg-HqW" secondAttribute="trailing" id="fQM-Bt-wpR"/>
+                <constraint firstAttribute="bottom" secondItem="xgm-Fg-HqW" secondAttribute="bottom" id="l3K-IR-yWe"/>
+                <constraint firstItem="RI8-xW-w8i" firstAttribute="leading" secondItem="Xyx-lW-yh7" secondAttribute="trailing" id="tdR-y3-mRV"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="28" y="-111"/>
+        </view>
+    </objects>
+</document>

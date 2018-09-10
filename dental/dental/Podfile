@@ -1,0 +1,10 @@
+project '../dental.xcodeproj'
+source 'https://github.com/CocoaPods/Specs.git'
+target 'dental' do
+pod 'GoogleMaps'
+pod 'GooglePlaces'
+use_frameworks!
+
+pod 'Alamofire', '~> 4.4'
+pod 'AlamofireImage', '~> 3.3'
+end
