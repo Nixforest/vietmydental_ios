@@ -67,6 +67,15 @@ class Service: NSObject {
 
     func request(api: APIFunctions, method: HTTPMethod, parameter: Dictionary<String, AnyObject>, success: @escaping((APIResponse) -> Void), failure: @escaping((APIResponse) -> Void)) {
 
+        if !CommonProcess.isConnectNetwork() {
+            let resp = APIResponse()
+            resp.code = -1
+            resp.message = "Vui lòng kiểm tra kết nối mạng"
+            resp.isDisconnected = true
+            failure(resp)
+            return
+        }
+        
         let strParam = getStringParam(parameter: parameter)
         var strURL = ""
         strURL = serviceConfig.url.appending(api.rawValue)
