@@ -15,7 +15,8 @@ class ConfigExtBean: ConfigBean {
     var _dataExt:           [ConfigExtBean]         = [ConfigExtBean]()
     var _dataObj:           [String: AnyObject]     = [String: AnyObject]()
     var _dataArrObj:        [[String: AnyObject]]   = [[String: AnyObject]]()
-    
+    /** Select Status */
+    var isSelected: Bool            = false
     /**
      * Initializer
      * - parameter jsonData: List of data

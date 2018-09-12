@@ -31,6 +31,11 @@ class StatisticsListTableViewCell: UITableViewCell {
     }
     
     func loadReceipt(_ receipt: ConfigExtBean) {
+        if receipt.isSelected {
+            self.contentView.backgroundColor = "007BFE".hexColor()
+        } else {
+            self.contentView.backgroundColor = UIColor.white
+        }
         for data in receipt.getListData() {
             switch data.id {
             case DomainConst.ITEM_NAME:

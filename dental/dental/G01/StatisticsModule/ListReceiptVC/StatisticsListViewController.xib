@@ -22,14 +22,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lb6-Rp-Ghm">
-                    <rect key="frame" x="0.0" y="200" width="375" height="467"/>
+                    <rect key="frame" x="0.0" y="208" width="375" height="459"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fen-Mk-tj1" customClass="StatisticsListHeaderView" customModule="dental" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                     <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="MVp-5n-WUJ"/>
+                        <constraint firstAttribute="height" constant="250" id="MVp-5n-WUJ"/>
                     </constraints>
                 </view>
             </subviews>
@@ -38,7 +38,7 @@
                 <constraint firstItem="lb6-Rp-Ghm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="69p-a9-Imn"/>
                 <constraint firstAttribute="bottom" secondItem="lb6-Rp-Ghm" secondAttribute="bottom" id="7OZ-so-SCD"/>
                 <constraint firstItem="fen-Mk-tj1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7dE-Wz-eev"/>
-                <constraint firstItem="lb6-Rp-Ghm" firstAttribute="top" secondItem="fen-Mk-tj1" secondAttribute="bottom" id="LTX-jh-9gg"/>
+                <constraint firstItem="lb6-Rp-Ghm" firstAttribute="top" secondItem="fen-Mk-tj1" secondAttribute="bottom" constant="8" id="LTX-jh-9gg"/>
                 <constraint firstAttribute="trailing" secondItem="lb6-Rp-Ghm" secondAttribute="trailing" id="Vwo-rZ-r2Y"/>
                 <constraint firstAttribute="trailing" secondItem="fen-Mk-tj1" secondAttribute="trailing" id="ejg-xp-S6x"/>
                 <constraint firstItem="fen-Mk-tj1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xmK-cO-0C7"/>

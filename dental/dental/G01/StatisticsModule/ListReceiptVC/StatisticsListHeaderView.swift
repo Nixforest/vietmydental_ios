@@ -46,9 +46,7 @@ class StatisticsListHeaderView: BaseView {
                 lbReceiptionistName.text = "\(data.getStringData())"
                 break
             case DomainConst.ITEM_RECEIPT_QUANTITY:
-                if data.getStringData().count > 0 {
-                    lbQuantity.text = "x\(data.getStringData())"
-                }
+                lbQuantity.text = data.getStringData().count > 0 ? "x\(data.getStringData())" : ""
                 break
             case DomainConst.ITEM_TREATMENT:
                 lbTreatmentName.text = data.getStringData()

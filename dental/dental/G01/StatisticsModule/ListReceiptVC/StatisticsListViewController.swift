@@ -95,6 +95,7 @@ class StatisticsListViewController: ChildExtViewController {
             self.receipt.data.setData(data: data)
         }
         if resp.data.count() > 0 {
+            resp.data.getData()[0].isSelected = true
             self.headerView.loadReceipt(resp.data.getData()[0])
         }
         self.tbView.reloadData()
@@ -140,6 +141,11 @@ extension StatisticsListViewController: UITableViewDelegate, UITableViewDataSour
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        for item in receipt.data.getData() {
+            item.isSelected = false
+        }
+        receipt.data.getData()[indexPath.row].isSelected = true
+        tbView.reloadData()
         headerView.loadReceipt(receipt.data.getData()[indexPath.row])
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

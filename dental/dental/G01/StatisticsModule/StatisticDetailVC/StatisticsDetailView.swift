@@ -91,13 +91,13 @@ class StatisticsDetailView: BaseView {
             let strTo = CommonProcess.getDateString(date: dateTo, format: DomainConst.DATE_TIME_FORMAT_1)
             lbTime.text = "Từ \(strFrom) đến \(strTo)"
         }
-        if statistic.total.replacingOccurrences(of: ",", with: "").intValue() == 0 {
-            btnListDebt.alpha = 0
-            btnListDiscount.alpha = 0
-        } else {
-            btnListDebt.alpha = 1
-            btnListDiscount.alpha = 1
-        }
+//        if statistic.total.replacingOccurrences(of: ",", with: "").intValue() == 0 {
+//            btnListDebt.alpha = 0
+//            btnListDiscount.alpha = 0
+//        } else {
+//            btnListDebt.alpha = 1
+//            btnListDiscount.alpha = 1
+//        }
         lbTotal.text = "\(statistic.total)"
         lbDebt.text = "\(statistic.debt)"
         lbCustomerCount.text = "\(statistic.customerCount)"
