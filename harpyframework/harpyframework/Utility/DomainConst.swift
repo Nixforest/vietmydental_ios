@@ -1502,6 +1502,7 @@ public class DomainConst {
     public static let USER_PROFILE                      = "account"
     public static let ISSUE_CREATE                      = "Tạo mới phản ánh"
     public static let HOME                              = "home"
+    public static let STATISTIC                         = "report_revenue"
     public static let ISSUE_LIST                        = "issue_list"
     public static let MESSAGE                           = "message"
     public static let CUSTOMER_LIST                     = "customer_list"
@@ -1853,6 +1854,8 @@ public class DomainConst {
     public static let MENU_BKG_TOP_IMG_NAME                 = "bg_sliding_menu_top.jpg"
     /** Menu item Home image name */
     public static let MENU_ITEM_HOME_IMG_NAME               = "ic_menu_home.png"
+    /** Menu item Statistic image name */
+    public static let MENU_ITEM_STATISTIC_IMG_NAME               = "ic_menu_home.png"
     /** Menu item Home image name */
     public static let MENU_ITEM_GIFT_IMG_NAME               = "ic_menu_gift.png"
     /** Menu item Profile image name */

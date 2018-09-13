@@ -1364,6 +1364,11 @@ open class BaseViewController : UIViewController {
         
     }
     //-- BUG0171-SPJ (NguyenPT 20171127) Add new menu
+    //++ BUG0086-Vietmy (LamPP)
+    open func openStatistics() {
+        
+    }
+    //-- BUG0086-Vietmy (LamPP)
     
     open func openConfig() {
         

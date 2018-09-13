@@ -353,6 +353,10 @@ open class BaseMenuViewController : BaseViewController {
         // Close slide menu
         BaseViewController.getRootController()?.closeLeft()
         switch (sender as! UIButton).accessibilityIdentifier! {
+        //++ BUG0086-Vietmy
+        case DomainConst.STATISTIC:
+            openStatistics()
+            break
         case DomainConst.G00_CONFIGURATION_VIEW_CTRL:       // Config menu
             openConfig()
             break
@@ -580,6 +584,8 @@ open class BaseMenuViewController : BaseViewController {
     public static func getMenuIcon(id: String) -> String {
         var iconPath: String = DomainConst.MENU_ITEM_HOME_IMG_NAME
         switch (id) {
+        case DomainConst.STATISTIC:
+            iconPath = DomainConst.MENU_ITEM_STATISTIC_IMG_NAME
         case DomainConst.HOME:
             iconPath = DomainConst.MENU_ITEM_HOME_IMG_NAME
             break

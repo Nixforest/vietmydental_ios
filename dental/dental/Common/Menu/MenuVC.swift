@@ -70,12 +70,6 @@ class MenuVC: BaseMenuViewController {
     
     //++ BUG0165-SPJ (NguyenPT 20171123) Override select home menu
     override func openHome() {
-        // temp open Statistics controller 
-        let view = StatisticsViewController()
-        if let controller = BaseViewController.getCurrentViewController() {
-            controller.navigationController?.pushViewController(view, animated: true)
-        }
-        return
         // Get current view controller
         if let currentView = BaseViewController.getCurrentViewController() {
             // Pop to root view controller
@@ -89,6 +83,13 @@ class MenuVC: BaseMenuViewController {
         let loginView = G00LoginExtVC(nibName: G00LoginExtVC.theClassName, bundle: nil)
         if let controller = BaseViewController.getCurrentViewController() {
             controller.present(loginView, animated: true, completion: finishOpenLogin)
+        }
+    }
+    
+    override func openStatistics() {
+        let view = StatisticsViewController()
+        if let controller = BaseViewController.getCurrentViewController() {
+            controller.navigationController?.pushViewController(view, animated: true)
         }
     }
     
