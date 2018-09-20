@@ -1369,6 +1369,10 @@ open class BaseViewController : UIViewController {
         
     }
     
+    open func openReportRevenue() {
+        
+    }
+    
     //++ BUG0156-SPJ (NguyenPT 20170926) Re-design Gas24h
     /**
      * Create bottom message view

@@ -1231,6 +1231,8 @@ public class DomainConst {
     public static let KEY_MENU_FAMILY_UPHOLD_LIST       = "uphold_hgd_list"
     /** Key menu item: Report list */
     public static let KEY_MENU_REPORT_LIST              = "report"
+    /** Key menu item: Report list */
+    public static let KEY_MENU_REPORT_REVENUE           = "report_revenue"
     //-- BUG0073-SPJ (NguyenPT 20170504) Add new key setting
     
     //++ BUG0102-SPJ (NguyenPT 20170604) Add new key setting

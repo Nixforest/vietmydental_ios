@@ -12,6 +12,8 @@
 		9018162820ABE72F000D69E2 /* DiagnosisCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9018162720ABE72F000D69E2 /* DiagnosisCreateRequest.swift */; };
 		902E28A020A8411B0085AAF3 /* G01F03S06VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902E289E20A8411B0085AAF3 /* G01F03S06VC.swift */; };
 		902E28A120A8411B0085AAF3 /* G01F03S06VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 902E289F20A8411B0085AAF3 /* G01F03S06VC.xib */; };
+		903BD0AE215357DD00B5A6B9 /* MultiSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BD0AC215357DD00B5A6B9 /* MultiSelectionVC.swift */; };
+		903BD0AF215357DD00B5A6B9 /* MultiSelectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 903BD0AD215357DD00B5A6B9 /* MultiSelectionVC.xib */; };
 		907C2054214687A9006BD127 /* harpyframework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907C20512146879F006BD127 /* harpyframework.framework */; };
 		907C2055214687A9006BD127 /* harpyframework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 907C20512146879F006BD127 /* harpyframework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		908CE2DB205E5A5E00798C6F /* G01F03S04ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908CE2D8205E5A5E00798C6F /* G01F03S04ViewController.xib */; };
@@ -303,6 +305,8 @@
 		9018162720ABE72F000D69E2 /* DiagnosisCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DiagnosisCreateRequest.swift; path = G01/API/DiagnosisCreateRequest.swift; sourceTree = "<group>"; };
 		902E289E20A8411B0085AAF3 /* G01F03S06VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = G01F03S06VC.swift; path = G01/F03/G01F03S06VC.swift; sourceTree = "<group>"; };
 		902E289F20A8411B0085AAF3 /* G01F03S06VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = G01F03S06VC.xib; path = G01/F03/G01F03S06VC.xib; sourceTree = "<group>"; };
+		903BD0AC215357DD00B5A6B9 /* MultiSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MultiSelectionVC.swift; path = G01/Custom/MultiSelectionVC.swift; sourceTree = "<group>"; };
+		903BD0AD215357DD00B5A6B9 /* MultiSelectionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MultiSelectionVC.xib; path = G01/Custom/MultiSelectionVC.xib; sourceTree = "<group>"; };
 		907C204B2146879E006BD127 /* harpyframework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = harpyframework.xcodeproj; path = ../harpyframework/harpyframework.xcodeproj; sourceTree = "<group>"; };
 		908CE2D8205E5A5E00798C6F /* G01F03S04ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = G01F03S04ViewController.xib; path = G01/F03/G01F03S04ViewController.xib; sourceTree = "<group>"; };
 		908CE2DA205E5A5E00798C6F /* G01F03S04ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = G01F03S04ViewController.swift; path = G01/F03/G01F03S04ViewController.swift; sourceTree = "<group>"; };
@@ -863,6 +867,8 @@
 				D7A2AC8B202B5C9D008C8580 /* CustomerInfoHeaderView.xib */,
 				D7B43B372037739600F59945 /* SelectionVC.swift */,
 				D7B43B382037739600F59945 /* SelectionVC.xib */,
+				903BD0AC215357DD00B5A6B9 /* MultiSelectionVC.swift */,
+				903BD0AD215357DD00B5A6B9 /* MultiSelectionVC.xib */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -1347,6 +1353,7 @@
 				D7F4B202202B524F00EC7AB5 /* Help.png in Resources */,
 				90063CAB20A10FBB0025E09F /* G01F03S05VC.xib in Resources */,
 				D78CD1642024B5BA00C70FAE /* G01F00S02VC.xib in Resources */,
+				903BD0AF215357DD00B5A6B9 /* MultiSelectionVC.xib in Resources */,
 				D70BCB5E2016EF1A00BCD90B /* G00AddressSelectVC.xib in Resources */,
 				CFE0CF6D21104FDB00635813 /* BorderSelectBox.xib in Resources */,
 				D7F4B1F8202B524F00EC7AB5 /* GPlus.png in Resources */,
@@ -1514,6 +1521,7 @@
 				D706B042203AD2E8004AE6D7 /* G01F02S06VC.swift in Sources */,
 				90063CAA20A10FBB0025E09F /* G01F03S05VC.swift in Sources */,
 				D7F4B220202B524F00EC7AB5 /* CustomerList.swift in Sources */,
+				903BD0AE215357DD00B5A6B9 /* MultiSelectionVC.swift in Sources */,
 				D7F4B221202B524F00EC7AB5 /* LoginUser.swift in Sources */,
 				D78CD16C2024CC8D00C70FAE /* TreatmentBean.swift in Sources */,
 				CFE0CF79211053D100635813 /* BaseView.swift in Sources */,

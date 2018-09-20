@@ -52,6 +52,7 @@ class StatisticsViewController: BaseParentViewController {
     var listSelect: [QuickSelectItem] = []
     var selectedAgents: [ConfigBean] = []
     var canSelectAgent: Bool = false
+    var isSelectingAgents:              Bool        = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +78,12 @@ class StatisticsViewController: BaseParentViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        getRoleSelectAgent()
+        super.viewWillAppear(animated)
+        if self.isSelectingAgents {
+            self.isSelectingAgents = false
+            self.selectedAgents = BaseModel.shared.sharedArrayConfig
+            BaseModel.shared.sharedArrayConfig.removeAll()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -201,9 +207,13 @@ class StatisticsViewController: BaseParentViewController {
 extension StatisticsViewController: BorderSelectBoxDelegate {
     func borderSelectBoxDidTouch(box: BorderSelectBox) {
         if box == boxAgency {
-            let vc = ListAgencyViewController(selectedAgents: self.selectedAgents)
-            vc.delegate = self
-            self.navigationController?.pushViewController(vc, animated: true)
+            isSelectingAgents = true
+            let view = MultiSelectionVC(nibName: MultiSelectionVC.theClassName, bundle: nil)
+            view.createNavigationBar(title: DomainConst.CONTENT00446)
+            view.setData(data: LoginBean.shared.list_agent,
+                         selectedValue: "")
+            view.setSelectedArray(value: selectedAgents)
+            self.push(view, animated: true)
         }
     }
     func borderSelectBoxDidTouchDidFinishPickDate(box: BorderSelectBox) {

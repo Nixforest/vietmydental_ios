@@ -468,6 +468,9 @@ open class BaseMenuViewController : BaseViewController {
             openAppGuide()
             break
         //-- BUG0171-SPJ (NguyenPT 20171127	) Add new menu
+        case DomainConst.KEY_MENU_REPORT_REVENUE:
+            openReportRevenue()
+            break
         default:
             currentView.showAlert(message: DomainConst.CONTENT00362)
             break
@@ -644,6 +647,9 @@ open class BaseMenuViewController : BaseViewController {
             iconPath = DomainConst.MENU_ITEM_APP_GUIDE
             break
         //-- BUG0171-SPJ (NguyenPT 20171127	) Add new menu
+        case DomainConst.KEY_MENU_REPORT_REVENUE:
+            iconPath = DomainConst.MENU_ITEM_WORKING_REPORT_IMG_NAME
+            break
         default:
             break
         }
