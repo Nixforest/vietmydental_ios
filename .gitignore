@@ -634,3 +634,4 @@ dental/dental/Pods/Target Support Files/Pods-dental/Pods-dental-umbrella.h
 dental/dental/Pods/Target Support Files/Pods-dental/Pods-dental.debug.xcconfig
 dental/dental/Pods/Target Support Files/Pods-dental/Pods-dental.modulemap
 dental/dental/Pods/Target Support Files/Pods-dental/Pods-dental.release.xcconfig
+harpyframework/harpyframework/Utility/Info.swift
