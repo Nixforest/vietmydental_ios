@@ -48,6 +48,9 @@ class StatisticsListViewController: ChildExtViewController {
         tbView.delegate = self
         tbView.dataSource = self
         tbView.register(UINib(nibName: cellID, bundle: Bundle.main), forCellReuseIdentifier: cellID)
+    }
+    
+    override func viewDidLayoutSubviews() {
         headerView.dropShadow(color: UIColor.black, radius: 3, opacity: 0.5)
     }
 
