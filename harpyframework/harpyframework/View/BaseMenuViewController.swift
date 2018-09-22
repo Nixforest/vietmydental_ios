@@ -155,6 +155,7 @@ open class BaseMenuViewController : BaseViewController {
      */
     public func setupMenuItem() {
         // Valid data menu
+        print(listMenu.count)
         if listMenu.count < MenuItemEnum.MENUITEM_NUM.hashValue {
             return
         }

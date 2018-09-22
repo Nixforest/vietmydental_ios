@@ -84,6 +84,11 @@ class StatisticsDetailView: BaseView {
         return output
     }
     
+    func showSelectedAgents(list: [ConfigBean]) {
+        selectedAgents = list
+        cltvAgents.reloadData()
+    }
+    
     func loadUI(statistic: StatisticsModel) {
         if let dateFrom = CommonProcess.getDate(fromString: param.date_from, withFormat: DomainConst.DATE_TIME_FORMAT_2),
             let dateTo = CommonProcess.getDate(fromString: param.date_to, withFormat: DomainConst.DATE_TIME_FORMAT_2) {
