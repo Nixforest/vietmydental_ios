@@ -584,6 +584,7 @@ public class BaseModel: NSObject {
         self.isTrainningMode = isTrainningValue
         defaults.set(isTrainningMode, forKey: DomainConst.KEY_SETTING_TRAINING_MODE)
         defaults.synchronize()
+        self.setDefaultServerUrl()
         
         // Handle display color when training mode is on
 //        if BaseModel.shared.checkTrainningMode() {

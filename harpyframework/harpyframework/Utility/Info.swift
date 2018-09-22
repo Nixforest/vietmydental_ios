@@ -17,7 +17,7 @@ class Info: NSObject {
     /** Main path: get domain name */
     public static let MAIN_PATH_GET_DOMAIN_NAME             = "default/getDomainName"
     /** Server url */
-    public static let SERVER_URL                            = "http://nkvietmy.vom/index.php/api/"
+    public static let SERVER_URL                            = "http://nkvietmy.com/index.php/api/"
     /** Training url */
     public static let TRAINING_URL                          = "http://vietmy.immortal.vn/index.php/api/"
 }
