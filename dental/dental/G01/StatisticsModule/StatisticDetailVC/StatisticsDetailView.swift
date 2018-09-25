@@ -43,10 +43,16 @@ class StatisticsDetailView: BaseView {
     }
     
     //MARK: - Logic
+    /**
+     *  show selected agent UI
+     */
     func loadSelectedAgents(agents: [ConfigBean]) {
         self.selectedAgents = agents
         processListAgent()
     }
+    /**
+     *  process selected agent
+     */
     func processListAgent() {
         if selectedAgents.count == 0 {
             let listAgent = LoginBean.shared.list_agent
@@ -58,6 +64,10 @@ class StatisticsDetailView: BaseView {
         }
         cltvAgents.reloadData()
     }
+    
+    /**
+     *  get parameters for today statistics request
+     */
     func getParamToday() -> GetStatisticsRequest {
         let param = GetStatisticsRequest()
         param.agent_id = "[\(LoginBean.shared.user_agents_id)]"
@@ -66,6 +76,10 @@ class StatisticsDetailView: BaseView {
         return param
     }
     
+    /**
+     *  get width item of collection view
+     *  param: text need calculating
+     */
     func getWidthItem(withText text: String) -> CGFloat {
         var output:CGFloat = 0
         let font = UIFont.systemFont(ofSize: 14)
@@ -84,6 +98,9 @@ class StatisticsDetailView: BaseView {
         return output
     }
     
+    /**
+     *  load UI based on response from server
+     */
     func loadUI(statistic: StatisticsModel) {
         if let dateFrom = CommonProcess.getDate(fromString: param.date_from, withFormat: DomainConst.DATE_TIME_FORMAT_2),
             let dateTo = CommonProcess.getDate(fromString: param.date_to, withFormat: DomainConst.DATE_TIME_FORMAT_2) {
@@ -107,19 +124,21 @@ class StatisticsDetailView: BaseView {
     }
     
     //MARK: - Services
-    func getStatistics(param: GetStatisticsRequest) {
-        self.param = param
-        serviceInstance.getStatistics(req: param, success: { (resp) in
-            self.loadUI(statistic: resp)
-        }) { (error) in
-            
-        }
-    }
+//    func getStatistics(param: GetStatisticsRequest) {
+//        self.param = param
+//        serviceInstance.getStatistics(req: param, success: { (resp) in
+//            self.loadUI(statistic: resp)
+//        }) { (error) in
+//
+//        }
+//    }
     
     //MARK: - IBAction
+    // select list collected customers
     @IBAction func btnListCollectedAction(_ sender: Any) {
         delegate.statisticsDetailViewDidSelectCollected!()
     }
+    // select list not collected customers
     @IBAction func btnListNotCollectedAction(_ sender: Any) {
         delegate.statisticsDetailViewDidSelectNotCollected!()
     }

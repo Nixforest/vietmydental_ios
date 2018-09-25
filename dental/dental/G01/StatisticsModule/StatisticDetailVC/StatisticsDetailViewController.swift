@@ -32,6 +32,7 @@ class StatisticsDetailViewController: ChildExtViewController {
         createNavigationBar(title: "Thống kê")
         detailView.delegate = self
         detailView.param = self.param
+        detailView.loadSelectedAgents(agents: self.selectedAgents)
         self.getStatistics(param: self.param)
     }
 

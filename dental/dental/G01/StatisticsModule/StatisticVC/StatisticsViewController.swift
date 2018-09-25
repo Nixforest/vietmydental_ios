@@ -82,6 +82,12 @@ class StatisticsViewController: BaseParentViewController {
         if self.isSelectingAgents {
             self.isSelectingAgents = false
             self.selectedAgents = BaseModel.shared.sharedArrayConfig
+            if selectedAgents.count == 1 {
+                boxAgency.setValue(selectedAgents[0].name)
+            }
+            if selectedAgents.count > 1 {
+                boxAgency.setValue("Đã chọn \(selectedAgents.count) chi nhánh")
+            }
             BaseModel.shared.sharedArrayConfig.removeAll()
         }
     }
@@ -122,11 +128,10 @@ class StatisticsViewController: BaseParentViewController {
         if agentIDs.count > 1 {
             canSelectAgent = true
             boxAgency.alpha = 1
-            for id in agentIDs {
-                for agent in LoginBean.shared.list_agent {
-                    if id == agent.id {
-                        selectedAgents.append(agent)
-                    }
+            for agent in LoginBean.shared.list_agent {
+                if agent.id == "-1" {
+                    selectedAgents.append(agent)
+                    return
                 }
             }
         } else {
@@ -203,7 +208,7 @@ class StatisticsViewController: BaseParentViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
-
+//MARK: - Extension
 extension StatisticsViewController: BorderSelectBoxDelegate {
     func borderSelectBoxDidTouch(box: BorderSelectBox) {
         if box == boxAgency {

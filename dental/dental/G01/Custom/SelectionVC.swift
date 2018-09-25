@@ -26,7 +26,10 @@ class SelectionVC: G00AddressSelectVC {
      * - parameter value: Value of array
      */
     public func setSelectedArray(value: [ConfigBean]) {
+        // setting value for UI
         self._selectedArray = value
+        // setting shared value for passing between controllers
+        BaseModel.shared.sharedArrayConfig = value
     }
     
     /**
