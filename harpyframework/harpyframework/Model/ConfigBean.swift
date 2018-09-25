@@ -15,10 +15,6 @@ open class ConfigBean: NSObject {
     /** Data of item */
     public var data = [ConfigBean]()
     
-    /** Offline property Selection Status */
-    //++BUG0086_1
-    public var isSelected: Bool = false
-    //--BUG0086_1
     /**
      * Initializer
      * - parameter id: Id of item

@@ -27,15 +27,6 @@ class SelectionVC: G00AddressSelectVC {
      */
     public func setSelectedArray(value: [ConfigBean]) {
         self._selectedArray = value
-        if !_selectedArray.isEmpty {
-            for selectedItem in _selectedArray {
-                for item in _data {
-                    if item.id == selectedItem.id {
-                        item.isSelected = true
-                    }
-                }
-            }
-        }
     }
     
     /**
@@ -47,28 +38,22 @@ class SelectionVC: G00AddressSelectVC {
             let data = self._data[indexPath.row]
             cell.textLabel?.text = data.name
             cell.textLabel?.font = GlobalConst.BASE_FONT
-            //BUG0086_1
-            if data.isSelected {
-                cell.accessoryType = .checkmark
-            } else {
-                cell.accessoryType = .none
+            if !_selectedArray.isEmpty {
+                for item in _selectedArray {
+                    if data.id == item.id {
+                        cell.accessoryType = .checkmark
+                        break
+                    } else {
+                        cell.accessoryType = .none
+                    }
+                }
+            } else {            
+                if data.id == _selectedValue {
+                    cell.textLabel?.textColor = UIColor.red
+                } else {
+                    cell.textLabel?.textColor = UIColor.black
+                }
             }
-//            if !_selectedArray.isEmpty {
-//                for item in _selectedArray {
-//                    if data.id == item.id {
-//                        cell.accessoryType = .checkmark
-//                        break
-//                    } else {
-//                        cell.accessoryType = .none
-//                    }
-//                }
-//            } else {
-//                if data.id == _selectedValue {
-//                    cell.textLabel?.textColor = UIColor.red
-//                } else {
-//                    cell.textLabel?.textColor = UIColor.black
-//                }
-//            }
         }
         return cell
     }

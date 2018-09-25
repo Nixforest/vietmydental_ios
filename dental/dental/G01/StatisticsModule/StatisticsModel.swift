@@ -55,21 +55,6 @@ class GetStatisticsRequest: MasterModel {
     @objc dynamic var date_to: String = ""
     
     func getAgentID(listAgents: [ConfigBean]) -> String {
-        if listAgents.isEmpty {
-            return ""
-        }
-        if listAgents.count == 1 && listAgents[0].id == "-1" {
-            var retVal = ""
-            var arr = [String]()
-            for agent in LoginBean.shared.list_agent {
-                if agent.id != "-1" {
-                    arr.append(agent.id)
-                }
-            }
-            retVal = arr.joined(separator: DomainConst.SPLITER_TYPE2)
-            retVal = "[\(retVal)]"
-            return retVal
-        }
         var retVal = ""
         var arr = [String]()
         for agent in listAgents {

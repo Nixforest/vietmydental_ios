@@ -122,10 +122,11 @@ class StatisticsViewController: BaseParentViewController {
         if agentIDs.count > 1 {
             canSelectAgent = true
             boxAgency.alpha = 1
-            for agent in LoginBean.shared.list_agent {
-                if agent.id == "-1" {
-                    selectedAgents.append(agent)
-                    return
+            for id in agentIDs {
+                for agent in LoginBean.shared.list_agent {
+                    if id == agent.id {
+                        selectedAgents.append(agent)
+                    }
                 }
             }
         } else {
@@ -192,15 +193,9 @@ class StatisticsViewController: BaseParentViewController {
         let param = GetStatisticsRequest()
         if let d = CommonProcess.getDate(fromString: boxFromDate.getValue(), withFormat: "dd/MM/yyyy") {
             param.date_from = CommonProcess.getDateString(date: d, format: DomainConst.DATE_TIME_FORMAT_2)
-        } else {
-            self.showAlert(message: "Vui lòng chọn thời gian tìm kiếm")
-            return
         }
         if let d = CommonProcess.getDate(fromString: boxToDate.getValue(), withFormat: "dd/MM/yyyy") {
             param.date_to = CommonProcess.getDateString(date: d, format: DomainConst.DATE_TIME_FORMAT_2)
-        } else {
-            self.showAlert(message: "Vui lòng chọn thời gian tìm kiếm")
-            return
         }
         param.agent_id = param.getAgentID(listAgents: selectedAgents)
         let vc = StatisticsDetailViewController(paramRequest: param)
@@ -218,7 +213,6 @@ extension StatisticsViewController: BorderSelectBoxDelegate {
             view.setData(data: LoginBean.shared.list_agent,
                          selectedValue: "")
             view.setSelectedArray(value: selectedAgents)
-            view.delegate = self
             self.push(view, animated: true)
         }
     }
@@ -228,18 +222,6 @@ extension StatisticsViewController: BorderSelectBoxDelegate {
         }
         if box == boxToDate {
             
-        }
-    }
-}
-
-extension StatisticsViewController: MultiSelectionVCDelegate {
-    func multiSelectionVCDidSelect(list: [ConfigBean]) {
-        selectedAgents = list
-        if list.count == 1 {
-            boxAgency.setValue(list[0].name)
-        }
-        if list.count > 1 {
-            boxAgency.setValue("Đã chọn \(list.count) chi nhánh")
         }
     }
 }
