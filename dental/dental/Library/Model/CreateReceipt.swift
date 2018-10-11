@@ -27,7 +27,7 @@ class CreateReceipt_Request: MasterModel {
 
 extension Service {
     func createReceipt(req: CreateReceipt_Request, completionHandler: @escaping((CreateReceipt) -> Void)) {
-        let url = serviceConfig.url + "customer/createReceipt"
+        let url = ServiceConfig.shared.url + "customer/createReceipt"
         let body = CommonProcess.getStringBody(parameter: req.dictionary() as Dictionary<String, AnyObject>)
         let baseReq = BaseRequest(url: url, method: DomainConst.HTTP_POST_REQUEST, body: body)
         

@@ -10,21 +10,11 @@ import UIKit
 import harpyframework
 
 
-let  serviceConfig = ServiceConfig.sharedInstance()
-
-
 class ServiceConfig: NSObject {
     let url = BaseModel.shared.getServerURL()
     var token = ""
     
-    static var instance: ServiceConfig!
-    
-    class func sharedInstance() -> ServiceConfig {
-        if(self.instance == nil) {
-            self.instance = (self.instance ?? ServiceConfig())
-        }
-        return self.instance
-    }
+    static let shared = ServiceConfig()
     
 }
 

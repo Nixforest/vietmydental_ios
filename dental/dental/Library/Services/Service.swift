@@ -11,10 +11,12 @@ import Alamofire
 import harpyframework
 
 class APIResponse: MasterModel {
-    var status = 0
-    var message = "Lỗi"
-    var data : Any!
-    var code  = 0
+    public static let NO_CONNECTION_CODE = -1
+    
+    var status: Int = 0
+    var message: String = "Lỗi"
+    var data: Any!
+    var code: Int = 0
     var isDisconnected = false
     var error: Bool = false
     
@@ -59,7 +61,7 @@ class Service: NSObject {
         for  (k,v) in  parameter {
             output = output + "\"\(k)\": \"\(v)\","
         }
-        output = "q={\(output) \"platform\":\"0\", \"token\": \"\(serviceConfig.token)\"}"
+        output = "q={\(output) \"platform\":\"0\", \"token\": \"\(ServiceConfig.shared.token)\"}"
         output = output.replacingOccurrences(of: "\"(", with: "[")
         output = output.replacingOccurrences(of: ")\"", with: "]")
         return output
@@ -69,7 +71,7 @@ class Service: NSObject {
 
         if !CommonProcess.isConnectNetwork() {
             let resp = APIResponse()
-            resp.code = -1
+            resp.code = APIResponse.NO_CONNECTION_CODE
             resp.message = "Vui lòng kiểm tra kết nối mạng"
             resp.isDisconnected = true
             failure(resp)
@@ -78,7 +80,7 @@ class Service: NSObject {
         
         let strParam = getStringParam(parameter: parameter)
         var strURL = ""
-        strURL = serviceConfig.url.appending(api.rawValue)
+        strURL = ServiceConfig.shared.url.appending(api.rawValue)
 
         print("=======request")
         print(strURL)
@@ -113,6 +115,14 @@ class Service: NSObject {
  */
 extension BaseRequest {
     func execute(completionHandler: @escaping((APIResponse) -> Void)) {
+        if !CommonProcess.isConnectNetwork() {
+            let resp = APIResponse()
+            resp.code = APIResponse.NO_CONNECTION_CODE
+            resp.message = "Vui lòng kiểm tra kết nối mạng"
+            resp.isDisconnected = true
+            completionHandler(resp)
+            return
+        }
         print("===== URL REQUEST \(self.url) =====")
         print("Body: \(self.data)")
         let serverUrl: URL = URL.init(string: self.url)!
@@ -133,6 +143,13 @@ extension BaseRequest {
     
     
     private func processReponse(response: DataResponse<Any>) -> APIResponse {
+        guard response.response != nil else {
+            let resp = APIResponse.init()
+            resp.error = true
+            resp.code = APIResponse.NO_CONNECTION_CODE
+            resp.message = response.description
+            return resp
+        }
         if(response.result.isSuccess) {
             let resp = APIResponse.init(dictionary: response.result.value as! NSDictionary)
             resp.code = (response.response?.statusCode)!
@@ -144,6 +161,7 @@ extension BaseRequest {
             return resp
         } else {
             let resp = APIResponse.init()
+            resp.error = true
             resp.code = (response.response?.statusCode)!
             resp.message = response.description
             return resp

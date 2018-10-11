@@ -529,6 +529,8 @@ public class DomainConst {
     public static let KEY_TECHNICAL_NAME                = "technical_name"
     /** Setting key: Technical phone */
     public static let KEY_TECHNICAL_PHONE               = "technical_phone"
+    /** Setting key: Daily report status */
+    public static let KEY_DAILY_REPORT_STATUS           = "daily_report_status"
     
     /** Key total record */
     public static let KEY_TOTAL_RECORD                  = "total_record"
@@ -1200,6 +1202,8 @@ public class DomainConst {
     public static let ITEM_RECEIPT_DEBT                     = "48"
     /** Item id: Receptionist */
     public static let ITEM_RECEIPTIONIST_NAME               = "49"
+    /** Item id: Status String */
+    public static let ITEM_STATUS_STR                       = "50"
     /* Item id: receipt status collected */
     public static let RECEIPT_STATUS_COLLECTED              = "3"
     /* Item id: receipt status not collected */
@@ -1217,6 +1221,19 @@ public class DomainConst {
     public static let TREATMENT_SCHEDULE_PROCESS_ACTIVE     = "1"
     public static let TREATMENT_SCHEDULE_PROCESS_COMPLETED  = "2"
     
+    /** Report status: Unapproved */
+    public static let REPORT_STATUS_UNAPPROVED              = "1"
+    /** Report status: Request approve */
+    public static let REPORT_STATUS_REQUEST_APPROVE         = "2"
+    /** Report status: Approved */
+    public static let REPORT_STATUS_APPROVED                = "3"
+    /** Report status: Refuse */
+    public static let REPORT_STATUS_REFUSE                  = "4"
+    /** Report status: Need check */
+    public static let REPORT_STATUS_NEED_CHECK              = "5"
+    /** Report status: Not created */
+    public static let REPORT_STATUS_NOT_CREATED             = "6"
+    
     // MARK: New
     /** Key menu item: Promotion list */
     public static let KEY_MENU_PROMOTION_LIST           = "promotion_list"
@@ -1233,6 +1250,8 @@ public class DomainConst {
     public static let KEY_MENU_REPORT_LIST              = "report"
     /** Key menu item: Report list */
     public static let KEY_MENU_REPORT_REVENUE           = "report_revenue"
+    /** Key menu item: Report list */
+    public static let KEY_MENU_DAILY_REPORT           = "daily_report"
     //-- BUG0073-SPJ (NguyenPT 20170504) Add new key setting
     
     //++ BUG0102-SPJ (NguyenPT 20170604) Add new key setting
@@ -2090,6 +2109,13 @@ public class DomainConst {
     public static let VMD_DEBT_ICON_IMG_NAME                    = "debt.png"
     public static let VMD_IMAGE_XRAY_ICON_IMG_NAME              = "xray.png"
     
+//    public static let VMD_REPORT_STATUS_APPROVED                = ""
+//    public static let VMD_REPORT_STATUS_UNAPPROVED              = ""
+//    public static let VMD_REPORT_STATUS_NOT_CREATED             = ""
+//    public static let VMD_REPORT_STATUS_REFURE                  = ""
+//    public static let VMD_REPORT_STATUS_WAITING                 = ""
+//    public static let VMD_REPORT_STATUS_NEED_CHECK              = ""
+    
     public static let VMD_IMG_LIST:[String: String] = 
     [
         ITEM_UPDATE_DATA:       VMD_UPDATE_ICON_IMG_NAME,
@@ -2135,6 +2161,8 @@ public class DomainConst {
     public static let DATE_TIME_FORMAT_1                    = "dd/MM/yyyy"
     /** Date time format yyyy/MM/dd */
     public static let DATE_TIME_FORMAT_2                    = "yyyy/MM/dd"
+    /** Date time format yyyy-MM */
+    public static let DATE_TIME_FORMAT_3                    = "yyyy-MM"
     /** HTTP Post request method */
     public static let GOOGLE_API_KEY                        = "AIzaSyCOXWFIXGsvZqkOziYt5CQj7Y-bB7Ej40U"
     /** HTTP Post request method */
