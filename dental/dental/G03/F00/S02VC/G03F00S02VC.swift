@@ -84,15 +84,14 @@ class G03F00S02VC: ChildExtViewController {
 extension G03F00S02VC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let report = agentReportList.data[indexPath.row]
-//        for item in report.getListData() {
-//            if item.id == DomainConst.ITEM_STATUS {
-//                if item.getStringData() == DomainConst.REPORT_STATUS_NOT_CREATED {
-//                    self.showAlert(message: "Báo cáo chưa được tạo bởi lễ tân")
-//                    return
-//                }
-//            }
-//        }
-//        let vc = G03F00S03VC(withReport: report)
+        for item in report.getListData() {
+            if item.id == DomainConst.ITEM_STATUS {
+                if item.getStringData() == DomainConst.REPORT_STATUS_NOT_CREATED {
+                    self.showAlert(message: "Báo cáo chưa được tạo bởi lễ tân")
+                    return
+                }
+            }
+        }
         let vc = G03F00S03VC.init(withReport: report, ofDate: req.date)
         self.navigationController?.pushViewController(vc, animated: true)
     }
