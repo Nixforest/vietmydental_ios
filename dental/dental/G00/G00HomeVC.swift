@@ -15,7 +15,8 @@ class G00HomeVC: BaseParentViewController {
     /** Logo */
     var imgLogo:        UIImageView = UIImageView()
     /** Statistic Detail View*/
-    @IBOutlet weak var statisticDetailView: StatisticsDetailView!
+    @IBOutlet weak var qrCodeView: QRCodeMainView!
+//    @IBOutlet weak var statisticDetailView: StatisticsDetailView!
     // MARK: Constant
     // Logo
     var LOGIN_LOGO_REAL_WIDTH_HD        = GlobalConst.LOGIN_LOGO_WIDTH * G00LoginExtVC.W_RATE_HD
@@ -42,7 +43,7 @@ class G00HomeVC: BaseParentViewController {
 
         // Do any additional setup after loading the view.
         self.createNavigationBar(title: DomainConst.CONTENT00571)
-        statisticDetailView.alpha = 0
+//        statisticDetailView.alpha = 0
         startLogic()
         
     }
@@ -228,7 +229,9 @@ class G00HomeVC: BaseParentViewController {
         if model.isSuccess() {
             LoginRespBean.saveConfigData(data: model)
             /** Loading statistic content*/
-            self.loadStatisticContent()
+//            self.loadStatisticContent()
+            /** Loading qrcode content */
+            self.loadQRCodeContent()
         }
     }
     
@@ -301,31 +304,63 @@ class G00HomeVC: BaseParentViewController {
             view: self)
     }
 
-}
-
-//MARK: - Setting Statistic content
-extension G00HomeVC: StatisticsDetailViewDelegate {
+    /** BUG0089 ++ */
+//    func loadStatisticContent() {
+//        statisticDetailView.delegate = self
+//        self.statisticParam = statisticDetailView.getParamToday()
+//        statisticDetailView.param = self.statisticParam
+//        self.getStatistics(param: self.statisticParam)
+//    }
     /** API Get today statistic detail of user*/
-    func getStatistics(param: GetStatisticsRequest) {
-        LoadingView.shared.showOverlay(view: self.view, className: self.theClassName)
-        serviceInstance.getStatistics(req: param, success: { (resp) in
-            self.statisticDetailView.alpha = 1
-            self.statisticDetailView.loadUI(statistic: resp)
-            LoadingView.shared.hideOverlayView(className: self.theClassName)
-            self.view.bringSubview(toFront: self.statisticDetailView)
+//    func getStatistics(param: GetStatisticsRequest) {
+//        LoadingView.shared.showOverlay(view: self.view, className: self.theClassName)
+//        serviceInstance.getStatistics(req: param, success: { (resp) in
+//            self.statisticDetailView.alpha = 1
+//            self.statisticDetailView.loadUI(statistic: resp)
+//            LoadingView.shared.hideOverlayView(className: self.theClassName)
+//            self.view.bringSubview(toFront: self.statisticDetailView)
+//        }) { (error) in
+//            LoadingView.shared.hideOverlayView(className: self.theClassName)
+//            self.statisticDetailView.alpha = 0
+//            self.showAlert(message: error.message)
+//        }
+//    }
+    /** BUG0089 -- */
+    /** BUG0099 ++ */
+    func loadQRCodeContent() {
+        qrCodeView.delegate = self
+        self.view.bringSubview(toFront: qrCodeView)
+        getUserByQRCode("123")
+    }
+    func getUserByQRCode(_ code: String) {
+        let param = GetCustomerByQRCodeRequest()
+        param.qr = code
+        serviceInstance.getCustomerByQRCode(param: param, success: { (response) in
+            
         }) { (error) in
-            LoadingView.shared.hideOverlayView(className: self.theClassName)
-            self.statisticDetailView.alpha = 0
             self.showAlert(message: error.message)
         }
     }
-    /** */
-    func loadStatisticContent() {
-        statisticDetailView.delegate = self
-        self.statisticParam = statisticDetailView.getParamToday()
-        statisticDetailView.param = self.statisticParam
-        self.getStatistics(param: self.statisticParam)
+    /** BUG0099 -- */
+}
+//MARK: - QRCodeMainViewDelegate
+extension G00HomeVC: QRCodeMainViewDelegate {
+    func qRCodeMainViewDidSelectScan() {
+        
     }
+    
+    func qRCodeMainViewDidSelectHistory() {
+        
+    }
+    
+    func qRCodeMainViewDidSelectOK(code: String) {
+        
+    }
+    
+    
+}
+//MARK: - StatisticDetailViewDelegate
+extension G00HomeVC: StatisticsDetailViewDelegate {
     func statisticsDetailViewDidSelectCollected() {
         self.receiptParam = GetListReceiptRequest()
         receiptParam.date_from = statisticParam.date_from

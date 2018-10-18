@@ -24,8 +24,15 @@
 		90F2A34020A14FD0004823B2 /* PathologicalCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F2A33F20A14FD0004823B2 /* PathologicalCreateRequest.swift */; };
 		90F2A34220A150E6004823B2 /* PathologicalCreateResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F2A34120A150E6004823B2 /* PathologicalCreateResp.swift */; };
 		CAB846C24394F5871EBDC0EB /* Pods_dental.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7ED4C39F2032FD07F14AA7 /* Pods_dental.framework */; };
+		CF32EE142174CFCC00B4A664 /* G04F01S01VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF32EE122174CFCC00B4A664 /* G04F01S01VC.swift */; };
+		CF32EE152174CFCC00B4A664 /* G04F01S01VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF32EE132174CFCC00B4A664 /* G04F01S01VC.xib */; };
 		CF48C969213D7CA70037C0AC /* GetDomainRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF48C968213D7CA70037C0AC /* GetDomainRequest.swift */; };
 		CF4EC320211191AA00ABE693 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4EC31F211191AA00ABE693 /* Agent.swift */; };
+		CF6C010221761C8A00B3E748 /* G04F00S01VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6C010021761C8A00B3E748 /* G04F00S01VC.swift */; };
+		CF6C010321761C8A00B3E748 /* G04F00S01VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF6C010121761C8A00B3E748 /* G04F00S01VC.xib */; };
+		CF6C010821761D4000B3E748 /* QRCodeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6C010721761D4000B3E748 /* QRCodeMainView.swift */; };
+		CF6C010A21761D5400B3E748 /* QRCodeMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF6C010921761D5400B3E748 /* QRCodeMainView.xib */; };
+		CF6C010C2176218800B3E748 /* GetCustomerByQRCodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6C010B2176218800B3E748 /* GetCustomerByQRCodeRequest.swift */; };
 		CFB31E8921465BB3003E5FE9 /* CustomerInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB31E6621465BB3003E5FE9 /* CustomerInfoTableViewCell.swift */; };
 		CFB31E8A21465BB3003E5FE9 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB31E6821465BB3003E5FE9 /* StatisticsViewController.swift */; };
 		CFB31E8B21465BB3003E5FE9 /* QuickSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB31E6921465BB3003E5FE9 /* QuickSelectCollectionViewCell.swift */; };
@@ -315,8 +322,15 @@
 		90F2A33B20A14CCF004823B2 /* G01F01S03VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = G01F01S03VC.xib; path = G01/F01/G01F01S03VC.xib; sourceTree = "<group>"; };
 		90F2A33F20A14FD0004823B2 /* PathologicalCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PathologicalCreateRequest.swift; path = G01/API/PathologicalCreateRequest.swift; sourceTree = "<group>"; };
 		90F2A34120A150E6004823B2 /* PathologicalCreateResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PathologicalCreateResp.swift; path = G01/Model/PathologicalCreateResp.swift; sourceTree = "<group>"; };
+		CF32EE122174CFCC00B4A664 /* G04F01S01VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G04F01S01VC.swift; sourceTree = "<group>"; };
+		CF32EE132174CFCC00B4A664 /* G04F01S01VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = G04F01S01VC.xib; sourceTree = "<group>"; };
 		CF48C968213D7CA70037C0AC /* GetDomainRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDomainRequest.swift; sourceTree = "<group>"; };
 		CF4EC31F211191AA00ABE693 /* Agent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
+		CF6C010021761C8A00B3E748 /* G04F00S01VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G04F00S01VC.swift; sourceTree = "<group>"; };
+		CF6C010121761C8A00B3E748 /* G04F00S01VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = G04F00S01VC.xib; sourceTree = "<group>"; };
+		CF6C010721761D4000B3E748 /* QRCodeMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeMainView.swift; sourceTree = "<group>"; };
+		CF6C010921761D5400B3E748 /* QRCodeMainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeMainView.xib; sourceTree = "<group>"; };
+		CF6C010B2176218800B3E748 /* GetCustomerByQRCodeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCustomerByQRCodeRequest.swift; sourceTree = "<group>"; };
 		CFB31E6621465BB3003E5FE9 /* CustomerInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerInfoTableViewCell.swift; sourceTree = "<group>"; };
 		CFB31E6821465BB3003E5FE9 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		CFB31E6921465BB3003E5FE9 /* QuickSelectCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSelectCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -592,6 +606,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF32EE172174CFD100B4A664 /* G04 */ = {
+			isa = PBXGroup;
+			children = (
+				CF6C010521761CD600B3E748 /* F01 */,
+				CF6C010621761CDD00B3E748 /* F00 */,
+				CF6C010B2176218800B3E748 /* GetCustomerByQRCodeRequest.swift */,
+			);
+			name = G04;
+			sourceTree = "<group>";
+		};
+		CF6C010521761CD600B3E748 /* F01 */ = {
+			isa = PBXGroup;
+			children = (
+				CF32EE122174CFCC00B4A664 /* G04F01S01VC.swift */,
+				CF32EE132174CFCC00B4A664 /* G04F01S01VC.xib */,
+			);
+			name = F01;
+			sourceTree = "<group>";
+		};
+		CF6C010621761CDD00B3E748 /* F00 */ = {
+			isa = PBXGroup;
+			children = (
+				CF6C010021761C8A00B3E748 /* G04F00S01VC.swift */,
+				CF6C010121761C8A00B3E748 /* G04F00S01VC.xib */,
+				CF6C010721761D4000B3E748 /* QRCodeMainView.swift */,
+				CF6C010921761D5400B3E748 /* QRCodeMainView.xib */,
+			);
+			name = F00;
+			sourceTree = "<group>";
+		};
 		CFB31E6521465BB3003E5FE9 /* StatisticsModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -794,6 +838,7 @@
 				D7C73AD820050787000B3CBC /* Assets.xcassets */,
 				D7C73ADA20050787000B3CBC /* LaunchScreen.storyboard */,
 				D7C73ADD20050787000B3CBC /* Info.plist */,
+				CF32EE172174CFD100B4A664 /* G04 */,
 			);
 			path = dental;
 			sourceTree = "<group>";
@@ -1277,6 +1322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFB31E9721465BB3003E5FE9 /* StatisticsListTableViewCell.xib in Resources */,
+				CF32EE152174CFCC00B4A664 /* G04F01S01VC.xib in Resources */,
 				D7F4B20E202B524F00EC7AB5 /* GreenCheckbox.xib in Resources */,
 				D7C73B0520052071000B3CBC /* G00LoginExtVC.xib in Resources */,
 				D706B04D203BC3AD004AE6D7 /* G01F03S03VC.xib in Resources */,
@@ -1328,6 +1374,7 @@
 				D7F4B1E7202B524F00EC7AB5 /* GCancel.png in Resources */,
 				D7A2AC8D202B5C9D008C8580 /* CustomerInfoHeaderView.xib in Resources */,
 				D7B43B2A20368CE800F59945 /* G01F01S01VC.xib in Resources */,
+				CF6C010321761C8A00B3E748 /* G04F00S01VC.xib in Resources */,
 				D7F4B22A202B52F200EC7AB5 /* Podfile in Resources */,
 				D7F4B1FE202B524F00EC7AB5 /* GShop.png in Resources */,
 				CFB31E9E21465BB3003E5FE9 /* StatisticDiscountListViewController.xib in Resources */,
@@ -1351,6 +1398,7 @@
 				D7C73AFA2005131C000B3CBC /* G00HomeVC.xib in Resources */,
 				D7F4B215202B524F00EC7AB5 /* GreenInfoFieldSymbol.xib in Resources */,
 				D7F4B202202B524F00EC7AB5 /* Help.png in Resources */,
+				CF6C010A21761D5400B3E748 /* QRCodeMainView.xib in Resources */,
 				90063CAB20A10FBB0025E09F /* G01F03S05VC.xib in Resources */,
 				D78CD1642024B5BA00C70FAE /* G01F00S02VC.xib in Resources */,
 				903BD0AF215357DD00B5A6B9 /* MultiSelectionVC.xib in Resources */,
@@ -1416,11 +1464,13 @@
 				"${SRCROOT}/dental/Pods/Target Support Files/Pods-dental/Pods-dental-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/BarcodeScanner/BarcodeScanner.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BarcodeScanner.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1464,6 +1514,7 @@
 				D78CD1632024B5BA00C70FAE /* G01F00S02VC.swift in Sources */,
 				D7E41401203CA6FC002DBA96 /* TreatmentScheduleProcessUpdateRequest.swift in Sources */,
 				D7E413F9203C963A002DBA96 /* TreatmentDetailUpdateResp.swift in Sources */,
+				CF6C010221761C8A00B3E748 /* G04F00S01VC.swift in Sources */,
 				D7F4B1C8202B524F00EC7AB5 /* NavigationView.swift in Sources */,
 				D7F4B1E0202B524F00EC7AB5 /* GreenView.swift in Sources */,
 				D7F4B1DD202B524F00EC7AB5 /* GreenTableView.swift in Sources */,
@@ -1480,6 +1531,7 @@
 				D7FF1FBB2024224400C2DF28 /* G01F00S01VC.swift in Sources */,
 				D7F4B1D8202B524F00EC7AB5 /* GreenExtention+UIView.swift in Sources */,
 				D7AAE671203802D7001C3847 /* TreatmentListRespBean.swift in Sources */,
+				CF6C010821761D4000B3E748 /* QRCodeMainView.swift in Sources */,
 				D706B048203AD504004AE6D7 /* G01F03S01VC.swift in Sources */,
 				D702C81A203904010075D40B /* G01F02S05VC.swift in Sources */,
 				D7F4B117202B2A9700EC7AB5 /* G00ConfigVC.swift in Sources */,
@@ -1488,6 +1540,7 @@
 				D7A2AC91202B6086008C8580 /* GroupIdConfig.swift in Sources */,
 				CFB31EA121465BB3003E5FE9 /* ListAgencyViewController.swift in Sources */,
 				D7F4B223202B524F00EC7AB5 /* MasterObject.swift in Sources */,
+				CF6C010C2176218800B3E748 /* GetCustomerByQRCodeRequest.swift in Sources */,
 				D7C92A2D203967B2002EF00D /* TreatmentDetailBean.swift in Sources */,
 				D7C73AD420050787000B3CBC /* ViewController.swift in Sources */,
 				CFB31E9B21465BB3003E5FE9 /* StatisticsListViewController.swift in Sources */,
@@ -1503,6 +1556,7 @@
 				D7AAE67720388DE5001C3847 /* ListConfigBean.swift in Sources */,
 				D7C73AD220050787000B3CBC /* AppDelegate.swift in Sources */,
 				D7F4B1E2202B524F00EC7AB5 /* DialogInfoView.swift in Sources */,
+				CF32EE142174CFCC00B4A664 /* G04F01S01VC.swift in Sources */,
 				D7F4B1DA202B524F00EC7AB5 /* GCleanView.swift in Sources */,
 				D7FF1FC52024245700C2DF28 /* CustomerBean.swift in Sources */,
 				D70BCB4E2016E99100BCD90B /* G00AccountExtVC.swift in Sources */,

@@ -9,9 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="G00HomeVC" customModule="dental" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="G04F00S01VC" customModule="dental" customModuleProvider="target">
             <connections>
-                <outlet property="qrCodeView" destination="HtO-Jv-S24" id="wDY-IH-yYc"/>
+                <outlet property="qrcodeView" destination="xHt-lh-ieU" id="NHg-h3-aB0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,17 +20,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HtO-Jv-S24" customClass="QRCodeMainView" customModule="dental" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHt-lh-ieU" customClass="QRCodeMainView" customModule="dental" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="HtO-Jv-S24" secondAttribute="bottom" id="2Ik-Sl-LMN"/>
-                <constraint firstAttribute="trailing" secondItem="HtO-Jv-S24" secondAttribute="trailing" id="4Nn-Rp-RAR"/>
-                <constraint firstItem="HtO-Jv-S24" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FhH-Mr-hbp"/>
-                <constraint firstItem="HtO-Jv-S24" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JRN-RF-Pfo"/>
+                <constraint firstAttribute="trailing" secondItem="xHt-lh-ieU" secondAttribute="trailing" id="2Ea-dG-3JR"/>
+                <constraint firstItem="xHt-lh-ieU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OZ3-KB-CXw"/>
+                <constraint firstItem="xHt-lh-ieU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="U1k-oW-uue"/>
+                <constraint firstAttribute="bottom" secondItem="xHt-lh-ieU" secondAttribute="bottom" id="a5n-fj-H6V"/>
             </constraints>
         </view>
     </objects>
