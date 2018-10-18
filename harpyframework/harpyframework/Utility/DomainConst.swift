@@ -141,6 +141,8 @@ public class DomainConst {
     public static let KEY_CHIEF_MONITOR_ID              = "chief_monitor_id"
     /** Monitor agent id */
     public static let KEY_MONITOR_AGENT_ID              = "monitor_agent_id"
+    /** Key setting: Month */
+    public static let KEY_MONTH                         = "month"
     /** Accounting id */
     public static let KEY_ACCOUNTING_ID                 = "accounting_id"
     /** Username */
@@ -2734,4 +2736,5 @@ public class DomainConst {
     public static let CONTENT00575 = "Thông tin răng"
     public static let CONTENT00576 = "Dữ liệu chưa đầy đủ, bạn có muốn tiếp tục không?"
     public static let CONTENT00577 = "Nợ cũ"
+    public static let CONTENT00578 = "Báo cáo hằng ngày"
 }

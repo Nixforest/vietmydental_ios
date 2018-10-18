@@ -19,6 +19,11 @@
 		908CE2DB205E5A5E00798C6F /* G01F03S04ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908CE2D8205E5A5E00798C6F /* G01F03S04ViewController.xib */; };
 		908CE2DC205E5A5E00798C6F /* G01F03S04ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908CE2DA205E5A5E00798C6F /* G01F03S04ViewController.swift */; };
 		908CE2DE205E5A6E00798C6F /* CreateReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908CE2DD205E5A6E00798C6F /* CreateReceipt.swift */; };
+		90BB90E72178296000A4E118 /* G03F00S01ExtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BB90E52178296000A4E118 /* G03F00S01ExtVC.swift */; };
+		90BB90E82178296000A4E118 /* G03F00S01ExtVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90BB90E62178296000A4E118 /* G03F00S01ExtVC.xib */; };
+		90BB90EB21782AD900A4E118 /* GetDailyReportRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BB90EA21782AD900A4E118 /* GetDailyReportRequest.swift */; };
+		90BB90ED21782C1100A4E118 /* G03Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BB90EC21782C1100A4E118 /* G03Const.swift */; };
+		90BB90F021782E1900A4E118 /* DailyReportRespBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BB90EF21782E1900A4E118 /* DailyReportRespBean.swift */; };
 		90F2A33C20A14CCF004823B2 /* G01F01S03VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F2A33A20A14CCF004823B2 /* G01F01S03VC.swift */; };
 		90F2A33D20A14CCF004823B2 /* G01F01S03VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90F2A33B20A14CCF004823B2 /* G01F01S03VC.xib */; };
 		90F2A34020A14FD0004823B2 /* PathologicalCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F2A33F20A14FD0004823B2 /* PathologicalCreateRequest.swift */; };
@@ -324,6 +329,11 @@
 		908CE2D8205E5A5E00798C6F /* G01F03S04ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = G01F03S04ViewController.xib; path = G01/F03/G01F03S04ViewController.xib; sourceTree = "<group>"; };
 		908CE2DA205E5A5E00798C6F /* G01F03S04ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = G01F03S04ViewController.swift; path = G01/F03/G01F03S04ViewController.swift; sourceTree = "<group>"; };
 		908CE2DD205E5A6E00798C6F /* CreateReceipt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateReceipt.swift; sourceTree = "<group>"; };
+		90BB90E52178296000A4E118 /* G03F00S01ExtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = G03F00S01ExtVC.swift; path = dental/G03/F00/G03F00S01ExtVC.swift; sourceTree = SOURCE_ROOT; };
+		90BB90E62178296000A4E118 /* G03F00S01ExtVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = G03F00S01ExtVC.xib; path = dental/G03/F00/G03F00S01ExtVC.xib; sourceTree = SOURCE_ROOT; };
+		90BB90EA21782AD900A4E118 /* GetDailyReportRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDailyReportRequest.swift; sourceTree = "<group>"; };
+		90BB90EC21782C1100A4E118 /* G03Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G03Const.swift; sourceTree = "<group>"; };
+		90BB90EF21782E1900A4E118 /* DailyReportRespBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportRespBean.swift; sourceTree = "<group>"; };
 		90F2A33A20A14CCF004823B2 /* G01F01S03VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = G01F01S03VC.swift; path = G01/F01/G01F01S03VC.swift; sourceTree = "<group>"; };
 		90F2A33B20A14CCF004823B2 /* G01F01S03VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = G01F01S03VC.xib; path = G01/F01/G01F01S03VC.xib; sourceTree = "<group>"; };
 		90F2A33F20A14FD0004823B2 /* PathologicalCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PathologicalCreateRequest.swift; path = G01/API/PathologicalCreateRequest.swift; sourceTree = "<group>"; };
@@ -610,6 +620,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		90BB90EE21782DCD00A4E118 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90BB90EF21782E1900A4E118 /* DailyReportRespBean.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AED35F1128F3424FC1E1BDA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,8 +650,10 @@
 		CF8646722164636700416DB8 /* G03 */ = {
 			isa = PBXGroup;
 			children = (
+				90BB90EE21782DCD00A4E118 /* Model */,
 				CF864678216463B600416DB8 /* F00 */,
 				CF86467D21646F0700416DB8 /* API */,
+				90BB90EC21782C1100A4E118 /* G03Const.swift */,
 			);
 			path = G03;
 			sourceTree = "<group>";
@@ -654,6 +674,7 @@
 				CF86467A21646F0300416DB8 /* DailyReportList.swift */,
 				CF87C2542166614C00318EBD /* DailyReport.swift */,
 				CF6FAE26216E396C001C1BB1 /* UpdateDailyReport.swift */,
+				90BB90EA21782AD900A4E118 /* GetDailyReportRequest.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -665,6 +686,8 @@
 				CF864675216463A700416DB8 /* G03F00S01VC.xib */,
 				CF34E2562165C1B100872040 /* G03F00S01TableViewCell.swift */,
 				CF34E2572165C1B100872040 /* G03F00S01TableViewCell.xib */,
+				90BB90E52178296000A4E118 /* G03F00S01ExtVC.swift */,
+				90BB90E62178296000A4E118 /* G03F00S01ExtVC.xib */,
 			);
 			path = S01VC;
 			sourceTree = "<group>";
@@ -1465,6 +1488,7 @@
 				CF864677216463A700416DB8 /* G03F00S01VC.xib in Resources */,
 				CF6FAE23216C8258001C1BB1 /* G03F00S03TableViewCell.xib in Resources */,
 				D7F4B217202B524F00EC7AB5 /* GreenStepField.xib in Resources */,
+				90BB90E82178296000A4E118 /* G03F00S01ExtVC.xib in Resources */,
 				902E28A120A8411B0085AAF3 /* G01F03S06VC.xib in Resources */,
 				D7AAE6752038683E001C3847 /* G01F02S02VC.xib in Resources */,
 				D7F4B200202B524F00EC7AB5 /* GUser.png in Resources */,
@@ -1647,6 +1671,7 @@
 				D7F4B21F202B524F00EC7AB5 /* CustomerInfo.swift in Sources */,
 				D7C73AF320051253000B3CBC /* BaseParentViewController.swift in Sources */,
 				D7F4B1D0202B524F00EC7AB5 /* GreenExtension+UIImage.swift in Sources */,
+				90BB90EB21782AD900A4E118 /* GetDailyReportRequest.swift in Sources */,
 				CF6FAE22216C8258001C1BB1 /* G03F00S03TableViewCell.swift in Sources */,
 				D7F4B1D4202B524F00EC7AB5 /* GreenExtention+UILabel.swift in Sources */,
 				CFB31E8921465BB3003E5FE9 /* CustomerInfoTableViewCell.swift in Sources */,
@@ -1664,6 +1689,7 @@
 				D7C73B0420052071000B3CBC /* G00LoginExtVC.swift in Sources */,
 				D7F4B1D2202B524F00EC7AB5 /* GreenExtension+UIViewController.swift in Sources */,
 				D7B43B392037739600F59945 /* SelectionVC.swift in Sources */,
+				90BB90F021782E1900A4E118 /* DailyReportRespBean.swift in Sources */,
 				D702C815203903CA0075D40B /* G01F02S04VC.swift in Sources */,
 				D7C73AFE200513F3000B3CBC /* MenuVC.swift in Sources */,
 				D7C92A3120397C5A002EF00D /* G01F00S03VC.swift in Sources */,
@@ -1689,8 +1715,10 @@
 				CFB31E8B21465BB3003E5FE9 /* QuickSelectCollectionViewCell.swift in Sources */,
 				D78CD1662024B6B600C70FAE /* ConfigExtBean.swift in Sources */,
 				D79087AF203D1D5C000BD77E /* G01F04S02VC.swift in Sources */,
+				90BB90ED21782C1100A4E118 /* G03Const.swift in Sources */,
 				D7F4B1E4202B524F00EC7AB5 /* GreenDialog.swift in Sources */,
 				D70BCB562016EEA700BCD90B /* G00Const.swift in Sources */,
+				90BB90E72178296000A4E118 /* G03F00S01ExtVC.swift in Sources */,
 				CFB31E9521465BB3003E5FE9 /* StatisticsDetailView.swift in Sources */,
 				D78CD16A2024C45700C70FAE /* CustomerInfoRequest.swift in Sources */,
 			);

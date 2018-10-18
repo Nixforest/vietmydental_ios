@@ -116,4 +116,8 @@ class ListConfigBean: NSObject {
             item._dataStr = DomainConst.BLANK
         }
     }
+    
+    public func removeAll() {
+        self._data.removeAll()
+    }
 }
