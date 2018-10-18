@@ -46,6 +46,8 @@ class LoginBean: ConfigBean {
     var user_agents_id:        String       = ""
     /** status receipt config */
     var status_receipt:    [ConfigBean]     = [ConfigBean]()
+    /** report status list */
+    var report_status_list:    [ConfigBean]     = [ConfigBean]()
     
     var app_page_size: String               = ""
     
@@ -88,6 +90,7 @@ class LoginBean: ConfigBean {
         self.user_agents_id = getString(json: jsonData, key: DomainConst.KEY_AGENT_ID)
         // Status receipt
         self.status_receipt.append(contentsOf: getListConfig(json: jsonData, key: DomainConst.KEY_STATUS_RECEIPT))
+        self.report_status_list.append(contentsOf: getListConfig(json: jsonData, key: DomainConst.KEY_DAILY_REPORT_STATUS))
         // App page size
         self.app_page_size = getString(json: jsonData, key: DomainConst.KEY_APP_API_LIST_PAGE_SIZE)
     }

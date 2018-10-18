@@ -50,8 +50,13 @@ class GetListReceiptRequest: MasterModel {
 }
 
 class GetStatisticsRequest: MasterModel {
+    /** agent ID: format string Array
+     *  sample: "[id1, id2, id3...]"
+     */
     @objc dynamic var agent_id: String = ""
+    /** Date time format yyyy/MM/dd */
     @objc dynamic var date_from: String = ""
+    /** Date time format yyyy/MM/dd */
     @objc dynamic var date_to: String = ""
     
     func getAgentID(listAgents: [ConfigBean]) -> String {
@@ -68,7 +73,7 @@ class GetStatisticsRequest: MasterModel {
 
 extension Service {
     func getStatistics(req: GetStatisticsRequest, success: @escaping((StatisticsModel) -> Void), failure: @escaping((APIResponse) -> Void)) {
-        let url = serviceConfig.url + "report/getStatistic"
+        let url = ServiceConfig.shared.url + "report/getStatistic"
         let body = CommonProcess.getStringBody(parameter: req.dictionary() as Dictionary<String, AnyObject>)
         let baseReq = BaseRequest(url: url, method: DomainConst.HTTP_POST_REQUEST, body: body)
         
@@ -81,7 +86,7 @@ extension Service {
         }
     }
     func getListReceipt(req: GetListReceiptRequest, success: @escaping((MedicalReceipt) -> Void), failure: @escaping((APIResponse) -> Void)) {
-        let url = serviceConfig.url + "report/listReceipts"
+        let url = ServiceConfig.shared.url + "report/listReceipts"
         let body = CommonProcess.getStringBody(parameter: req.dictionary() as Dictionary<String, AnyObject>)
         let baseReq = BaseRequest(url: url, method: DomainConst.HTTP_POST_REQUEST, body: body)
         

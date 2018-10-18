@@ -88,6 +88,11 @@ class MenuVC: BaseMenuViewController {
     override func openReportRevenue() {
         self.push(StatisticsViewController(), animated: true)
     }
+    
+    override func openReportList() {
+//        self.push(G03F00S01VC(), animated: true)
+        self.push(G03F00S01ExtVC(), animated: true)
+    }
 
     override func openLogin() {
         let loginView = G00LoginExtVC(nibName: G00LoginExtVC.theClassName, bundle: nil)
