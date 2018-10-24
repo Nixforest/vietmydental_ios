@@ -86,7 +86,7 @@ extension G03F00S02VC: UITableViewDelegate {
         let report = agentReportList.data[indexPath.row]
         for item in report.getListData() {
             if item.id == DomainConst.ITEM_STATUS {
-                if item.getStringData() == DomainConst.REPORT_STATUS_NOT_CREATED {
+                if item.getStringData() == DomainConst.REPORT_STATUS_NOT_CREATED_YET {
                     self.showAlert(message: "Báo cáo chưa được tạo bởi lễ tân")
                     return
                 }

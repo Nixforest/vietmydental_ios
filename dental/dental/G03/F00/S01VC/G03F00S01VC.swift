@@ -27,7 +27,7 @@ class G03F00S01VC: BaseParentViewController {
         createNavigationBar(title: "Danh sách báo cáo")
         tbView.delegate = self
         tbView.dataSource = self
-        tbView.register(UINib(nibName: cellID, bundle: Bundle.main), forCellReuseIdentifier: cellID)
+//        tbView.register(UINib(nibName: cellID, bundle: Bundle.main), forCellReuseIdentifier: cellID)
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         tbView.addSubview(refreshControl)
         getReportList(time: getParamDateString())
@@ -72,7 +72,6 @@ class G03F00S01VC: BaseParentViewController {
     }
     
     
-    
     //MARK: - API
     /** call api get report list by month
      * input: date string format "yyyy-MM"
@@ -105,7 +104,25 @@ class G03F00S01VC: BaseParentViewController {
             self.tbView.reloadData()
         }
     }
-    
+    /** get list agent report by day */
+    func getDailyAgentReport(byDate date: String) {
+        LoadingView.shared.showOverlay()
+        let dailyReq = DailyReportRequest()
+        dailyReq.date = date
+        serviceInstance.getDailyReport(req: dailyReq, success: { (report) in
+            LoadingView.shared.hideOverlayView(className: self.theClassName)
+            if report.data.count == 1 {
+                let vc = G03F00S03VC.init(withReport: report.data[0], ofDate: date)
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                let vc = G03F00S02VC(strDate: date)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }) { (error) in
+            self.showAlert(message: error.message)
+            LoadingView.shared.hideOverlayView(className: self.theClassName)
+        }
+    }
     
 }
 
@@ -113,8 +130,12 @@ class G03F00S01VC: BaseParentViewController {
 extension G03F00S01VC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let report = reportList.data[indexPath.row]
-        let vc = G03F00S02VC(strDate: report.name)
-        self.navigationController?.pushViewController(vc, animated: true)
+        let stt = report.getData(id: DomainConst.ITEM_STATUS)
+        if stt == DomainConst.REPORT_STATUS_NOT_CREATED_YET || stt == DomainConst.REPORT_STATUS_NEW {
+            self.showAlert(message: "Báo cáo chưa được tạo bởi lễ tân")
+            return
+        }
+        getDailyAgentReport(byDate: report.name)
     }
 }
 
@@ -123,15 +144,33 @@ extension G03F00S01VC: UITableViewDataSource {
         return reportList.data.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return UITableViewAutomaticDimension
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row > reportList.data.count {
             return UITableViewCell()
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! G03F00S01TableViewCell
+        let report = reportList.data[indexPath.row]
+        let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
+        cell.textLabel?.text = report.name
+        cell.textLabel?.font = GlobalConst.BASE_FONT
+        let imgPath = DomainConst.INFORMATION_IMG_NAME
+        for data in report.getListData() {
+            switch data.id {
+            case DomainConst.ITEM_STATUS_STR:
+                cell.detailTextLabel?.text = data.getStringData()
+                cell.detailTextLabel?.font = GlobalConst.BASE_FONT
+                break
+            default:
+                break
+            }
+        }
+        let imgMargin = GlobalConst.MARGIN * 2
+        cell.imageView?.image = ImageManager.getImage(
+            named: imgPath, margin: imgMargin)
+        cell.imageView?.contentMode = .scaleAspectFit
+        cell.accessoryType = .disclosureIndicator
         cell.selectionStyle = .none
-        cell.loadReport(reportList.data[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

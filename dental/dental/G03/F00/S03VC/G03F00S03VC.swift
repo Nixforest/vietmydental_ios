@@ -44,6 +44,11 @@ class G03F00S03VC: ChildExtViewController {
         tbView.dataSource = self
         tbView.register(UINib(nibName: cellID, bundle: Bundle.main), forCellReuseIdentifier: cellID)
         tbView.reloadData()
+        let status = report.getData(id: DomainConst.ITEM_STATUS)
+        if status == DomainConst.REPORT_STATUS_CONFIRM {
+            btnOK.isHidden = true
+            btnRefuse.isHidden = true
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,6 +58,10 @@ class G03F00S03VC: ChildExtViewController {
     
     
     //MARK: - Service
+    /**
+     *  call api update report status
+     *  param: string status id
+     */
     func updateReportStatus(_ statusID: String) {
         let req = UpdateDailyReportRequest()
         req.id = report.id
@@ -62,6 +71,8 @@ class G03F00S03VC: ChildExtViewController {
             self.showAlert(message: result.message, okHandler: { (action) in
                 
             })
+            self.report = result.data
+            self.tbView.reloadData()
         }) { (error) in
             self.showAlert(message: error.message)
         }
@@ -71,10 +82,10 @@ class G03F00S03VC: ChildExtViewController {
     
     //MARK: - IBAction
     @IBAction func btnOkAction(_ sender: Any) {
-        updateReportStatus(DomainConst.REPORT_STATUS_APPROVED)
+        updateReportStatus(DomainConst.REPORT_STATUS_CONFIRM)
     }
     @IBAction func btnRefuseAction(_ sender: Any) {
-        updateReportStatus(DomainConst.REPORT_STATUS_REFUSE)
+        updateReportStatus(DomainConst.REPORT_STATUS_CANCEL)
     }
     
 }
@@ -88,16 +99,38 @@ extension G03F00S03VC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let item = report.getListData()[indexPath.row]
         if item.name.count > 0 {
-            return 60
+            return UITableViewAutomaticDimension
         }
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! G03F00S03TableViewCell
+        if indexPath.row > report.getListData().count {
+            return UITableViewCell()
+        }
+        let item = report.getListData()[indexPath.row]
+        let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
+        if item.name.count > 0 {
+            cell.isHidden = false
+        } else {
+            cell.isHidden = true
+        }
+        cell.textLabel?.text = item.name
+        cell.textLabel?.font = GlobalConst.BASE_FONT
+        cell.detailTextLabel?.text = item.getStringData()
+        cell.detailTextLabel?.font = GlobalConst.BASE_FONT
+        let imgPath = DomainConst.INFORMATION_IMG_NAME
+        let imgMargin = GlobalConst.MARGIN * 2
+        cell.imageView?.image = ImageManager.getImage(named: imgPath, margin: imgMargin)
+        cell.imageView?.contentMode = .scaleAspectFit
+        cell.accessoryType = .none
         cell.selectionStyle = .none
-        cell.loadData(report.getListData()[indexPath.row])
+        cell.contentView.clipsToBounds = true
         return cell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! G03F00S03TableViewCell
+//        cell.selectionStyle = .none
+//        cell.loadData(report.getListData()[indexPath.row])
+//        return cell
     }
 }
 

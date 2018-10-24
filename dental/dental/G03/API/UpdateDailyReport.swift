@@ -12,6 +12,7 @@ import harpyframework
 class UpdateDailyReport: NSObject {
     var message: String = ""
     var isSuccess: Bool = false
+    var data: ConfigExtBean!
 }
 
 class UpdateDailyReportRequest: MasterModel {
@@ -29,6 +30,9 @@ extension Service {
         baseReq.execute { (response) in
             if response.status == 1 {
                 let result = UpdateDailyReport()
+                if let data = response.data as? [String: AnyObject] {
+                    result.data = ConfigExtBean(jsonData: data)
+                }
                 result.message = response.message
                 result.isSuccess = true
                 success(result)
