@@ -33,6 +33,8 @@
 		CF34E2592165C1B100872040 /* G03F00S01TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF34E2572165C1B100872040 /* G03F00S01TableViewCell.xib */; };
 		CF48C969213D7CA70037C0AC /* GetDomainRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF48C968213D7CA70037C0AC /* GetDomainRequest.swift */; };
 		CF4EC320211191AA00ABE693 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4EC31F211191AA00ABE693 /* Agent.swift */; };
+		CF640FD42180C2B900963101 /* G00ChangePassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF640FD22180C2B900963101 /* G00ChangePassVC.swift */; };
+		CF640FD52180C2B900963101 /* G00ChangePassVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF640FD32180C2B900963101 /* G00ChangePassVC.xib */; };
 		CF6FAE22216C8258001C1BB1 /* G03F00S03TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FAE20216C8258001C1BB1 /* G03F00S03TableViewCell.swift */; };
 		CF6FAE23216C8258001C1BB1 /* G03F00S03TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF6FAE21216C8258001C1BB1 /* G03F00S03TableViewCell.xib */; };
 		CF6FAE27216E396C001C1BB1 /* UpdateDailyReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FAE26216E396C001C1BB1 /* UpdateDailyReport.swift */; };
@@ -81,6 +83,7 @@
 		CFE0CF7321104FE800635813 /* MIDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFE0CF7121104FE800635813 /* MIDateView.xib */; };
 		CFE0CF79211053D100635813 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0CF78211053D100635813 /* BaseView.swift */; };
 		CFE0CF7B21105FBB00635813 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0CF7A21105FBB00635813 /* LeftAlignedCollectionViewFlowLayout.swift */; };
+		CFF33A502189F6490005DBBB /* ChangePassRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF33A4F2189F6490005DBBB /* ChangePassRequest.swift */; };
 		D702C815203903CA0075D40B /* G01F02S04VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702C813203903CA0075D40B /* G01F02S04VC.swift */; };
 		D702C816203903CA0075D40B /* G01F02S04VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D702C814203903CA0075D40B /* G01F02S04VC.xib */; };
 		D702C81A203904010075D40B /* G01F02S05VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702C818203904010075D40B /* G01F02S05VC.swift */; };
@@ -342,6 +345,8 @@
 		CF34E2572165C1B100872040 /* G03F00S01TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = G03F00S01TableViewCell.xib; sourceTree = "<group>"; };
 		CF48C968213D7CA70037C0AC /* GetDomainRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDomainRequest.swift; sourceTree = "<group>"; };
 		CF4EC31F211191AA00ABE693 /* Agent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
+		CF640FD22180C2B900963101 /* G00ChangePassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = G00ChangePassVC.swift; path = G00/G00ChangePassVC.swift; sourceTree = "<group>"; };
+		CF640FD32180C2B900963101 /* G00ChangePassVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = G00ChangePassVC.xib; path = G00/G00ChangePassVC.xib; sourceTree = "<group>"; };
 		CF6FAE20216C8258001C1BB1 /* G03F00S03TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G03F00S03TableViewCell.swift; sourceTree = "<group>"; };
 		CF6FAE21216C8258001C1BB1 /* G03F00S03TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = G03F00S03TableViewCell.xib; sourceTree = "<group>"; };
 		CF6FAE26216E396C001C1BB1 /* UpdateDailyReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDailyReport.swift; sourceTree = "<group>"; };
@@ -390,6 +395,7 @@
 		CFE0CF7121104FE800635813 /* MIDateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIDateView.xib; sourceTree = "<group>"; };
 		CFE0CF78211053D100635813 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		CFE0CF7A21105FBB00635813 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		CFF33A4F2189F6490005DBBB /* ChangePassRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassRequest.swift; sourceTree = "<group>"; };
 		D702C813203903CA0075D40B /* G01F02S04VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = G01F02S04VC.swift; path = G01/F02/G01F02S04VC.swift; sourceTree = "<group>"; };
 		D702C814203903CA0075D40B /* G01F02S04VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = G01F02S04VC.xib; path = G01/F02/G01F02S04VC.xib; sourceTree = "<group>"; };
 		D702C818203904010075D40B /* G01F02S05VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = G01F02S05VC.swift; path = G01/F02/G01F02S05VC.swift; sourceTree = "<group>"; };
@@ -834,6 +840,7 @@
 			isa = PBXGroup;
 			children = (
 				D70BCB532016EE7D00BCD90B /* ChangeProfileRequest.swift */,
+				CFF33A4F2189F6490005DBBB /* ChangePassRequest.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -937,6 +944,8 @@
 				D7C73B0320052071000B3CBC /* G00LoginExtVC.xib */,
 				D7F4B115202B2A9700EC7AB5 /* G00ConfigVC.swift */,
 				D7F4B116202B2A9700EC7AB5 /* G00ConfigVC.xib */,
+				CF640FD22180C2B900963101 /* G00ChangePassVC.swift */,
+				CF640FD32180C2B900963101 /* G00ChangePassVC.xib */,
 			);
 			name = G00;
 			sourceTree = "<group>";
@@ -1419,6 +1428,7 @@
 				D7B43B3A2037739600F59945 /* SelectionVC.xib in Resources */,
 				D7F4B205202B524F00EC7AB5 /* Panel.png in Resources */,
 				D7C92A3220397C5A002EF00D /* G01F00S03VC.xib in Resources */,
+				CF640FD52180C2B900963101 /* G00ChangePassVC.xib in Resources */,
 				CFB31E8D21465BB3003E5FE9 /* StatisticsViewController.xib in Resources */,
 				D7F4B1E9202B524F00EC7AB5 /* GClover.png in Resources */,
 				D7F4B1FD202B524F00EC7AB5 /* GSetting.png in Resources */,
@@ -1615,6 +1625,7 @@
 				D7F4B216202B524F00EC7AB5 /* GreenStepField.swift in Sources */,
 				CFE0CF7B21105FBB00635813 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				D7C92A3420397D20002EF00D /* TreatmentCreateRequest.swift in Sources */,
+				CF640FD42180C2B900963101 /* G00ChangePassVC.swift in Sources */,
 				D7F4B1D7202B524F00EC7AB5 /* GreenExtention+UITextView.swift in Sources */,
 				CFB31E9821465BB3003E5FE9 /* StatisticsListTableViewCell.swift in Sources */,
 				D7AAE67720388DE5001C3847 /* ListConfigBean.swift in Sources */,
@@ -1691,6 +1702,7 @@
 				D7B43B392037739600F59945 /* SelectionVC.swift in Sources */,
 				90BB90F021782E1900A4E118 /* DailyReportRespBean.swift in Sources */,
 				D702C815203903CA0075D40B /* G01F02S04VC.swift in Sources */,
+				CFF33A502189F6490005DBBB /* ChangePassRequest.swift in Sources */,
 				D7C73AFE200513F3000B3CBC /* MenuVC.swift in Sources */,
 				D7C92A3120397C5A002EF00D /* G01F00S03VC.swift in Sources */,
 				D7AAE6802038F82C001C3847 /* G01F02S03VC.swift in Sources */,
