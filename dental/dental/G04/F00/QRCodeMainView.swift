@@ -24,7 +24,7 @@ class QRCodeMainView: BaseView {
     var delegate: QRCodeMainViewDelegate!
     
     override func firstInit() {
-        
+        btnOK.drawRadius(4)
     }
     /** set code to textField */
     func setCode(_ code: String) {

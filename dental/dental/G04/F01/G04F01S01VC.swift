@@ -10,10 +10,11 @@ import UIKit
 import harpyframework
 import BarcodeScanner
 
-
 class G04F01S01VC: ChildExtViewController {
     
     var scanVC:BarcodeScannerController!
+    
+    var handler: ((String) -> Void)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +31,12 @@ class G04F01S01VC: ChildExtViewController {
         super.viewWillDisappear(animated)
     }
     //MARK: -
+    func didGetCode(didGetCode: @escaping((String) -> Void)) {
+        handler = didGetCode
+    }
     func settingCamera() {
         scanVC = BarcodeScannerController()
-        if (self.view.bounds.width > self.view.bounds.height) {
-            scanVC.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.height, height: self.view.frame.size.width)
-        } else {
-            scanVC.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
-        }
+        scanVC.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
         scanVC.codeDelegate = self
         scanVC.errorDelegate = self
         self.addChildViewController(scanVC)
@@ -53,11 +53,13 @@ class G04F01S01VC: ChildExtViewController {
         self.childViewControllers[0].present(alertController, animated: true, completion: nil)
     }
 
-    func showMessage(message: String) {
+    func showCode(code: String) {
         weak var weakself = self
-        let alertController = UIAlertController(title: "Kết quả", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "Kết quả", message: code, preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
             weakself?.scanVC.reset()
+//            self.delegate.g04F01S01VCDidGetCode(code)
+            self.handler(code)
         }
         alertController.addAction(okAction)
         self.childViewControllers[0].present(alertController, animated: true, completion: nil)
@@ -67,7 +69,7 @@ class G04F01S01VC: ChildExtViewController {
 
 extension G04F01S01VC: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate {
     func barcodeScanner(_ controller: BarcodeScannerController, didCaptureCode code: String, type: String) {
-        showMessage(message: code)
+        showCode(code: code)
     }
     
     func barcodeScanner(_ controller: BarcodeScannerController, didReceiveError error: Error) {

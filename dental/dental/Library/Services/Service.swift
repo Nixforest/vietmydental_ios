@@ -144,7 +144,9 @@ extension BaseRequest {
             return resp
         } else {
             let resp = APIResponse.init()
-            resp.code = (response.response?.statusCode)!
+            if let temp = response.response {
+                resp.code = temp.statusCode
+            }
             resp.message = response.description
             return resp
         }

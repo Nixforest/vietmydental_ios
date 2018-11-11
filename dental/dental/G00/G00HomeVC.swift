@@ -10,13 +10,22 @@
 import UIKit
 import harpyframework
 
+enum RoleEnum: String {
+    case customer = "1"
+    case employee = "2"
+    case director = "3"
+    case doctor = "4"
+    case receptionist = "6"
+    case saler = "7"
+}
+
 class G00HomeVC: BaseParentViewController {
     // MARK: Properties
     /** Logo */
     var imgLogo:        UIImageView = UIImageView()
     /** Statistic Detail View*/
-    @IBOutlet weak var qrCodeView: QRCodeMainView!
-//    @IBOutlet weak var statisticDetailView: StatisticsDetailView!
+    var qrCodeView: QRCodeMainView!
+    var statisticDetailView: StatisticsDetailView!
     // MARK: Constant
     // Logo
     var LOGIN_LOGO_REAL_WIDTH_HD        = GlobalConst.LOGIN_LOGO_WIDTH * G00LoginExtVC.W_RATE_HD
@@ -43,9 +52,7 @@ class G00HomeVC: BaseParentViewController {
 
         // Do any additional setup after loading the view.
         self.createNavigationBar(title: DomainConst.CONTENT00571)
-//        statisticDetailView.alpha = 0
         startLogic()
-        
     }
     
     /**
@@ -94,26 +101,26 @@ class G00HomeVC: BaseParentViewController {
     override func createChildrenViews() {
         super.createChildrenViews()
         // Get current device type
-        switch UIDevice.current.userInterfaceIdiom {
-        case .phone:        // iPhone
-            self.createLogoImgHD()
-            break
-        case .pad:          // iPad
-            switch UIApplication.shared.statusBarOrientation {
-            case .portrait, .portraitUpsideDown:        // Portrait
-                self.createLogoImgFHD()
-            case .landscapeLeft, .landscapeRight:       // Landscape
-                self.createLogoImgFHD_L()
-            default:
-                break
-            }
-            
-            break
-        default:
-            break
-        }
-        
-        self.view.addSubview(imgLogo)
+//        switch UIDevice.current.userInterfaceIdiom {
+//        case .phone:        // iPhone
+//            self.createLogoImgHD()
+//            break
+//        case .pad:          // iPad
+//            switch UIApplication.shared.statusBarOrientation {
+//            case .portrait, .portraitUpsideDown:        // Portrait
+//                self.createLogoImgFHD()
+//            case .landscapeLeft, .landscapeRight:       // Landscape
+//                self.createLogoImgFHD_L()
+//            default:
+//                break
+//            }
+//
+//            break
+//        default:
+//            break
+//        }
+//
+//        self.view.addSubview(imgLogo)
     }
     
     /**
@@ -228,10 +235,11 @@ class G00HomeVC: BaseParentViewController {
         let model = LoginRespBean(jsonString: data)
         if model.isSuccess() {
             LoginRespBean.saveConfigData(data: model)
-            /** Loading statistic content*/
-//            self.loadStatisticContent()
-            /** Loading qrcode content */
-            self.loadQRCodeContent()
+            if model.data.role_id == RoleEnum.receptionist.rawValue {
+                self.loadQRCodeContent()
+            } else {
+                self.loadStatisticContent()
+            }
         }
     }
     
@@ -305,39 +313,52 @@ class G00HomeVC: BaseParentViewController {
     }
 
     /** BUG0089 ++ */
-//    func loadStatisticContent() {
-//        statisticDetailView.delegate = self
-//        self.statisticParam = statisticDetailView.getParamToday()
-//        statisticDetailView.param = self.statisticParam
-//        self.getStatistics(param: self.statisticParam)
-//    }
-    /** API Get today statistic detail of user*/
-//    func getStatistics(param: GetStatisticsRequest) {
-//        LoadingView.shared.showOverlay(view: self.view, className: self.theClassName)
-//        serviceInstance.getStatistics(req: param, success: { (resp) in
-//            self.statisticDetailView.alpha = 1
-//            self.statisticDetailView.loadUI(statistic: resp)
-//            LoadingView.shared.hideOverlayView(className: self.theClassName)
-//            self.view.bringSubview(toFront: self.statisticDetailView)
-//        }) { (error) in
-//            LoadingView.shared.hideOverlayView(className: self.theClassName)
-//            self.statisticDetailView.alpha = 0
-//            self.showAlert(message: error.message)
-//        }
-//    }
+    func loadStatisticContent() {
+        statisticDetailView = StatisticsDetailView()
+        statisticDetailView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        self.view.addSubview(statisticDetailView)
+        self.view.bringSubview(toFront: statisticDetailView)
+        statisticDetailView.delegate = self
+        self.statisticParam = statisticDetailView.getParamToday()
+        statisticDetailView.param = self.statisticParam
+        self.getStatistics(param: self.statisticParam)
+    }
+    /* API Get today statistic detail of user */
+    func getStatistics(param: GetStatisticsRequest) {
+        LoadingView.shared.showOverlay(view: self.view, className: self.theClassName)
+        serviceInstance.getStatistics(req: param, success: { (resp) in
+            self.statisticDetailView.alpha = 1
+            self.statisticDetailView.loadUI(statistic: resp)
+            LoadingView.shared.hideOverlayView(className: self.theClassName)
+            self.view.bringSubview(toFront: self.statisticDetailView)
+        }) { (error) in
+            LoadingView.shared.hideOverlayView(className: self.theClassName)
+            self.statisticDetailView.alpha = 0
+            self.showAlert(message: error.message)
+        }
+    }
     /** BUG0089 -- */
     /** BUG0099 ++ */
     func loadQRCodeContent() {
+        qrCodeView = QRCodeMainView()
+        qrCodeView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        self.view.addSubview(qrCodeView)
         qrCodeView.delegate = self
         self.view.bringSubview(toFront: qrCodeView)
-        getUserByQRCode("123")
+        getUserByQRCode("5C170E86CA3B7")
     }
     func getUserByQRCode(_ code: String) {
+        LoadingView.shared.showOverlay(view: self.view, className: self.theClassName)
         let param = GetCustomerByQRCodeRequest()
         param.qr = code
         serviceInstance.getCustomerByQRCode(param: param, success: { (response) in
-            
+            LoadingView.shared.hideOverlayView(className: self.theClassName)
+            let vc = G01F00S02VC(nibName: G01F00S02VC.theClassName, bundle: nil)
+            vc.setId(id: response.customerID, code: code)
+            vc.shouldSaveCustomer = true
+            self.navigationController?.pushViewController(vc, animated: true)
         }) { (error) in
+            LoadingView.shared.hideOverlayView(className: self.theClassName)
             self.showAlert(message: error.message)
         }
     }
@@ -346,18 +367,23 @@ class G00HomeVC: BaseParentViewController {
 //MARK: - QRCodeMainViewDelegate
 extension G00HomeVC: QRCodeMainViewDelegate {
     func qRCodeMainViewDidSelectScan() {
-        
+        let vc = G04F01S01VC()
+        vc.didGetCode { (code) in
+            self.qrCodeView.setCode(code)
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
-    
     func qRCodeMainViewDidSelectHistory() {
-        
+        let vc = G04F00S02VC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
-    
     func qRCodeMainViewDidSelectOK(code: String) {
-        
+        if code.count == 0 {
+            self.showAlert(message: "Vui lòng điền code cần tìm kiếm")
+            return
+        }
+        self.getUserByQRCode(code)
     }
-    
-    
 }
 //MARK: - StatisticDetailViewDelegate
 extension G00HomeVC: StatisticsDetailViewDelegate {
@@ -380,7 +406,6 @@ extension G00HomeVC: StatisticsDetailViewDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
-
 
 
 

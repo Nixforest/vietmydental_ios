@@ -24,15 +24,17 @@
 		90F2A34020A14FD0004823B2 /* PathologicalCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F2A33F20A14FD0004823B2 /* PathologicalCreateRequest.swift */; };
 		90F2A34220A150E6004823B2 /* PathologicalCreateResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F2A34120A150E6004823B2 /* PathologicalCreateResp.swift */; };
 		CAB846C24394F5871EBDC0EB /* Pods_dental.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7ED4C39F2032FD07F14AA7 /* Pods_dental.framework */; };
-		CF32EE142174CFCC00B4A664 /* G04F01S01VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF32EE122174CFCC00B4A664 /* G04F01S01VC.swift */; };
-		CF32EE152174CFCC00B4A664 /* G04F01S01VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF32EE132174CFCC00B4A664 /* G04F01S01VC.xib */; };
 		CF48C969213D7CA70037C0AC /* GetDomainRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF48C968213D7CA70037C0AC /* GetDomainRequest.swift */; };
 		CF4EC320211191AA00ABE693 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4EC31F211191AA00ABE693 /* Agent.swift */; };
-		CF6C010221761C8A00B3E748 /* G04F00S01VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6C010021761C8A00B3E748 /* G04F00S01VC.swift */; };
-		CF6C010321761C8A00B3E748 /* G04F00S01VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF6C010121761C8A00B3E748 /* G04F00S01VC.xib */; };
-		CF6C010821761D4000B3E748 /* QRCodeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6C010721761D4000B3E748 /* QRCodeMainView.swift */; };
-		CF6C010A21761D5400B3E748 /* QRCodeMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF6C010921761D5400B3E748 /* QRCodeMainView.xib */; };
-		CF6C010C2176218800B3E748 /* GetCustomerByQRCodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6C010B2176218800B3E748 /* GetCustomerByQRCodeRequest.swift */; };
+		CF8ADD7B2196AF02000091C9 /* GetCustomerByQRCodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8ADD702196AF02000091C9 /* GetCustomerByQRCodeRequest.swift */; };
+		CF8ADD7C2196AF03000091C9 /* QRCodeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8ADD722196AF02000091C9 /* QRCodeMainView.swift */; };
+		CF8ADD7D2196AF03000091C9 /* G04F00S01VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8ADD732196AF02000091C9 /* G04F00S01VC.swift */; };
+		CF8ADD7E2196AF03000091C9 /* QRCodeMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF8ADD742196AF02000091C9 /* QRCodeMainView.xib */; };
+		CF8ADD7F2196AF03000091C9 /* G04F00S02VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF8ADD752196AF02000091C9 /* G04F00S02VC.xib */; };
+		CF8ADD802196AF03000091C9 /* G04F00S02VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8ADD762196AF02000091C9 /* G04F00S02VC.swift */; };
+		CF8ADD812196AF03000091C9 /* G04F00S01VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF8ADD772196AF02000091C9 /* G04F00S01VC.xib */; };
+		CF8ADD822196AF03000091C9 /* G04F01S01VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8ADD792196AF02000091C9 /* G04F01S01VC.swift */; };
+		CF8ADD832196AF03000091C9 /* G04F01S01VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF8ADD7A2196AF02000091C9 /* G04F01S01VC.xib */; };
 		CFB31E8921465BB3003E5FE9 /* CustomerInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB31E6621465BB3003E5FE9 /* CustomerInfoTableViewCell.swift */; };
 		CFB31E8A21465BB3003E5FE9 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB31E6821465BB3003E5FE9 /* StatisticsViewController.swift */; };
 		CFB31E8B21465BB3003E5FE9 /* QuickSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB31E6921465BB3003E5FE9 /* QuickSelectCollectionViewCell.swift */; };
@@ -322,15 +324,17 @@
 		90F2A33B20A14CCF004823B2 /* G01F01S03VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = G01F01S03VC.xib; path = G01/F01/G01F01S03VC.xib; sourceTree = "<group>"; };
 		90F2A33F20A14FD0004823B2 /* PathologicalCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PathologicalCreateRequest.swift; path = G01/API/PathologicalCreateRequest.swift; sourceTree = "<group>"; };
 		90F2A34120A150E6004823B2 /* PathologicalCreateResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PathologicalCreateResp.swift; path = G01/Model/PathologicalCreateResp.swift; sourceTree = "<group>"; };
-		CF32EE122174CFCC00B4A664 /* G04F01S01VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G04F01S01VC.swift; sourceTree = "<group>"; };
-		CF32EE132174CFCC00B4A664 /* G04F01S01VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = G04F01S01VC.xib; sourceTree = "<group>"; };
 		CF48C968213D7CA70037C0AC /* GetDomainRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDomainRequest.swift; sourceTree = "<group>"; };
 		CF4EC31F211191AA00ABE693 /* Agent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
-		CF6C010021761C8A00B3E748 /* G04F00S01VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G04F00S01VC.swift; sourceTree = "<group>"; };
-		CF6C010121761C8A00B3E748 /* G04F00S01VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = G04F00S01VC.xib; sourceTree = "<group>"; };
-		CF6C010721761D4000B3E748 /* QRCodeMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeMainView.swift; sourceTree = "<group>"; };
-		CF6C010921761D5400B3E748 /* QRCodeMainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeMainView.xib; sourceTree = "<group>"; };
-		CF6C010B2176218800B3E748 /* GetCustomerByQRCodeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCustomerByQRCodeRequest.swift; sourceTree = "<group>"; };
+		CF8ADD702196AF02000091C9 /* GetCustomerByQRCodeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCustomerByQRCodeRequest.swift; sourceTree = "<group>"; };
+		CF8ADD722196AF02000091C9 /* QRCodeMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeMainView.swift; sourceTree = "<group>"; };
+		CF8ADD732196AF02000091C9 /* G04F00S01VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G04F00S01VC.swift; sourceTree = "<group>"; };
+		CF8ADD742196AF02000091C9 /* QRCodeMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QRCodeMainView.xib; sourceTree = "<group>"; };
+		CF8ADD752196AF02000091C9 /* G04F00S02VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = G04F00S02VC.xib; sourceTree = "<group>"; };
+		CF8ADD762196AF02000091C9 /* G04F00S02VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G04F00S02VC.swift; sourceTree = "<group>"; };
+		CF8ADD772196AF02000091C9 /* G04F00S01VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = G04F00S01VC.xib; sourceTree = "<group>"; };
+		CF8ADD792196AF02000091C9 /* G04F01S01VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G04F01S01VC.swift; sourceTree = "<group>"; };
+		CF8ADD7A2196AF02000091C9 /* G04F01S01VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = G04F01S01VC.xib; sourceTree = "<group>"; };
 		CFB31E6621465BB3003E5FE9 /* CustomerInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerInfoTableViewCell.swift; sourceTree = "<group>"; };
 		CFB31E6821465BB3003E5FE9 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		CFB31E6921465BB3003E5FE9 /* QuickSelectCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSelectCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -606,34 +610,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CF32EE172174CFD100B4A664 /* G04 */ = {
+		CF8ADD6F2196AF02000091C9 /* G04 */ = {
 			isa = PBXGroup;
 			children = (
-				CF6C010521761CD600B3E748 /* F01 */,
-				CF6C010621761CDD00B3E748 /* F00 */,
-				CF6C010B2176218800B3E748 /* GetCustomerByQRCodeRequest.swift */,
+				CF8ADD702196AF02000091C9 /* GetCustomerByQRCodeRequest.swift */,
+				CF8ADD712196AF02000091C9 /* F00 */,
+				CF8ADD782196AF02000091C9 /* F01 */,
 			);
-			name = G04;
+			path = G04;
 			sourceTree = "<group>";
 		};
-		CF6C010521761CD600B3E748 /* F01 */ = {
+		CF8ADD712196AF02000091C9 /* F00 */ = {
 			isa = PBXGroup;
 			children = (
-				CF32EE122174CFCC00B4A664 /* G04F01S01VC.swift */,
-				CF32EE132174CFCC00B4A664 /* G04F01S01VC.xib */,
+				CF8ADD722196AF02000091C9 /* QRCodeMainView.swift */,
+				CF8ADD742196AF02000091C9 /* QRCodeMainView.xib */,
+				CF8ADD732196AF02000091C9 /* G04F00S01VC.swift */,
+				CF8ADD772196AF02000091C9 /* G04F00S01VC.xib */,
+				CF8ADD762196AF02000091C9 /* G04F00S02VC.swift */,
+				CF8ADD752196AF02000091C9 /* G04F00S02VC.xib */,
 			);
-			name = F01;
+			path = F00;
 			sourceTree = "<group>";
 		};
-		CF6C010621761CDD00B3E748 /* F00 */ = {
+		CF8ADD782196AF02000091C9 /* F01 */ = {
 			isa = PBXGroup;
 			children = (
-				CF6C010021761C8A00B3E748 /* G04F00S01VC.swift */,
-				CF6C010121761C8A00B3E748 /* G04F00S01VC.xib */,
-				CF6C010721761D4000B3E748 /* QRCodeMainView.swift */,
-				CF6C010921761D5400B3E748 /* QRCodeMainView.xib */,
+				CF8ADD792196AF02000091C9 /* G04F01S01VC.swift */,
+				CF8ADD7A2196AF02000091C9 /* G04F01S01VC.xib */,
 			);
-			name = F00;
+			path = F01;
 			sourceTree = "<group>";
 		};
 		CFB31E6521465BB3003E5FE9 /* StatisticsModule */ = {
@@ -831,6 +837,7 @@
 				D7F4B14D202B524F00EC7AB5 /* Library */,
 				D7C73AF6200512A8000B3CBC /* G00 */,
 				D7FF1FB62024218E00C2DF28 /* G01 */,
+				CF8ADD6F2196AF02000091C9 /* G04 */,
 				D7C73AF12005122E000B3CBC /* Common */,
 				D7C73AD120050787000B3CBC /* AppDelegate.swift */,
 				D7C73AD320050787000B3CBC /* ViewController.swift */,
@@ -838,7 +845,6 @@
 				D7C73AD820050787000B3CBC /* Assets.xcassets */,
 				D7C73ADA20050787000B3CBC /* LaunchScreen.storyboard */,
 				D7C73ADD20050787000B3CBC /* Info.plist */,
-				CF32EE172174CFD100B4A664 /* G04 */,
 			);
 			path = dental;
 			sourceTree = "<group>";
@@ -1322,7 +1328,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFB31E9721465BB3003E5FE9 /* StatisticsListTableViewCell.xib in Resources */,
-				CF32EE152174CFCC00B4A664 /* G04F01S01VC.xib in Resources */,
 				D7F4B20E202B524F00EC7AB5 /* GreenCheckbox.xib in Resources */,
 				D7C73B0520052071000B3CBC /* G00LoginExtVC.xib in Resources */,
 				D706B04D203BC3AD004AE6D7 /* G01F03S03VC.xib in Resources */,
@@ -1348,6 +1353,7 @@
 				CFB31E9421465BB3003E5FE9 /* StatisticsDetailView.xib in Resources */,
 				D7F4B1EB202B524F00EC7AB5 /* GDelete.png in Resources */,
 				D7F4B209202B524F00EC7AB5 /* Trash.png in Resources */,
+				CF8ADD812196AF03000091C9 /* G04F00S01VC.xib in Resources */,
 				CFB31E8F21465BB3003E5FE9 /* DebtorListViewController.xib in Resources */,
 				D7F4B1FC202B524F00EC7AB5 /* GSelect.png in Resources */,
 				CFB31E9621465BB3003E5FE9 /* StatisticsListHeaderView.xib in Resources */,
@@ -1363,6 +1369,7 @@
 				D7C73AD720050787000B3CBC /* Main.storyboard in Resources */,
 				D7F4B219202B524F00EC7AB5 /* GreenSwipeView.xib in Resources */,
 				D7F4B1FA202B524F00EC7AB5 /* GRight.png in Resources */,
+				CF8ADD7E2196AF03000091C9 /* QRCodeMainView.xib in Resources */,
 				D7F4B1F3202B524F00EC7AB5 /* GLogout.png in Resources */,
 				D7F4B1F7202B524F00EC7AB5 /* GPassword.png in Resources */,
 				D7F4B1FB202B524F00EC7AB5 /* GSearch.png in Resources */,
@@ -1374,7 +1381,6 @@
 				D7F4B1E7202B524F00EC7AB5 /* GCancel.png in Resources */,
 				D7A2AC8D202B5C9D008C8580 /* CustomerInfoHeaderView.xib in Resources */,
 				D7B43B2A20368CE800F59945 /* G01F01S01VC.xib in Resources */,
-				CF6C010321761C8A00B3E748 /* G04F00S01VC.xib in Resources */,
 				D7F4B22A202B52F200EC7AB5 /* Podfile in Resources */,
 				D7F4B1FE202B524F00EC7AB5 /* GShop.png in Resources */,
 				CFB31E9E21465BB3003E5FE9 /* StatisticDiscountListViewController.xib in Resources */,
@@ -1384,6 +1390,7 @@
 				D7F4B21D202B524F00EC7AB5 /* 37x-Checkmark@2x.png in Resources */,
 				D7F4B1CB202B524F00EC7AB5 /* SingleLineTableViewCell.xib in Resources */,
 				D7F4B1EE202B524F00EC7AB5 /* GGrid.png in Resources */,
+				CF8ADD7F2196AF03000091C9 /* G04F00S02VC.xib in Resources */,
 				CFB31E8C21465BB3003E5FE9 /* QuickSelectCollectionViewCell.xib in Resources */,
 				D7F4B1F6202B524F00EC7AB5 /* GNext.png in Resources */,
 				D7AAE66B2037FCA8001C3847 /* G01F02S01VC.xib in Resources */,
@@ -1394,11 +1401,11 @@
 				D7F4B1C7202B524F00EC7AB5 /* HUDView.xib in Resources */,
 				D70BCB4320164A9100BCD90B /* logo_main.png in Resources */,
 				D7F4B118202B2A9700EC7AB5 /* G00ConfigVC.xib in Resources */,
+				CF8ADD832196AF03000091C9 /* G04F01S01VC.xib in Resources */,
 				D7F4B213202B524F00EC7AB5 /* GreenInfoFieldHorizontal.xib in Resources */,
 				D7C73AFA2005131C000B3CBC /* G00HomeVC.xib in Resources */,
 				D7F4B215202B524F00EC7AB5 /* GreenInfoFieldSymbol.xib in Resources */,
 				D7F4B202202B524F00EC7AB5 /* Help.png in Resources */,
-				CF6C010A21761D5400B3E748 /* QRCodeMainView.xib in Resources */,
 				90063CAB20A10FBB0025E09F /* G01F03S05VC.xib in Resources */,
 				D78CD1642024B5BA00C70FAE /* G01F00S02VC.xib in Resources */,
 				903BD0AF215357DD00B5A6B9 /* MultiSelectionVC.xib in Resources */,
@@ -1514,7 +1521,6 @@
 				D78CD1632024B5BA00C70FAE /* G01F00S02VC.swift in Sources */,
 				D7E41401203CA6FC002DBA96 /* TreatmentScheduleProcessUpdateRequest.swift in Sources */,
 				D7E413F9203C963A002DBA96 /* TreatmentDetailUpdateResp.swift in Sources */,
-				CF6C010221761C8A00B3E748 /* G04F00S01VC.swift in Sources */,
 				D7F4B1C8202B524F00EC7AB5 /* NavigationView.swift in Sources */,
 				D7F4B1E0202B524F00EC7AB5 /* GreenView.swift in Sources */,
 				D7F4B1DD202B524F00EC7AB5 /* GreenTableView.swift in Sources */,
@@ -1530,8 +1536,8 @@
 				D7B43B2C2036914300F59945 /* MedicalRecordInfoRequest.swift in Sources */,
 				D7FF1FBB2024224400C2DF28 /* G01F00S01VC.swift in Sources */,
 				D7F4B1D8202B524F00EC7AB5 /* GreenExtention+UIView.swift in Sources */,
+				CF8ADD822196AF03000091C9 /* G04F01S01VC.swift in Sources */,
 				D7AAE671203802D7001C3847 /* TreatmentListRespBean.swift in Sources */,
-				CF6C010821761D4000B3E748 /* QRCodeMainView.swift in Sources */,
 				D706B048203AD504004AE6D7 /* G01F03S01VC.swift in Sources */,
 				D702C81A203904010075D40B /* G01F02S05VC.swift in Sources */,
 				D7F4B117202B2A9700EC7AB5 /* G00ConfigVC.swift in Sources */,
@@ -1540,7 +1546,6 @@
 				D7A2AC91202B6086008C8580 /* GroupIdConfig.swift in Sources */,
 				CFB31EA121465BB3003E5FE9 /* ListAgencyViewController.swift in Sources */,
 				D7F4B223202B524F00EC7AB5 /* MasterObject.swift in Sources */,
-				CF6C010C2176218800B3E748 /* GetCustomerByQRCodeRequest.swift in Sources */,
 				D7C92A2D203967B2002EF00D /* TreatmentDetailBean.swift in Sources */,
 				D7C73AD420050787000B3CBC /* ViewController.swift in Sources */,
 				CFB31E9B21465BB3003E5FE9 /* StatisticsListViewController.swift in Sources */,
@@ -1556,7 +1561,6 @@
 				D7AAE67720388DE5001C3847 /* ListConfigBean.swift in Sources */,
 				D7C73AD220050787000B3CBC /* AppDelegate.swift in Sources */,
 				D7F4B1E2202B524F00EC7AB5 /* DialogInfoView.swift in Sources */,
-				CF32EE142174CFCC00B4A664 /* G04F01S01VC.swift in Sources */,
 				D7F4B1DA202B524F00EC7AB5 /* GCleanView.swift in Sources */,
 				D7FF1FC52024245700C2DF28 /* CustomerBean.swift in Sources */,
 				D70BCB4E2016E99100BCD90B /* G00AccountExtVC.swift in Sources */,
@@ -1594,6 +1598,7 @@
 				D7F4B1DE202B524F00EC7AB5 /* GreenTextField.swift in Sources */,
 				D7AAE66A2037FCA8001C3847 /* G01F02S01VC.swift in Sources */,
 				CFE0CF7221104FE800635813 /* MIDateView.swift in Sources */,
+				CF8ADD802196AF03000091C9 /* G04F00S02VC.swift in Sources */,
 				D7B43B2E2036930D00F59945 /* MedicalRecordRespBean.swift in Sources */,
 				D79087B9203DBCDA000BD77E /* TreatmentScheduleDetailCreateRequest.swift in Sources */,
 				D70BCB542016EE7D00BCD90B /* ChangeProfileRequest.swift in Sources */,
@@ -1638,10 +1643,13 @@
 				D7F4B1D5202B524F00EC7AB5 /* GreenExtention+UITableView.swift in Sources */,
 				D7A2AC92202B6086008C8580 /* ItemIdConfig.swift in Sources */,
 				D7F4B1E1202B524F00EC7AB5 /* GreenDefine.swift in Sources */,
+				CF8ADD7B2196AF02000091C9 /* GetCustomerByQRCodeRequest.swift in Sources */,
 				9018162820ABE72F000D69E2 /* DiagnosisCreateRequest.swift in Sources */,
+				CF8ADD7C2196AF03000091C9 /* QRCodeMainView.swift in Sources */,
 				D7F4B227202B524F00EC7AB5 /* ServiceConfig.swift in Sources */,
 				CFB31E8B21465BB3003E5FE9 /* QuickSelectCollectionViewCell.swift in Sources */,
 				D78CD1662024B6B600C70FAE /* ConfigExtBean.swift in Sources */,
+				CF8ADD7D2196AF03000091C9 /* G04F00S01VC.swift in Sources */,
 				D79087AF203D1D5C000BD77E /* G01F04S02VC.swift in Sources */,
 				D7F4B1E4202B524F00EC7AB5 /* GreenDialog.swift in Sources */,
 				D70BCB562016EEA700BCD90B /* G00Const.swift in Sources */,

@@ -14,7 +14,7 @@ class GetCustomerByQRCodeRequest: MasterModel {
 }
 
 class GetCustomerByQRCodeResponse: NSObject {
-    
+    var customerID: String = ""
 }
 
 extension Service {
@@ -24,7 +24,10 @@ extension Service {
         let baseReq = BaseRequest(url: url, method: DomainConst.HTTP_POST_REQUEST, body: body)
         baseReq.execute { (response) in
             if response.status == 1 {
-                
+//                let data = response.data as! NSDictionary
+                let result = GetCustomerByQRCodeResponse()
+                result.customerID = response.data as! String
+                success(result)
             } else {
                 failure(response)
             }

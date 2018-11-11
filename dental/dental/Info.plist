@@ -30,7 +30,7 @@
 		<dict/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Sử dụng camera để chụp hình hoá đơn</string>
+	<string>Sử dụng camera để chụp hình hoá đơn hoặc quét QR Code</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

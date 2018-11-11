@@ -15,6 +15,10 @@ class G01F00S02VC: ChildExtViewController {
     var _data:              CustomerInfoRespBean    = CustomerInfoRespBean()
     /** Customer id */
     var _id:                String                  = DomainConst.BLANK
+    /** Customer id */
+    var shouldSaveCustomer: Bool                    = false
+    /** Customer qr code */
+    var _code:              String                  = DomainConst.BLANK
     /** Information table view */
     var _tblInfo:           UITableView             = UITableView()
     /** Refrest control */
@@ -60,9 +64,26 @@ class G01F00S02VC: ChildExtViewController {
         if model.isSuccess() {
             _data = model
             _tblInfo.reloadData()
+            if shouldSaveCustomer {
+                self.saveCustomerQRCode()
+            }
         } else {
             showAlert(message: model.message)
         }
+    }
+    
+    func saveCustomerQRCode() {
+        var name = ""
+        for item in _data.data {
+            if item.id == "1" {
+                for child in item.data {
+                    if child.id == "1" {
+                        name = child.name
+                    }
+                }
+            }
+        }
+        app.saveCustomer(id: self._id, name: name, code: self._code)
     }
     
     // MARK: Logic
@@ -106,6 +127,14 @@ class G01F00S02VC: ChildExtViewController {
      */
     public func setId(id: String) {
         self._id = id
+    }
+    /**
+     * Set value of id and qr code
+     * - parameter id: Customer id, customer qr code
+     */
+    public func setId(id: String, code: String) {
+        _id = id
+        _code = code
     }
     
     /**
