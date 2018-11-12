@@ -43,8 +43,12 @@ class G00HomeVC: BaseParentViewController {
         // Do any additional setup after loading the view.
         self.createNavigationBar(title: DomainConst.CONTENT00571)
         statisticDetailView.alpha = 0
-        startLogic()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        startLogic()
     }
     
     /**
