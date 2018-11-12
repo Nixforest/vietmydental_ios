@@ -345,7 +345,7 @@ class G00HomeVC: BaseParentViewController {
         self.view.addSubview(qrCodeView)
         qrCodeView.delegate = self
         self.view.bringSubview(toFront: qrCodeView)
-        getUserByQRCode("5C170E86CA3B7")
+//        getUserByQRCode("5C170E86CA3B7")
     }
     func getUserByQRCode(_ code: String) {
         LoadingView.shared.showOverlay(view: self.view, className: self.theClassName)
