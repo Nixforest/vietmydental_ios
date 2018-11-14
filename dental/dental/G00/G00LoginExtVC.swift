@@ -9,7 +9,7 @@
 import UIKit
 import harpyframework
 
-class G00LoginExtVC: ChildExtViewController {
+class G00LoginExtVC: ParentExtViewController {
     // MARK: Properties
     /** Logo */
     var imgLogo:        UIImageView = UIImageView()
@@ -72,10 +72,17 @@ class G00LoginExtVC: ChildExtViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        createNavigationBar(title: "")
         setLocalData()
         self.view.makeComponentsColor()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     /**
@@ -865,6 +872,24 @@ class G00LoginExtVC: ChildExtViewController {
 //        btnFacebook.contentEdgeInsets = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
     }
     
+    private func createCustomerButton(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) {
+        let btn = UIButton()
+        btn.frame = CGRect(x: x, y: y, width: w, height: h)
+        btn.setTitle("Dành cho bệnh nhân", for: UIControlState())
+        btn.setTitleColor(GlobalConst.MAIN_COLOR_GAS_24H, for: UIControlState())
+        btn.backgroundColor     = .white
+        btn.layer.cornerRadius  = GlobalConst.BUTTON_CORNER_RADIUS_NEW
+        btn.layer.borderWidth   = 0.5
+        btn.layer.borderColor   = GlobalConst.MAIN_COLOR_GAS_24H.cgColor
+        btn.addTarget(self, action: #selector(customerButtonAction), for: .touchUpInside)
+        self.view.addSubview(btn)
+    }
+    
+    @objc func customerButtonAction() {
+        let vc = G05F00S01VC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     /**
      * Create facebook button (in HD mode)
      */
@@ -874,6 +899,7 @@ class G00LoginExtVC: ChildExtViewController {
             y: lblOr.frame.maxY + GlobalConst.MARGIN,
             w: LOGIN_PHONE_REAL_WIDTH_HD,
             h: LOGIN_PHONE_REAL_HEIGHT_HD)
+        self.createCustomerButton(x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_HD) / 2, y: btnFacebook.frame.maxY + GlobalConst.MARGIN*8, w: LOGIN_PHONE_REAL_WIDTH_HD, h: LOGIN_PHONE_REAL_HEIGHT_HD)
     }
     
     /**

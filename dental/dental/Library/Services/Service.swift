@@ -44,7 +44,7 @@ class Service: NSObject {
     private func processReponse(response: DataResponse<Any>) -> APIResponse {
         if(response.result.isSuccess) {
             let resp = APIResponse.init(dictionary: response.result.value as! NSDictionary)
-            if resp.data == nil {
+            if resp.status != 1 {
                 resp.error = true
             } else {
                 resp.error = false
@@ -107,7 +107,38 @@ class Service: NSObject {
         }
     }
 
-
+    func request(url: String, data: String, success: @escaping((APIResponse) -> Void), failure: @escaping((APIResponse) -> Void)) {
+        
+        if !CommonProcess.isConnectNetwork() {
+            let resp = APIResponse()
+            resp.code = APIResponse.NO_CONNECTION_CODE
+            resp.message = "Vui lòng kiểm tra kết nối mạng"
+            resp.isDisconnected = true
+            failure(resp)
+            return
+        }
+        print("===== URL REQUEST \(url) =====")
+        print("Body: \(data)")
+        let serverUrl: URL = URL.init(string: url)!
+        var request = URLRequest(url: serverUrl)
+        request.httpMethod = "POST"
+        request.timeoutInterval = TimeInterval(30)
+        request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringLocalCacheData
+        request.setValue("Keep-Alive", forHTTPHeaderField: "Connection")
+        request.httpBody = data.data(using: String.Encoding.utf8)
+        
+        Alamofire.request(request as URLRequestConvertible).responseJSON { (response) in
+            print("===========response")
+            print(response as Any)
+            let apiResponse = self.processReponse(response: response)
+            if (apiResponse.error == false) {
+                success(apiResponse)
+            }
+            else {
+                failure(apiResponse)
+            }
+        }
+    }
 }
 
 /**
@@ -163,7 +194,7 @@ extension BaseRequest {
             let resp = APIResponse.init()
             resp.error = true
             resp.code = (response.response?.statusCode)!
-            resp.message = response.description
+            resp.message = response.debugDescription
             return resp
         }
     }

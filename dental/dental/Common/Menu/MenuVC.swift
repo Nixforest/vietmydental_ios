@@ -96,8 +96,9 @@ class MenuVC: BaseMenuViewController {
 
     override func openLogin() {
         let loginView = G00LoginExtVC(nibName: G00LoginExtVC.theClassName, bundle: nil)
+        let nav = UINavigationController.init(rootViewController: loginView)
         if let controller = BaseViewController.getCurrentViewController() {
-            controller.present(loginView, animated: true, completion: finishOpenLogin)
+            controller.present(nav.viewControllers[0], animated: true, completion: finishOpenLogin)
         }
     }
     

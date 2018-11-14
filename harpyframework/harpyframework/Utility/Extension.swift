@@ -89,7 +89,7 @@ extension NSMutableData {
 /**
  * Menu item enum
  */
-enum MenuItemEnum {
+enum MenuItemEnum: Int {
     case LOGIN
     case LOGOUT
     case REGISTER

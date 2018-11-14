@@ -12,6 +12,10 @@ import harpyframework
 class LoginRespBean: BaseRespModel {
     var data:       LoginBean = LoginBean()
     
+    override init() {
+        super.init()
+    }
+    
     /**
      * Initializer
      */
