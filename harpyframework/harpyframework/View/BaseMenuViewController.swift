@@ -112,7 +112,6 @@ open class BaseMenuViewController : BaseViewController {
     open func update() {
         // Remove all current menu items
         self.listMenu.removeAll()
-        
         // Re-create menu items
         if BaseModel.shared.checkIsLogin() {
             //++ BUG0130-SPJ (NguyenPT 20170724) Remove Signout menu
@@ -143,7 +142,7 @@ open class BaseMenuViewController : BaseViewController {
      * - parameter listValues: List of values
      */
     public func setItem(listValues: [Bool]) {
-        if listValues.count <= MenuItemEnum.MENUITEM_NUM.hashValue {
+        if listValues.count <= MenuItemEnum.MENUITEM_NUM.rawValue {
             for item in listValues {
                 listMenu.append(item)
             }
