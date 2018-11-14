@@ -90,8 +90,8 @@ class MenuVC: BaseMenuViewController {
     }
     
     override func openReportList() {
-//        self.push(G03F00S01VC(), animated: true)
-        self.push(G03F00S01ExtVC(), animated: true)
+        self.push(G03F00S01VC(), animated: true)
+//        self.push(G03F00S01ExtVC(), animated: true)
     }
 
     override func openLogin() {

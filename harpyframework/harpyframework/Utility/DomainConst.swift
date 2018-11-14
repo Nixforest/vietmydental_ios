@@ -1224,17 +1224,17 @@ public class DomainConst {
     public static let TREATMENT_SCHEDULE_PROCESS_COMPLETED  = "2"
     
     /** Report status: Unapproved */
-    public static let REPORT_STATUS_UNAPPROVED              = "1"
+    public static let REPORT_STATUS_NEW                     = "1"
     /** Report status: Request approve */
-    public static let REPORT_STATUS_REQUEST_APPROVE         = "2"
+    public static let REPORT_STATUS_PROCESS                 = "2"
     /** Report status: Approved */
-    public static let REPORT_STATUS_APPROVED                = "3"
+    public static let REPORT_STATUS_CONFIRM                 = "3"
     /** Report status: Refuse */
-    public static let REPORT_STATUS_REFUSE                  = "4"
+    public static let REPORT_STATUS_CANCEL                  = "4"
     /** Report status: Need check */
-    public static let REPORT_STATUS_NEED_CHECK              = "5"
+    public static let REPORT_STATUS_SHOULD_REVIEW           = "5"
     /** Report status: Not created */
-    public static let REPORT_STATUS_NOT_CREATED             = "6"
+    public static let REPORT_STATUS_NOT_CREATED_YET         = "6"
     
     // MARK: New
     /** Key menu item: Promotion list */

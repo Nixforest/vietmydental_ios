@@ -33,7 +33,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Swb-b7-Vry"/>
                     </constraints>
-                    <state key="normal" title="Đồng ý">
+                    <state key="normal" title="Xác nhận">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -45,7 +45,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="8Dm-Hv-9Vo"/>
                     </constraints>
-                    <state key="normal" title="Không đồng ý">
+                    <state key="normal" title="Không xác nhận">
                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>

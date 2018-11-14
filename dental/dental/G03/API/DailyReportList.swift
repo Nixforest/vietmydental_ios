@@ -21,17 +21,17 @@ enum DailyReportStatus {
     
     static func getStatus(byID id: String) -> DailyReportStatus {
         switch id {
-        case DomainConst.REPORT_STATUS_REFUSE:
+        case DomainConst.REPORT_STATUS_CANCEL:
             return .refuse
-        case DomainConst.REPORT_STATUS_APPROVED:
+        case DomainConst.REPORT_STATUS_CONFIRM:
             return .approved
-        case DomainConst.REPORT_STATUS_UNAPPROVED:
+        case DomainConst.REPORT_STATUS_NEW:
             return .unapproved
-        case DomainConst.REPORT_STATUS_REQUEST_APPROVE:
+        case DomainConst.REPORT_STATUS_PROCESS:
             return .requestApprove
-        case DomainConst.REPORT_STATUS_NEED_CHECK:
+        case DomainConst.REPORT_STATUS_SHOULD_REVIEW:
             return .needCheck
-        case DomainConst.REPORT_STATUS_NOT_CREATED:
+        case DomainConst.REPORT_STATUS_NOT_CREATED_YET:
             return .notCreated
         default:
             return .unknow

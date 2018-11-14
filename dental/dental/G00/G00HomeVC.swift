@@ -44,7 +44,15 @@ class G00HomeVC: BaseParentViewController {
         self.createNavigationBar(title: DomainConst.CONTENT00571)
         statisticDetailView.alpha = 0
         startLogic()
+        NotificationCenter.default.addObserver(self, selector: #selector(shouldReload), name: NSNotification.Name.init("HOMEVC_SHOULD_RELOAD_LOGIC"), object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
+    }
+    
+    @objc func shouldReload() {
+        startLogic()
     }
     
     /**

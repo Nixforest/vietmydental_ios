@@ -112,7 +112,6 @@ open class BaseMenuViewController : BaseViewController {
     open func update() {
         // Remove all current menu items
         self.listMenu.removeAll()
-        
         // Re-create menu items
         if BaseModel.shared.checkIsLogin() {
             //++ BUG0130-SPJ (NguyenPT 20170724) Remove Signout menu
@@ -143,7 +142,7 @@ open class BaseMenuViewController : BaseViewController {
      * - parameter listValues: List of values
      */
     public func setItem(listValues: [Bool]) {
-        if listValues.count <= MenuItemEnum.MENUITEM_NUM.hashValue {
+        if listValues.count <= MenuItemEnum.MENUITEM_NUM.rawValue {
             for item in listValues {
                 listMenu.append(item)
             }
@@ -155,7 +154,7 @@ open class BaseMenuViewController : BaseViewController {
      */
     public func setupMenuItem() {
         // Valid data menu
-        if listMenu.count < MenuItemEnum.MENUITEM_NUM.hashValue {
+        if listMenu.count < MenuItemEnum.MENUITEM_NUM.rawValue {
             return
         }
         // Offset
@@ -176,7 +175,7 @@ open class BaseMenuViewController : BaseViewController {
             height: self.preferredContentSize.height - topHeight)
         
         // Dynamic menu
-        if listMenu[MenuItemEnum.DYNAMIC_MENU_LIST.hashValue] {
+        if listMenu[MenuItemEnum.DYNAMIC_MENU_LIST.rawValue] {
             for item in BaseModel.shared.menu {
                 //++ BUG0121-SPJ (NguyenPT 20170712) Add menu to Home
 //                var iconPath: String = DomainConst.MENU_ITEM_HOME_IMG_NAME
@@ -263,7 +262,7 @@ open class BaseMenuViewController : BaseViewController {
         }
         
         // Configuration menu
-        if listMenu[MenuItemEnum.CONFIG.hashValue] {
+        if listMenu[MenuItemEnum.CONFIG.rawValue] {
             setItemContent(title: DomainConst.CONTENT00128,
                            iconPath: DomainConst.CONFIG_MENU_IMG_NAME,
                            //++ BUG0043-SPJ (NguyenPT 20170301) Change how to menu work
@@ -276,7 +275,7 @@ open class BaseMenuViewController : BaseViewController {
         }
         
         // Login menu
-        if listMenu[MenuItemEnum.LOGIN.hashValue] {
+        if listMenu[MenuItemEnum.LOGIN.rawValue] {
             setItemContent(title: DomainConst.CONTENT00051,
                            iconPath: DomainConst.LOGIN_MENU_IMG_NAME,
                            //++ BUG0043-SPJ (NguyenPT 20170301) Change how to menu work
@@ -289,7 +288,7 @@ open class BaseMenuViewController : BaseViewController {
         }
         
         // Logout menu
-        if listMenu[MenuItemEnum.LOGOUT.hashValue] {
+        if listMenu[MenuItemEnum.LOGOUT.rawValue] {
             setItemContent(title: DomainConst.CONTENT00132,
                            iconPath: DomainConst.LOGOUT_MENU_IMG_NAME,
                            //++ BUG0043-SPJ (NguyenPT 20170301) Change how to menu work
@@ -302,7 +301,7 @@ open class BaseMenuViewController : BaseViewController {
         }
         
         // Register menu
-        if listMenu[MenuItemEnum.REGISTER.hashValue] {
+        if listMenu[MenuItemEnum.REGISTER.rawValue] {
             setItemContent(title: DomainConst.CONTENT00052,
                            iconPath: DomainConst.REGISTER_MENU_IMG_NAME,
                            //++ BUG0043-SPJ (NguyenPT 20170301) Change how to menu work
