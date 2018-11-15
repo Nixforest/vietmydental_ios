@@ -154,20 +154,21 @@ extension G03F00S01VC: UITableViewDataSource {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
         cell.textLabel?.text = report.name
         cell.textLabel?.font = GlobalConst.BASE_FONT
-        let imgPath = DomainConst.INFORMATION_IMG_NAME
         for data in report.getListData() {
             switch data.id {
             case DomainConst.ITEM_STATUS_STR:
                 cell.detailTextLabel?.text = data.getStringData()
                 cell.detailTextLabel?.font = GlobalConst.BASE_FONT
+            case DomainConst.ITEM_STATUS:
+                let imgMargin = GlobalConst.MARGIN * 2
+                let stt = DailyReportStatus.getStatus(byID: data.getStringData())
+                let img = stt.getImage().imageWithInsets(insets: UIEdgeInsets(top: imgMargin, left: imgMargin, bottom: imgMargin, right: imgMargin))
+                cell.imageView?.image = img
                 break
             default:
                 break
             }
         }
-        let imgMargin = GlobalConst.MARGIN * 2
-        cell.imageView?.image = ImageManager.getImage(
-            named: imgPath, margin: imgMargin)
         cell.imageView?.contentMode = .scaleAspectFit
         cell.accessoryType = .disclosureIndicator
         cell.selectionStyle = .none
