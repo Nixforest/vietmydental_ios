@@ -44,6 +44,7 @@
 		CF87C2552166614C00318EBD /* DailyReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87C2542166614C00318EBD /* DailyReport.swift */; };
 		CF87C25A2166681600318EBD /* G03F00S02VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87C2582166681600318EBD /* G03F00S02VC.swift */; };
 		CF87C25B2166681600318EBD /* G03F00S02VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF87C2592166681600318EBD /* G03F00S02VC.xib */; };
+		CFACF881219DB1BE002F9AB7 /* ChangePassRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFACF880219DB1BE002F9AB7 /* ChangePassRequest.swift */; };
 		CFB31E8921465BB3003E5FE9 /* CustomerInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB31E6621465BB3003E5FE9 /* CustomerInfoTableViewCell.swift */; };
 		CFB31E8A21465BB3003E5FE9 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB31E6821465BB3003E5FE9 /* StatisticsViewController.swift */; };
 		CFB31E8B21465BB3003E5FE9 /* QuickSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB31E6921465BB3003E5FE9 /* QuickSelectCollectionViewCell.swift */; };
@@ -83,7 +84,6 @@
 		CFE0CF7321104FE800635813 /* MIDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFE0CF7121104FE800635813 /* MIDateView.xib */; };
 		CFE0CF79211053D100635813 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0CF78211053D100635813 /* BaseView.swift */; };
 		CFE0CF7B21105FBB00635813 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0CF7A21105FBB00635813 /* LeftAlignedCollectionViewFlowLayout.swift */; };
-		CFF33A502189F6490005DBBB /* ChangePassRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF33A4F2189F6490005DBBB /* ChangePassRequest.swift */; };
 		D702C815203903CA0075D40B /* G01F02S04VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702C813203903CA0075D40B /* G01F02S04VC.swift */; };
 		D702C816203903CA0075D40B /* G01F02S04VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D702C814203903CA0075D40B /* G01F02S04VC.xib */; };
 		D702C81A203904010075D40B /* G01F02S05VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702C818203904010075D40B /* G01F02S05VC.swift */; };
@@ -356,6 +356,7 @@
 		CF87C2542166614C00318EBD /* DailyReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReport.swift; sourceTree = "<group>"; };
 		CF87C2582166681600318EBD /* G03F00S02VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G03F00S02VC.swift; sourceTree = "<group>"; };
 		CF87C2592166681600318EBD /* G03F00S02VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = G03F00S02VC.xib; sourceTree = "<group>"; };
+		CFACF880219DB1BE002F9AB7 /* ChangePassRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePassRequest.swift; path = G00/API/ChangePassRequest.swift; sourceTree = "<group>"; };
 		CFB31E6621465BB3003E5FE9 /* CustomerInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerInfoTableViewCell.swift; sourceTree = "<group>"; };
 		CFB31E6821465BB3003E5FE9 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		CFB31E6921465BB3003E5FE9 /* QuickSelectCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSelectCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -395,7 +396,6 @@
 		CFE0CF7121104FE800635813 /* MIDateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIDateView.xib; sourceTree = "<group>"; };
 		CFE0CF78211053D100635813 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		CFE0CF7A21105FBB00635813 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
-		CFF33A4F2189F6490005DBBB /* ChangePassRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassRequest.swift; sourceTree = "<group>"; };
 		D702C813203903CA0075D40B /* G01F02S04VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = G01F02S04VC.swift; path = G01/F02/G01F02S04VC.swift; sourceTree = "<group>"; };
 		D702C814203903CA0075D40B /* G01F02S04VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = G01F02S04VC.xib; path = G01/F02/G01F02S04VC.xib; sourceTree = "<group>"; };
 		D702C818203904010075D40B /* G01F02S05VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = G01F02S05VC.swift; path = G01/F02/G01F02S05VC.swift; sourceTree = "<group>"; };
@@ -839,8 +839,8 @@
 		D70BCB522016EE7300BCD90B /* API */ = {
 			isa = PBXGroup;
 			children = (
+				CFACF880219DB1BE002F9AB7 /* ChangePassRequest.swift */,
 				D70BCB532016EE7D00BCD90B /* ChangeProfileRequest.swift */,
-				CFF33A4F2189F6490005DBBB /* ChangePassRequest.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -1702,7 +1702,7 @@
 				D7B43B392037739600F59945 /* SelectionVC.swift in Sources */,
 				90BB90F021782E1900A4E118 /* DailyReportRespBean.swift in Sources */,
 				D702C815203903CA0075D40B /* G01F02S04VC.swift in Sources */,
-				CFF33A502189F6490005DBBB /* ChangePassRequest.swift in Sources */,
+				CFACF881219DB1BE002F9AB7 /* ChangePassRequest.swift in Sources */,
 				D7C73AFE200513F3000B3CBC /* MenuVC.swift in Sources */,
 				D7C92A3120397C5A002EF00D /* G01F00S03VC.swift in Sources */,
 				D7AAE6802038F82C001C3847 /* G01F02S03VC.swift in Sources */,
