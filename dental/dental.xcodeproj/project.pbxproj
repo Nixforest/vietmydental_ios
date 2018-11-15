@@ -29,6 +29,8 @@
 		90F2A34020A14FD0004823B2 /* PathologicalCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F2A33F20A14FD0004823B2 /* PathologicalCreateRequest.swift */; };
 		90F2A34220A150E6004823B2 /* PathologicalCreateResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F2A34120A150E6004823B2 /* PathologicalCreateResp.swift */; };
 		CAB846C24394F5871EBDC0EB /* Pods_dental.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7ED4C39F2032FD07F14AA7 /* Pods_dental.framework */; };
+		CF06310B219DC70700EF60AE /* CustomerInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF063109219DC70700EF60AE /* CustomerInfoTableViewCell.swift */; };
+		CF06310C219DC70700EF60AE /* CustomerInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF06310A219DC70700EF60AE /* CustomerInfoTableViewCell.xib */; };
 		CF34E2582165C1B100872040 /* G03F00S01TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF34E2562165C1B100872040 /* G03F00S01TableViewCell.swift */; };
 		CF34E2592165C1B100872040 /* G03F00S01TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF34E2572165C1B100872040 /* G03F00S01TableViewCell.xib */; };
 		CF48C969213D7CA70037C0AC /* GetDomainRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF48C968213D7CA70037C0AC /* GetDomainRequest.swift */; };
@@ -42,7 +44,6 @@
 		CF87C2552166614C00318EBD /* DailyReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87C2542166614C00318EBD /* DailyReport.swift */; };
 		CF87C25A2166681600318EBD /* G03F00S02VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF87C2582166681600318EBD /* G03F00S02VC.swift */; };
 		CF87C25B2166681600318EBD /* G03F00S02VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF87C2592166681600318EBD /* G03F00S02VC.xib */; };
-		CFB31E8921465BB3003E5FE9 /* CustomerInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB31E6621465BB3003E5FE9 /* CustomerInfoTableViewCell.swift */; };
 		CFB31E8A21465BB3003E5FE9 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB31E6821465BB3003E5FE9 /* StatisticsViewController.swift */; };
 		CFB31E8B21465BB3003E5FE9 /* QuickSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB31E6921465BB3003E5FE9 /* QuickSelectCollectionViewCell.swift */; };
 		CFB31E8C21465BB3003E5FE9 /* QuickSelectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFB31E6A21465BB3003E5FE9 /* QuickSelectCollectionViewCell.xib */; };
@@ -70,7 +71,6 @@
 		CFB31EA221465BB3003E5FE9 /* ListAgencyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFB31E8521465BB3003E5FE9 /* ListAgencyViewController.xib */; };
 		CFB31EA321465BB3003E5FE9 /* ListAgentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFB31E8621465BB3003E5FE9 /* ListAgentTableViewCell.xib */; };
 		CFB31EA421465BB3003E5FE9 /* ListAgentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB31E8721465BB3003E5FE9 /* ListAgentTableViewCell.swift */; };
-		CFB31EA521465BB3003E5FE9 /* CustomerInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFB31E8821465BB3003E5FE9 /* CustomerInfoTableViewCell.xib */; };
 		CFB31EA821465BC4003E5FE9 /* G01F00S01AdvancedSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB31EA621465BC4003E5FE9 /* G01F00S01AdvancedSearchVC.swift */; };
 		CFB31EA921465BC4003E5FE9 /* G01F00S01AdvancedSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFB31EA721465BC4003E5FE9 /* G01F00S01AdvancedSearchVC.xib */; };
 		CFD0062F216B697800B7593F /* G03F00S03VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD0062D216B697800B7593F /* G03F00S03VC.swift */; };
@@ -338,6 +338,8 @@
 		90F2A33B20A14CCF004823B2 /* G01F01S03VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = G01F01S03VC.xib; path = G01/F01/G01F01S03VC.xib; sourceTree = "<group>"; };
 		90F2A33F20A14FD0004823B2 /* PathologicalCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PathologicalCreateRequest.swift; path = G01/API/PathologicalCreateRequest.swift; sourceTree = "<group>"; };
 		90F2A34120A150E6004823B2 /* PathologicalCreateResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PathologicalCreateResp.swift; path = G01/Model/PathologicalCreateResp.swift; sourceTree = "<group>"; };
+		CF063109219DC70700EF60AE /* CustomerInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomerInfoTableViewCell.swift; path = G01/F00/CustomerInfoTableViewCell.swift; sourceTree = "<group>"; };
+		CF06310A219DC70700EF60AE /* CustomerInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomerInfoTableViewCell.xib; path = G01/F00/CustomerInfoTableViewCell.xib; sourceTree = "<group>"; };
 		CF34E2562165C1B100872040 /* G03F00S01TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G03F00S01TableViewCell.swift; sourceTree = "<group>"; };
 		CF34E2572165C1B100872040 /* G03F00S01TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = G03F00S01TableViewCell.xib; sourceTree = "<group>"; };
 		CF48C968213D7CA70037C0AC /* GetDomainRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDomainRequest.swift; sourceTree = "<group>"; };
@@ -351,7 +353,6 @@
 		CF87C2542166614C00318EBD /* DailyReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReport.swift; sourceTree = "<group>"; };
 		CF87C2582166681600318EBD /* G03F00S02VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G03F00S02VC.swift; sourceTree = "<group>"; };
 		CF87C2592166681600318EBD /* G03F00S02VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = G03F00S02VC.xib; sourceTree = "<group>"; };
-		CFB31E6621465BB3003E5FE9 /* CustomerInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerInfoTableViewCell.swift; sourceTree = "<group>"; };
 		CFB31E6821465BB3003E5FE9 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		CFB31E6921465BB3003E5FE9 /* QuickSelectCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		CFB31E6A21465BB3003E5FE9 /* QuickSelectCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuickSelectCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -379,7 +380,6 @@
 		CFB31E8521465BB3003E5FE9 /* ListAgencyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListAgencyViewController.xib; sourceTree = "<group>"; };
 		CFB31E8621465BB3003E5FE9 /* ListAgentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListAgentTableViewCell.xib; sourceTree = "<group>"; };
 		CFB31E8721465BB3003E5FE9 /* ListAgentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListAgentTableViewCell.swift; sourceTree = "<group>"; };
-		CFB31E8821465BB3003E5FE9 /* CustomerInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerInfoTableViewCell.xib; sourceTree = "<group>"; };
 		CFB31EA621465BC4003E5FE9 /* G01F00S01AdvancedSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = G01F00S01AdvancedSearchVC.swift; path = G01/F00/G01F00S01AdvancedSearchVC.swift; sourceTree = "<group>"; };
 		CFB31EA721465BC4003E5FE9 /* G01F00S01AdvancedSearchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = G01F00S01AdvancedSearchVC.xib; path = G01/F00/G01F00S01AdvancedSearchVC.xib; sourceTree = "<group>"; };
 		CFD0062D216B697800B7593F /* G03F00S03VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G03F00S03VC.swift; sourceTree = "<group>"; };
@@ -1239,12 +1239,12 @@
 		D7FF1FB8202421D500C2DF28 /* F00 */ = {
 			isa = PBXGroup;
 			children = (
+				CF063109219DC70700EF60AE /* CustomerInfoTableViewCell.swift */,
+				CF06310A219DC70700EF60AE /* CustomerInfoTableViewCell.xib */,
 				CFB31EA621465BC4003E5FE9 /* G01F00S01AdvancedSearchVC.swift */,
 				CFB31EA721465BC4003E5FE9 /* G01F00S01AdvancedSearchVC.xib */,
 				D7FF1FB92024224400C2DF28 /* G01F00S01VC.swift */,
 				D7FF1FBA2024224400C2DF28 /* G01F00S01VC.xib */,
-				CFB31E6621465BB3003E5FE9 /* CustomerInfoTableViewCell.swift */,
-				CFB31E8821465BB3003E5FE9 /* CustomerInfoTableViewCell.xib */,
 				D78CD1612024B5BA00C70FAE /* G01F00S02VC.swift */,
 				D78CD1622024B5BA00C70FAE /* G01F00S02VC.xib */,
 				D7C92A2F20397C5A002EF00D /* G01F00S03VC.swift */,
@@ -1393,6 +1393,7 @@
 				D706B043203AD2E8004AE6D7 /* G01F02S06VC.xib in Resources */,
 				D70BCB4F2016E99100BCD90B /* G00AccountExtVC.xib in Resources */,
 				D7F4B1E5202B524F00EC7AB5 /* Camera.png in Resources */,
+				CF06310C219DC70700EF60AE /* CustomerInfoTableViewCell.xib in Resources */,
 				D706B049203AD504004AE6D7 /* G01F03S01VC.xib in Resources */,
 				D7F4B1F9202B524F00EC7AB5 /* GQRCode.png in Resources */,
 				CFB31EA321465BB3003E5FE9 /* ListAgentTableViewCell.xib in Resources */,
@@ -1423,7 +1424,6 @@
 				D7F4B1E9202B524F00EC7AB5 /* GClover.png in Resources */,
 				D7F4B1FD202B524F00EC7AB5 /* GSetting.png in Resources */,
 				D702C81B203904010075D40B /* G01F02S05VC.xib in Resources */,
-				CFB31EA521465BB3003E5FE9 /* CustomerInfoTableViewCell.xib in Resources */,
 				D7C73AD720050787000B3CBC /* Main.storyboard in Resources */,
 				D7F4B219202B524F00EC7AB5 /* GreenSwipeView.xib in Resources */,
 				D7F4B1FA202B524F00EC7AB5 /* GRight.png in Resources */,
@@ -1634,6 +1634,7 @@
 				D7F4B20D202B524F00EC7AB5 /* GreenCheckbox.swift in Sources */,
 				CFB31EA021465BB3003E5FE9 /* DiscountListTableViewCell.swift in Sources */,
 				CF86467B21646F0300416DB8 /* DailyReportList.swift in Sources */,
+				CF06310B219DC70700EF60AE /* CustomerInfoTableViewCell.swift in Sources */,
 				D7F4B1D9202B524F00EC7AB5 /* UIDeviceExtension.swift in Sources */,
 				CF6FAE27216E396C001C1BB1 /* UpdateDailyReport.swift in Sources */,
 				D78CD1682024C0A900C70FAE /* CustomerInfoRespBean.swift in Sources */,
@@ -1674,7 +1675,6 @@
 				90BB90EB21782AD900A4E118 /* GetDailyReportRequest.swift in Sources */,
 				CF6FAE22216C8258001C1BB1 /* G03F00S03TableViewCell.swift in Sources */,
 				D7F4B1D4202B524F00EC7AB5 /* GreenExtention+UILabel.swift in Sources */,
-				CFB31E8921465BB3003E5FE9 /* CustomerInfoTableViewCell.swift in Sources */,
 				D7F4B1D3202B524F00EC7AB5 /* GreenExtention+UIButton.swift in Sources */,
 				D7C73AF92005131C000B3CBC /* G00HomeVC.swift in Sources */,
 				90F2A34020A14FD0004823B2 /* PathologicalCreateRequest.swift in Sources */,
