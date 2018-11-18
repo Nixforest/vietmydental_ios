@@ -11,12 +11,12 @@ import UIKit
 import harpyframework
 
 enum RoleEnum: String {
-    case customer = "1"
-    case employee = "2"
-    case director = "3"
-    case doctor = "4"
-    case receptionist = "6"
-    case saler = "7"
+    case customer = "3"
+    case employee = "4"
+    case director = "5"
+    case doctor = "6"
+    case receptionist = "8"
+    case saler = "9"
 }
 
 class G00HomeVC: BaseParentViewController {
@@ -53,6 +53,11 @@ class G00HomeVC: BaseParentViewController {
         // Do any additional setup after loading the view.
         self.createNavigationBar(title: DomainConst.CONTENT00571)
         startLogic()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     /**
@@ -370,6 +375,7 @@ extension G00HomeVC: QRCodeMainViewDelegate {
         let vc = G04F01S01VC()
         vc.didGetCode { (code) in
             self.qrCodeView.setCode(code)
+            self.qRCodeMainViewDidSelectOK(code: code)
         }
         self.navigationController?.pushViewController(vc, animated: true)
     }

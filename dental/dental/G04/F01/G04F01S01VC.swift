@@ -54,15 +54,19 @@ class G04F01S01VC: ChildExtViewController {
     }
 
     func showCode(code: String) {
-        weak var weakself = self
-        let alertController = UIAlertController(title: "Kết quả", message: code, preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            weakself?.scanVC.reset()
-//            self.delegate.g04F01S01VCDidGetCode(code)
+//        weak var weakself = self
+//        let alertController = UIAlertController(title: "Kết quả", message: code, preferredStyle: UIAlertControllerStyle.alert)
+//        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+////            weakself?.scanVC.reset()
+////            self.delegate.g04F01S01VCDidGetCode(code)
+//        }
+//        alertController.addAction(okAction)
+//        self.childViewControllers[0].present(alertController, animated: true, completion: nil)
+        let arrContent = code.components(separatedBy: "/")
+        if let code = arrContent.last {
             self.handler(code)
+            self.backButtonTapped(self)
         }
-        alertController.addAction(okAction)
-        self.childViewControllers[0].present(alertController, animated: true, completion: nil)
     }
 
 }
