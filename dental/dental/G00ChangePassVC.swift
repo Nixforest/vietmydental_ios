@@ -35,7 +35,7 @@ class G00ChangePassVC: ChildExtViewController {
         serviceInstance.changePassword(para: para, success: { (resp) in
             LoadingView.shared.hideOverlayView(className: self.theClassName)
             self.showAlert(message: resp.message, okHandler: { (action) in
-                
+                self.navigationController?.popViewController(animated: true)
             })
         }) { (error) in
             LoadingView.shared.hideOverlayView(className: self.theClassName)
