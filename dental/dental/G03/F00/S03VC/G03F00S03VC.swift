@@ -44,11 +44,7 @@ class G03F00S03VC: ChildExtViewController {
         tbView.dataSource = self
         tbView.register(UINib(nibName: cellID, bundle: Bundle.main), forCellReuseIdentifier: cellID)
         tbView.reloadData()
-        let status = report.getData(id: DomainConst.ITEM_STATUS)
-        if status == DomainConst.REPORT_STATUS_CONFIRM {
-            btnOK.isHidden = true
-            btnRefuse.isHidden = true
-        }
+        processData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,6 +52,13 @@ class G03F00S03VC: ChildExtViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func processData() {
+        let status = report.getData(id: DomainConst.ITEM_STATUS)
+        if status == DomainConst.REPORT_STATUS_CONFIRM {
+            btnOK.isHidden = true
+            btnRefuse.isHidden = true
+        }
+    }
     
     //MARK: - Service
     /**
@@ -72,6 +75,7 @@ class G03F00S03VC: ChildExtViewController {
                 
             })
             self.report = result.data
+            self.processData()
             self.tbView.reloadData()
         }) { (error) in
             self.showAlert(message: error.message)

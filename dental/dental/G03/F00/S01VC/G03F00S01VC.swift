@@ -49,6 +49,8 @@ class G03F00S01VC: BaseParentViewController {
     //MARK: - Logic
     @objc func shouldReloadData() {
         shouldLoadData = true
+        reportList.data.removeAll()
+        monthCount = 0
     }
     @objc private func refreshData() {
         isRefreshData = true
@@ -97,6 +99,7 @@ class G03F00S01VC: BaseParentViewController {
         req.month = time
         serviceInstance.getDailyReportList(req: req, success: { (data) in
             self.processData(data)
+            self.shouldLoadData = false
             if self.isRefreshData {
                 self.isRefreshData = false
                 self.refreshControl.endRefreshing()
