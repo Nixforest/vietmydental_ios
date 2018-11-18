@@ -29,6 +29,10 @@
 		90F2A34020A14FD0004823B2 /* PathologicalCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F2A33F20A14FD0004823B2 /* PathologicalCreateRequest.swift */; };
 		90F2A34220A150E6004823B2 /* PathologicalCreateResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F2A34120A150E6004823B2 /* PathologicalCreateResp.swift */; };
 		CAB846C24394F5871EBDC0EB /* Pods_dental.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7ED4C39F2032FD07F14AA7 /* Pods_dental.framework */; };
+		CF27A08621A122BB0055BC71 /* CustomerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF27A08521A122BB0055BC71 /* CustomerHomeView.swift */; };
+		CF27A08921A122DC0055BC71 /* CustomerHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF27A08821A122DB0055BC71 /* CustomerHomeView.xib */; };
+		CF27A09221A1256A0055BC71 /* G05F01S01VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF27A09021A1256A0055BC71 /* G05F01S01VC.xib */; };
+		CF27A09321A1256A0055BC71 /* G05F01S01VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF27A09121A1256A0055BC71 /* G05F01S01VC.swift */; };
 		CF34E2582165C1B100872040 /* G03F00S01TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF34E2562165C1B100872040 /* G03F00S01TableViewCell.swift */; };
 		CF34E2592165C1B100872040 /* G03F00S01TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF34E2572165C1B100872040 /* G03F00S01TableViewCell.xib */; };
 		CF48C969213D7CA70037C0AC /* GetDomainRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF48C968213D7CA70037C0AC /* GetDomainRequest.swift */; };
@@ -343,6 +347,10 @@
 		90F2A33B20A14CCF004823B2 /* G01F01S03VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = G01F01S03VC.xib; path = G01/F01/G01F01S03VC.xib; sourceTree = "<group>"; };
 		90F2A33F20A14FD0004823B2 /* PathologicalCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PathologicalCreateRequest.swift; path = G01/API/PathologicalCreateRequest.swift; sourceTree = "<group>"; };
 		90F2A34120A150E6004823B2 /* PathologicalCreateResp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PathologicalCreateResp.swift; path = G01/Model/PathologicalCreateResp.swift; sourceTree = "<group>"; };
+		CF27A08521A122BB0055BC71 /* CustomerHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHomeView.swift; sourceTree = "<group>"; };
+		CF27A08821A122DB0055BC71 /* CustomerHomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerHomeView.xib; sourceTree = "<group>"; };
+		CF27A09021A1256A0055BC71 /* G05F01S01VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = G05F01S01VC.xib; path = dental/G05/F01/G05F01S01VC.xib; sourceTree = SOURCE_ROOT; };
+		CF27A09121A1256A0055BC71 /* G05F01S01VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = G05F01S01VC.swift; path = dental/G05/F01/G05F01S01VC.swift; sourceTree = SOURCE_ROOT; };
 		CF34E2562165C1B100872040 /* G03F00S01TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G03F00S01TableViewCell.swift; sourceTree = "<group>"; };
 		CF34E2572165C1B100872040 /* G03F00S01TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = G03F00S01TableViewCell.xib; sourceTree = "<group>"; };
 		CF48C968213D7CA70037C0AC /* GetDomainRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDomainRequest.swift; sourceTree = "<group>"; };
@@ -646,11 +654,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF27A08F21A125330055BC71 /* F01 */ = {
+			isa = PBXGroup;
+			children = (
+				CF27A09121A1256A0055BC71 /* G05F01S01VC.swift */,
+				CF27A09021A1256A0055BC71 /* G05F01S01VC.xib */,
+			);
+			name = F01;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		CF686139219B1A89007629D6 /* G05 */ = {
 			isa = PBXGroup;
 			children = (
 				CF68613E219B1A9C007629D6 /* F00 */,
 				CF68613F219B2E4B007629D6 /* CustomerLogin.swift */,
+				CF27A08521A122BB0055BC71 /* CustomerHomeView.swift */,
+				CF27A08821A122DB0055BC71 /* CustomerHomeView.xib */,
+				CF27A08F21A125330055BC71 /* F01 */,
 			);
 			path = G05;
 			sourceTree = "<group>";
@@ -1446,6 +1467,7 @@
 				D7F4B1EB202B524F00EC7AB5 /* GDelete.png in Resources */,
 				D7F4B209202B524F00EC7AB5 /* Trash.png in Resources */,
 				CFB31E8F21465BB3003E5FE9 /* DebtorListViewController.xib in Resources */,
+				CF27A09221A1256A0055BC71 /* G05F01S01VC.xib in Resources */,
 				D7F4B1FC202B524F00EC7AB5 /* GSelect.png in Resources */,
 				CFB31E9621465BB3003E5FE9 /* StatisticsListHeaderView.xib in Resources */,
 				D7C73AD920050787000B3CBC /* Assets.xcassets in Resources */,
@@ -1530,6 +1552,7 @@
 				CFB31E9D21465BB3003E5FE9 /* DiscountListTableViewCell.xib in Resources */,
 				D7C73AFF200513F3000B3CBC /* MenuVC.xib in Resources */,
 				D7F4B1E8202B524F00EC7AB5 /* GCheck.png in Resources */,
+				CF27A08921A122DC0055BC71 /* CustomerHomeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1653,6 +1676,7 @@
 				D7AAE67720388DE5001C3847 /* ListConfigBean.swift in Sources */,
 				D7C73AD220050787000B3CBC /* AppDelegate.swift in Sources */,
 				D7F4B1E2202B524F00EC7AB5 /* DialogInfoView.swift in Sources */,
+				CF27A09321A1256A0055BC71 /* G05F01S01VC.swift in Sources */,
 				D7F4B1DA202B524F00EC7AB5 /* GCleanView.swift in Sources */,
 				D7FF1FC52024245700C2DF28 /* CustomerBean.swift in Sources */,
 				D70BCB4E2016E99100BCD90B /* G00AccountExtVC.swift in Sources */,
@@ -1717,6 +1741,7 @@
 				D7FF1FC8202426F600C2DF28 /* CustomerListRequest.swift in Sources */,
 				CFB31E9F21465BB3003E5FE9 /* StatisticDiscountListViewController.swift in Sources */,
 				D7F4B21E202B524F00EC7AB5 /* MBProgressHUD.m in Sources */,
+				CF27A08621A122BB0055BC71 /* CustomerHomeView.swift in Sources */,
 				CF34E2582165C1B100872040 /* G03F00S01TableViewCell.swift in Sources */,
 				D7F4B1DF202B524F00EC7AB5 /* GreenTextView.swift in Sources */,
 				D7F4B20B202B524F00EC7AB5 /* GreenButtonCenter.swift in Sources */,

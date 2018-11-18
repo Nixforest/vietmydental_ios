@@ -42,6 +42,7 @@ class G05F00S01VC: ChildExtViewController {
             self.showAlert(message: "Vui lòng nhập số điện thoại hợp lệ")
             return
         }
+        BaseModel.shared.sharedString = tfPhone.text!
         register(phone: tfPhone.text!)
     }
     

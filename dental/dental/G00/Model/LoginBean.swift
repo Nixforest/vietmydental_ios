@@ -50,6 +50,7 @@ class LoginBean: ConfigBean {
     var report_status_list:    [ConfigBean]     = [ConfigBean]()
     
     var app_page_size: String               = ""
+    var customer_id: String                 = ""
     
     override public init() {
         super.init()
@@ -93,6 +94,9 @@ class LoginBean: ConfigBean {
         self.report_status_list.append(contentsOf: getListConfig(json: jsonData, key: DomainConst.KEY_DAILY_REPORT_STATUS))
         // App page size
         self.app_page_size = getString(json: jsonData, key: DomainConst.KEY_APP_API_LIST_PAGE_SIZE)
+        
+        // Customer ID
+        self.customer_id = getString(json: jsonData, key: DomainConst.KEY_CUSTOMER_ID)
     }
     
     /**

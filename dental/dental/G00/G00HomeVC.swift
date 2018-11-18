@@ -43,6 +43,11 @@ class G00HomeVC: BaseParentViewController {
         // Do any additional setup after loading the view.
         self.createNavigationBar(title: DomainConst.CONTENT00571)
         statisticDetailView.alpha = 0
+        imgLogo.alpha = 0
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         startLogic()
         
     }
@@ -273,11 +278,25 @@ class G00HomeVC: BaseParentViewController {
      * Start normal logic
      */
     private func startNormalLogic() {
-        if BaseModel.shared.checkIsLogin() {
-            requestUpdateConfig()
+        if app.isCustomer {
+            loadCustomerView()
         } else {
-            openLogin()
+            if BaseModel.shared.checkIsLogin() {
+                requestUpdateConfig()
+            } else {
+                openLogin()
+            }
         }
+    }
+    
+    /**
+     *  Load customer view based on login type customer
+     */
+    func loadCustomerView() {
+        let customerView = CustomerHomeView()
+        customerView.frame = self.view.frame
+        customerView.delegate = self
+        self.view.addSubview(customerView)
     }
     
     /**
@@ -323,7 +342,7 @@ extension G00HomeVC: StatisticsDetailViewDelegate {
     func loadStatisticContent() {
         statisticDetailView.delegate = self
         self.statisticParam = statisticDetailView.getParamToday()
-        statisticDetailView.param = self.statisticParam
+//        statisticDetailView.param = self.statisticParam
         self.getStatistics(param: self.statisticParam)
     }
     func statisticsDetailViewDidSelectCollected() {
@@ -345,6 +364,22 @@ extension G00HomeVC: StatisticsDetailViewDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
+
+extension G00HomeVC: CustomerHomeViewDelegate {
+    func customerHomeViewDidSelectMedicalRecord() {
+        
+    }
+    func customerHomeViewDidSelectBooking() {
+        let vc = G05F01S01VC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+
+
+
+
+
 
 
 

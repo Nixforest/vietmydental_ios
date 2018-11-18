@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="G05F01S01VC" customModule="dental" customModuleProvider="target">
+            <connections>
+                <outlet property="boxDate" destination="SRi-Oi-kU8" id="fKJ-FQ-M3U"/>
+                <outlet property="boxName" destination="fa8-X3-Wth" id="AFj-Jv-AoL"/>
+                <outlet property="boxPhone" destination="4pB-a7-A4Z" id="Ahd-ge-B2f"/>
+                <outlet property="btnBooking" destination="kCm-5a-EXM" id="kOJ-EQ-nB5"/>
+                <outlet property="tfNote" destination="oaP-70-Itp" id="gfy-Ap-kKn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fa8-X3-Wth" customClass="BorderSelectBox" customModule="dental" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="50" width="375" height="60"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="yaH-s7-Sjy"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4pB-a7-A4Z" customClass="BorderSelectBox" customModule="dental" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="126" width="179.5" height="60"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="joJ-kv-XxI"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SRi-Oi-kU8" customClass="BorderSelectBox" customModule="dental" customModuleProvider="target">
+                    <rect key="frame" x="195.5" y="126" width="179.5" height="60"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="6YL-v0-ZXx"/>
+                    </constraints>
+                </view>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ghi chú" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oaP-70-Itp">
+                    <rect key="frame" x="16" y="202" width="343" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="Xe7-08-NYw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCm-5a-EXM">
+                    <rect key="frame" x="16" y="362" width="343" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Byx-Rf-hvt"/>
+                    </constraints>
+                    <state key="normal" title="Đặt lịch">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="btnBookingAction:" destination="-1" eventType="touchUpInside" id="Wlm-Cv-2TW"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fa8-X3-Wth" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="3Ww-Bb-sAB"/>
+                <constraint firstAttribute="trailing" secondItem="fa8-X3-Wth" secondAttribute="trailing" id="3aF-yJ-g3V"/>
+                <constraint firstItem="SRi-Oi-kU8" firstAttribute="width" secondItem="fa8-X3-Wth" secondAttribute="width" multiplier="1:2" constant="-8" id="CxW-QE-7zF"/>
+                <constraint firstItem="oaP-70-Itp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="EQV-o3-GEC"/>
+                <constraint firstItem="4pB-a7-A4Z" firstAttribute="top" secondItem="fa8-X3-Wth" secondAttribute="bottom" constant="16" id="FsT-Ss-FX9"/>
+                <constraint firstAttribute="trailing" secondItem="kCm-5a-EXM" secondAttribute="trailing" constant="16" id="Yx4-zw-LqH"/>
+                <constraint firstItem="4pB-a7-A4Z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bzY-J9-uZm"/>
+                <constraint firstItem="kCm-5a-EXM" firstAttribute="top" secondItem="oaP-70-Itp" secondAttribute="bottom" constant="32" id="cJt-T4-iRS"/>
+                <constraint firstAttribute="trailing" secondItem="oaP-70-Itp" secondAttribute="trailing" constant="16" id="cyx-tr-BDc"/>
+                <constraint firstItem="4pB-a7-A4Z" firstAttribute="width" secondItem="fa8-X3-Wth" secondAttribute="width" multiplier="1:2" constant="-8" id="dAb-JW-YjW"/>
+                <constraint firstItem="oaP-70-Itp" firstAttribute="top" secondItem="4pB-a7-A4Z" secondAttribute="bottom" constant="16" id="gjd-tR-WKh"/>
+                <constraint firstItem="fa8-X3-Wth" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kPb-O7-q9Y"/>
+                <constraint firstItem="kCm-5a-EXM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="mNt-29-sng"/>
+                <constraint firstAttribute="trailing" secondItem="SRi-Oi-kU8" secondAttribute="trailing" id="qJ7-7f-DTo"/>
+                <constraint firstItem="SRi-Oi-kU8" firstAttribute="top" secondItem="fa8-X3-Wth" secondAttribute="bottom" constant="16" id="qOk-7l-tjZ"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

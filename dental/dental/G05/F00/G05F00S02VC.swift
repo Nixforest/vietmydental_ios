@@ -32,6 +32,7 @@ class G05F00S02VC: ChildExtViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createNavigationBar(title: "Nhập mã OTP")
+        logo.image = ImageManager.getImage(named: DomainConst.LOGO_LOGIN_ICON_IMG_NAME)
         btnRegister.drawRadius(4)
         btnRewrite.drawRadius(4)
         btnResend.drawRadius(4)
@@ -46,9 +47,11 @@ class G05F00S02VC: ChildExtViewController {
         param.otp = otp
         param.apns_device_token = ""
         serviceInstance.loginCustomerConfirm(param: param, success: { (loginBean) in
+            app.isCustomer = true
             BaseModel.shared.loginSuccess(loginBean.data.token)
             LoginRespBean.saveConfigData(data: loginBean)
             LoadingView.shared.hideOverlayView(className: self.theClassName)
+            self.dismiss(animated: true, completion: nil)
         }) { (error) in
             LoadingView.shared.hideOverlayView(className: self.theClassName)
             self.showAlert(message: error.message)
@@ -66,11 +69,15 @@ class G05F00S02VC: ChildExtViewController {
     }
     
     @IBAction func btnRegisterAction(_ sender: Any) {
-//        if (tfOTP.text?.count)! < 10 {
-//            self.showAlert(message: "Vui lòng nhập số điện thoại hợp lệ")
-//            return
-//        }
-        login(otp: "1111")
+        if BaseModel.shared.checkTrainningMode() {
+            login(otp: "1111")
+            return
+        }
+        if (tfOTP.text?.count)! != 4 {
+            self.showAlert(message: "Vui lòng nhập mã OTP hợp lệ")
+            return
+        }
+        login(otp: tfOTP.text!)
     }
 
 }
