@@ -20,6 +20,7 @@ class G03F00S01VC: BaseParentViewController {
     var refreshControl = UIRefreshControl()
     var monthCount: Int = 0
     var reportList: DailyReportList = DailyReportList()
+    var shouldLoadData: Bool = true
     
     //MARK: - Life cirle
     override func viewDidLoad() {
@@ -30,7 +31,14 @@ class G03F00S01VC: BaseParentViewController {
 //        tbView.register(UINib(nibName: cellID, bundle: Bundle.main), forCellReuseIdentifier: cellID)
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         tbView.addSubview(refreshControl)
-        getReportList(time: getParamDateString())
+        NotificationCenter.default.addObserver(self, selector: #selector(shouldReloadData), name: NSNotification.Name(G03Const.SHOULD_RELOAD_DATA_NOTI_NAME), object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if shouldLoadData {
+            getReportList(time: getParamDateString())
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,6 +47,9 @@ class G03F00S01VC: BaseParentViewController {
     }
     
     //MARK: - Logic
+    @objc func shouldReloadData() {
+        shouldLoadData = true
+    }
     @objc private func refreshData() {
         isRefreshData = true
         reportList.data.removeAll()

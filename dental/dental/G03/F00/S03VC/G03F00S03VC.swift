@@ -37,7 +37,7 @@ class G03F00S03VC: ChildExtViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createNavigationBar(title: report.name)
+        createNavigationBar(title: "Báo cáo ngày " + strDate)
         btnOK.drawRadius(4)
         btnRefuse.drawRadius(4, color: "007AFF".hexColor(), thickness: 0.5)
         tbView.delegate = self
@@ -93,7 +93,10 @@ class G03F00S03VC: ChildExtViewController {
 extension G03F00S03VC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return report.getListData().count
+        if (report != nil) {
+            return report.getListData().count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
