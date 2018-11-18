@@ -11,26 +11,26 @@ import harpyframework
 
 enum DailyReportStatus {
     
-    case unapproved
-    case requestApprove
-    case approved
-    case refuse
+    case new
+    case process
+    case confirm
+    case cancel
     case notCreated
-    case needCheck
+    case shouldReview
     case unknow
     
     static func getStatus(byID id: String) -> DailyReportStatus {
         switch id {
         case DomainConst.REPORT_STATUS_CANCEL:
-            return .refuse
+            return .cancel
         case DomainConst.REPORT_STATUS_CONFIRM:
-            return .approved
+            return .confirm
         case DomainConst.REPORT_STATUS_NEW:
-            return .unapproved
+            return .new
         case DomainConst.REPORT_STATUS_PROCESS:
-            return .requestApprove
+            return .process
         case DomainConst.REPORT_STATUS_SHOULD_REVIEW:
-            return .needCheck
+            return .shouldReview
         case DomainConst.REPORT_STATUS_NOT_CREATED_YET:
             return .notCreated
         default:
@@ -40,18 +40,18 @@ enum DailyReportStatus {
     
     func getImage() -> UIImage {
         switch self {
-        case .unapproved:
-            return #imageLiteral(resourceName: "report_status_unapproved")
-        case .approved:
-            return #imageLiteral(resourceName: "report_status_approved")
-        case .requestApprove:
-            return #imageLiteral(resourceName: "report_status_approved")
-        case .refuse:
-            return #imageLiteral(resourceName: "report_status_refuse")
+        case .cancel:
+            return UIImage(named: "report_status_cancel")!
+        case .confirm:
+            return UIImage(named: "report_status_approved")!
+        case .new:
+            return UIImage(named: "report_status_active")!
+        case .process:
+            return UIImage(named: "report_status_request")!
+        case .shouldReview:
+            return UIImage(named: "report_status_request")!
         case .notCreated:
-            return #imageLiteral(resourceName: "report_status_not_created")
-        case .needCheck:
-            return #imageLiteral(resourceName: "report_status_approved")
+            return UIImage(named: "report_status_new")!
         default:
             return UIImage()
         }

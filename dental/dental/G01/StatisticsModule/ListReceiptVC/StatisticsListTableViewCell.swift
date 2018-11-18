@@ -41,7 +41,7 @@ class StatisticsListTableViewCell: UITableViewCell {
             case DomainConst.ITEM_NAME:
                 lbCustomerName.text = data.getStringData()
                 break
-            case DomainConst.ITEM_RECEIPT_TOTAL:
+            case DomainConst.ITEM_TOTAL:
                 lbAmount.text = data.getStringData()
                 break
             case DomainConst.ITEM_RECEIPT_DEBT:

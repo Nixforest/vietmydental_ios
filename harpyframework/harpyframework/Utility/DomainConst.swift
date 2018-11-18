@@ -1193,13 +1193,13 @@ public class DomainConst {
     /* Item id: Image */
     public static let ITEM_IMAGE                        = "42"
     /** Item id: Agent id */
-    public static let ITEM_RECEIPT_AGENT_ID                 = "44"
+    public static let ITEM_RECEIPT_AGENT_ID             = "44"
     /** Item id: Price */
-    public static let ITEM_RECEIPT_PRICE                    = "45"
+    public static let ITEM_RECEIPT_PRICE                = "45"
     /** Item id: Quantity */
-    public static let ITEM_RECEIPT_QUANTITY                 = "46"
+    public static let ITEM_QUANTITY                     = "46"
     /** Item id: Total */
-    public static let ITEM_RECEIPT_TOTAL                    = "47"
+    public static let ITEM_TOTAL                        = "47"
     /** Item id: Debt */
     public static let ITEM_RECEIPT_DEBT                     = "48"
     /** Item id: Receptionist */
@@ -2155,6 +2155,8 @@ public class DomainConst {
         ITEM_TEETH_INFO:        VMD_TEETH_ICON_IMG_NAME,
         ITEM_CUSTOMER_DEBT:     VMD_DEBT_ICON_IMG_NAME,
         ITEM_IMAGE:             VMD_IMAGE_XRAY_ICON_IMG_NAME,
+        ITEM_TOTAL:             VMD_FINAL_ICON_IMG_NAME,
+//        ITEM_STATUS_STR:        VMD_IMAGE_XRAY_ICON_IMG_NAME,
     ]
     
     /** HTTP Post request method */

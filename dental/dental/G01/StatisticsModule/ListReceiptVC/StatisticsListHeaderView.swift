@@ -30,7 +30,7 @@ class StatisticsListHeaderView: BaseView {
             case DomainConst.ITEM_NAME:
                 lbCustomerName.text = data.getStringData()
                 break
-            case DomainConst.ITEM_RECEIPT_TOTAL:
+            case DomainConst.ITEM_TOTAL:
                 lbTotal.text = data.getStringData()
                 break
             case DomainConst.ITEM_RECEIPT_DEBT:
@@ -45,7 +45,7 @@ class StatisticsListHeaderView: BaseView {
             case DomainConst.ITEM_RECEIPTIONIST_NAME:
                 lbReceiptionistName.text = "\(data.getStringData())"
                 break
-            case DomainConst.ITEM_RECEIPT_QUANTITY:
+            case DomainConst.ITEM_QUANTITY:
                 lbQuantity.text = data.getStringData().count > 0 ? "x\(data.getStringData())" : ""
                 break
             case DomainConst.ITEM_TREATMENT:

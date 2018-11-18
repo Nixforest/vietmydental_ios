@@ -20,6 +20,7 @@ class G03F00S01VC: BaseParentViewController {
     var refreshControl = UIRefreshControl()
     var monthCount: Int = 0
     var reportList: DailyReportList = DailyReportList()
+    var shouldLoadData: Bool = true
     
     //MARK: - Life cirle
     override func viewDidLoad() {
@@ -30,7 +31,14 @@ class G03F00S01VC: BaseParentViewController {
 //        tbView.register(UINib(nibName: cellID, bundle: Bundle.main), forCellReuseIdentifier: cellID)
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         tbView.addSubview(refreshControl)
-        getReportList(time: getParamDateString())
+        NotificationCenter.default.addObserver(self, selector: #selector(shouldReloadData), name: NSNotification.Name(G03Const.SHOULD_RELOAD_DATA_NOTI_NAME), object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if shouldLoadData {
+            getReportList(time: getParamDateString())
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,6 +47,11 @@ class G03F00S01VC: BaseParentViewController {
     }
     
     //MARK: - Logic
+    @objc func shouldReloadData() {
+        shouldLoadData = true
+        reportList.data.removeAll()
+        monthCount = 0
+    }
     @objc private func refreshData() {
         isRefreshData = true
         reportList.data.removeAll()
@@ -86,6 +99,7 @@ class G03F00S01VC: BaseParentViewController {
         req.month = time
         serviceInstance.getDailyReportList(req: req, success: { (data) in
             self.processData(data)
+            self.shouldLoadData = false
             if self.isRefreshData {
                 self.isRefreshData = false
                 self.refreshControl.endRefreshing()
@@ -106,11 +120,11 @@ class G03F00S01VC: BaseParentViewController {
     }
     /** get list agent report by day */
     func getDailyAgentReport(byDate date: String) {
-        LoadingView.shared.showOverlay()
+        LoadingView.shared.showOverlay(view: self.view, className: DailyReportRequest.theClassName)
         let dailyReq = DailyReportRequest()
         dailyReq.date = date
         serviceInstance.getDailyReport(req: dailyReq, success: { (report) in
-            LoadingView.shared.hideOverlayView(className: self.theClassName)
+            LoadingView.shared.hideOverlayView(className: DailyReportRequest.theClassName)
             if report.data.count == 1 {
                 let vc = G03F00S03VC.init(withReport: report.data[0], ofDate: date)
                 self.navigationController?.pushViewController(vc, animated: true)
@@ -120,7 +134,7 @@ class G03F00S01VC: BaseParentViewController {
             }
         }) { (error) in
             self.showAlert(message: error.message)
-            LoadingView.shared.hideOverlayView(className: self.theClassName)
+            LoadingView.shared.hideOverlayView(className: DailyReportRequest.theClassName)
         }
     }
     
@@ -154,20 +168,21 @@ extension G03F00S01VC: UITableViewDataSource {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
         cell.textLabel?.text = report.name
         cell.textLabel?.font = GlobalConst.BASE_FONT
-        let imgPath = DomainConst.INFORMATION_IMG_NAME
         for data in report.getListData() {
             switch data.id {
             case DomainConst.ITEM_STATUS_STR:
                 cell.detailTextLabel?.text = data.getStringData()
                 cell.detailTextLabel?.font = GlobalConst.BASE_FONT
+            case DomainConst.ITEM_STATUS:
+                let imgMargin = GlobalConst.MARGIN
+                let stt = DailyReportStatus.getStatus(byID: data.getStringData())
+                let img = stt.getImage().imageWithInsets(insets: UIEdgeInsets(top: imgMargin, left: imgMargin, bottom: imgMargin, right: imgMargin))
+                cell.imageView?.image = img
                 break
             default:
                 break
             }
         }
-        let imgMargin = GlobalConst.MARGIN * 2
-        cell.imageView?.image = ImageManager.getImage(
-            named: imgPath, margin: imgMargin)
         cell.imageView?.contentMode = .scaleAspectFit
         cell.accessoryType = .disclosureIndicator
         cell.selectionStyle = .none

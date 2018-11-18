@@ -30,8 +30,8 @@ extension Service {
         baseReq.execute { (response) in
             if response.status == 1 {
                 let result = UpdateDailyReport()
-                if let data = response.data as? [String: AnyObject] {
-                    result.data = ConfigExtBean(jsonData: data)
+                if let data = response.data as? [[String: AnyObject]] {
+                    result.data = ConfigExtBean(jsonData: data[0])
                 }
                 result.message = response.message
                 result.isSuccess = true

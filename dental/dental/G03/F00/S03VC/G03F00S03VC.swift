@@ -37,18 +37,14 @@ class G03F00S03VC: ChildExtViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createNavigationBar(title: report.name)
+        createNavigationBar(title: "Báo cáo ngày " + strDate)
         btnOK.drawRadius(4)
         btnRefuse.drawRadius(4, color: "007AFF".hexColor(), thickness: 0.5)
         tbView.delegate = self
         tbView.dataSource = self
         tbView.register(UINib(nibName: cellID, bundle: Bundle.main), forCellReuseIdentifier: cellID)
         tbView.reloadData()
-        let status = report.getData(id: DomainConst.ITEM_STATUS)
-        if status == DomainConst.REPORT_STATUS_CONFIRM {
-            btnOK.isHidden = true
-            btnRefuse.isHidden = true
-        }
+        processData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,6 +52,13 @@ class G03F00S03VC: ChildExtViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func processData() {
+        let status = report.getData(id: DomainConst.ITEM_STATUS)
+        if status == DomainConst.REPORT_STATUS_CONFIRM {
+            btnOK.isHidden = true
+            btnRefuse.isHidden = true
+        }
+    }
     
     //MARK: - Service
     /**
@@ -67,11 +70,12 @@ class G03F00S03VC: ChildExtViewController {
         req.id = report.id
         req.status = statusID
         serviceInstance.updateReportStatus(req: req, success: { (result) in
-            NotificationCenter.default.post(name: NSNotification.Name.init("G03F00S02VC_SHOULD_RELOAD_DATA"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name.init(G03Const.SHOULD_RELOAD_DATA_NOTI_NAME), object: nil)
             self.showAlert(message: result.message, okHandler: { (action) in
                 
             })
             self.report = result.data
+            self.processData()
             self.tbView.reloadData()
         }) { (error) in
             self.showAlert(message: error.message)
@@ -93,7 +97,10 @@ class G03F00S03VC: ChildExtViewController {
 extension G03F00S03VC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return report.getListData().count
+        if (report != nil) {
+            return report.getListData().count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -119,25 +126,26 @@ extension G03F00S03VC: UITableViewDataSource {
         cell.textLabel?.font = GlobalConst.BASE_FONT
         cell.detailTextLabel?.text = item.getStringData()
         cell.detailTextLabel?.font = GlobalConst.BASE_FONT
-        let imgPath = DomainConst.INFORMATION_IMG_NAME
+        var imgPath = DomainConst.INFORMATION_IMG_NAME
         let imgMargin = GlobalConst.MARGIN * 2
-        cell.imageView?.image = ImageManager.getImage(named: imgPath, margin: imgMargin)
+        if let img = DomainConst.VMD_IMG_LIST[item.id] {
+            imgPath = img
+        }
+        let img = ImageManager.getImage(named: imgPath,
+                                          margin: imgMargin)
+        cell.imageView?.image = img
         cell.imageView?.contentMode = .scaleAspectFit
         cell.accessoryType = .none
         cell.selectionStyle = .none
         cell.contentView.clipsToBounds = true
         return cell
-//        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! G03F00S03TableViewCell
-//        cell.selectionStyle = .none
-//        cell.loadData(report.getListData()[indexPath.row])
-//        return cell
     }
 }
 
 extension G03F00S03VC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = report.getListData()[indexPath.row]
-        if item.id == DomainConst.ITEM_RECEIPT_TOTAL {
+        if item.id == DomainConst.ITEM_TOTAL {
             let request = GetStatisticsRequest()
             for item in report.getListData() {
                 if item.id == DomainConst.ITEM_RECEIPT_AGENT_ID {

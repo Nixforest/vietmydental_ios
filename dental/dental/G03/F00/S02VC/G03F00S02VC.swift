@@ -35,7 +35,7 @@ class G03F00S02VC: ChildExtViewController {
         tbView.delegate = self
         tbView.dataSource = self
         tbView.register(UINib(nibName: cellID, bundle: Bundle.main), forCellReuseIdentifier: cellID)
-        NotificationCenter.default.addObserver(self, selector: #selector(shouldReloadData), name: NSNotification.Name("G03F00S02VC_SHOULD_RELOAD_DATA"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(shouldReloadData), name: NSNotification.Name(G03Const.SHOULD_RELOAD_DATA_NOTI_NAME), object: nil)
     }
 
     override func didReceiveMemoryWarning() {
