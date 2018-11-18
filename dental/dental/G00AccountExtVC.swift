@@ -260,6 +260,8 @@ extension G00AccountExtVC: UITableViewDelegate {
                 }
                 break
             case 1:
+                let vc = G00ChangePassVC()
+                self.navigationController?.pushViewController(vc, animated: true)
 //                self.updateVersionAppStore()
                 break
 //            case 3:
