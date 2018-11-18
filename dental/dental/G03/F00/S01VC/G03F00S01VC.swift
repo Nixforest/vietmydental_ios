@@ -106,11 +106,11 @@ class G03F00S01VC: BaseParentViewController {
     }
     /** get list agent report by day */
     func getDailyAgentReport(byDate date: String) {
-        LoadingView.shared.showOverlay()
+        LoadingView.shared.showOverlay(view: self.view, className: DailyReportRequest.theClassName)
         let dailyReq = DailyReportRequest()
         dailyReq.date = date
         serviceInstance.getDailyReport(req: dailyReq, success: { (report) in
-            LoadingView.shared.hideOverlayView(className: self.theClassName)
+            LoadingView.shared.hideOverlayView(className: DailyReportRequest.theClassName)
             if report.data.count == 1 {
                 let vc = G03F00S03VC.init(withReport: report.data[0], ofDate: date)
                 self.navigationController?.pushViewController(vc, animated: true)
@@ -120,7 +120,7 @@ class G03F00S01VC: BaseParentViewController {
             }
         }) { (error) in
             self.showAlert(message: error.message)
-            LoadingView.shared.hideOverlayView(className: self.theClassName)
+            LoadingView.shared.hideOverlayView(className: DailyReportRequest.theClassName)
         }
     }
     

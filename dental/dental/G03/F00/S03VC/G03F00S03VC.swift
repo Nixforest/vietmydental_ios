@@ -138,7 +138,7 @@ extension G03F00S03VC: UITableViewDataSource {
 extension G03F00S03VC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = report.getListData()[indexPath.row]
-        if item.id == DomainConst.ITEM_RECEIPT_TOTAL {
+        if item.id == DomainConst.ITEM_TOTAL {
             let request = GetStatisticsRequest()
             for item in report.getListData() {
                 if item.id == DomainConst.ITEM_RECEIPT_AGENT_ID {
