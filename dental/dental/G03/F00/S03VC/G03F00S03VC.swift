@@ -67,7 +67,7 @@ class G03F00S03VC: ChildExtViewController {
         req.id = report.id
         req.status = statusID
         serviceInstance.updateReportStatus(req: req, success: { (result) in
-            NotificationCenter.default.post(name: NSNotification.Name.init("G03F00S02VC_SHOULD_RELOAD_DATA"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name.init(G03Const.SHOULD_RELOAD_DATA_NOTI_NAME), object: nil)
             self.showAlert(message: result.message, okHandler: { (action) in
                 
             })
@@ -119,18 +119,19 @@ extension G03F00S03VC: UITableViewDataSource {
         cell.textLabel?.font = GlobalConst.BASE_FONT
         cell.detailTextLabel?.text = item.getStringData()
         cell.detailTextLabel?.font = GlobalConst.BASE_FONT
-        let imgPath = DomainConst.INFORMATION_IMG_NAME
+        var imgPath = DomainConst.INFORMATION_IMG_NAME
         let imgMargin = GlobalConst.MARGIN * 2
-        cell.imageView?.image = ImageManager.getImage(named: imgPath, margin: imgMargin)
+        if let img = DomainConst.VMD_IMG_LIST[item.id] {
+            imgPath = img
+        }
+        let img = ImageManager.getImage(named: imgPath,
+                                          margin: imgMargin)
+        cell.imageView?.image = img
         cell.imageView?.contentMode = .scaleAspectFit
         cell.accessoryType = .none
         cell.selectionStyle = .none
         cell.contentView.clipsToBounds = true
         return cell
-//        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! G03F00S03TableViewCell
-//        cell.selectionStyle = .none
-//        cell.loadData(report.getListData()[indexPath.row])
-//        return cell
     }
 }
 

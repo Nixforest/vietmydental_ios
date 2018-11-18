@@ -14,5 +14,7 @@ class G03Const: NSObject {
     public static let FUNC_IDENTIFIER                           = DomainConst.APPNAME + "g03"
     /** Path to connect with PHP server */
     public static let PATH_DAILY_REPORT_LIST                    = "report/dailyReportList"
+    
+    public static let SHOULD_RELOAD_DATA_NOTI_NAME              = "G03F00S02VC_SHOULD_RELOAD_DATA"
 
 }
