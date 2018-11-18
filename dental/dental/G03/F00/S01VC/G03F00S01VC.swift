@@ -160,7 +160,7 @@ extension G03F00S01VC: UITableViewDataSource {
                 cell.detailTextLabel?.text = data.getStringData()
                 cell.detailTextLabel?.font = GlobalConst.BASE_FONT
             case DomainConst.ITEM_STATUS:
-                let imgMargin = GlobalConst.MARGIN * 2
+                let imgMargin = GlobalConst.MARGIN
                 let stt = DailyReportStatus.getStatus(byID: data.getStringData())
                 let img = stt.getImage().imageWithInsets(insets: UIEdgeInsets(top: imgMargin, left: imgMargin, bottom: imgMargin, right: imgMargin))
                 cell.imageView?.image = img
