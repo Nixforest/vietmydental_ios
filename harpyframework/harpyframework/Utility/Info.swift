@@ -19,5 +19,5 @@ class Info: NSObject {
     /** Server url */
     public static let SERVER_URL                            = "https://nkvietmy.com/index.php/api/"
     /** Training url */
-    public static let TRAINING_URL                          = "https://vietmy.immortal.vn/index.php/api/"
+    public static let TRAINING_URL                          = "https://test.nkvietmy.com/index.php/api/"
 }
