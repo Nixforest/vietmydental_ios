@@ -42,7 +42,8 @@ class G01F00S02VC: ChildExtViewController {
         self.createNavigationBar(title: DomainConst.CONTENT00543)
         createInfoTableView()
         self.view.addSubview(_tblInfo)
-        requestData()
+        
+//        requestData()  // requestData() call twice ??
     }
     
     /**
