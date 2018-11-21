@@ -39,6 +39,15 @@
 		CF34E2592165C1B100872040 /* G03F00S01TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF34E2572165C1B100872040 /* G03F00S01TableViewCell.xib */; };
 		CF48C969213D7CA70037C0AC /* GetDomainRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF48C968213D7CA70037C0AC /* GetDomainRequest.swift */; };
 		CF4EC320211191AA00ABE693 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4EC31F211191AA00ABE693 /* Agent.swift */; };
+		CF67980821A2E61B00B93B26 /* GetCustomerByQRCodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6797FC21A2E61B00B93B26 /* GetCustomerByQRCodeRequest.swift */; };
+		CF67980921A2E61B00B93B26 /* QRCodeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6797FE21A2E61B00B93B26 /* QRCodeMainView.swift */; };
+		CF67980A21A2E61B00B93B26 /* G04F00S01VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6797FF21A2E61B00B93B26 /* G04F00S01VC.swift */; };
+		CF67980B21A2E61B00B93B26 /* QRCodeMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF67980021A2E61B00B93B26 /* QRCodeMainView.xib */; };
+		CF67980C21A2E61B00B93B26 /* G04F00S02VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF67980121A2E61B00B93B26 /* G04F00S02VC.xib */; };
+		CF67980D21A2E61B00B93B26 /* G04F00S02VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67980221A2E61B00B93B26 /* G04F00S02VC.swift */; };
+		CF67980E21A2E61B00B93B26 /* G04F00S01VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF67980321A2E61B00B93B26 /* G04F00S01VC.xib */; };
+		CF67980F21A2E61B00B93B26 /* G04F01S01VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67980521A2E61B00B93B26 /* G04F01S01VC.swift */; };
+		CF67981021A2E61B00B93B26 /* G04F01S01VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF67980621A2E61B00B93B26 /* G04F01S01VC.xib */; };
 		CF6FAE22216C8258001C1BB1 /* G03F00S03TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FAE20216C8258001C1BB1 /* G03F00S03TableViewCell.swift */; };
 		CF6FAE23216C8258001C1BB1 /* G03F00S03TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF6FAE21216C8258001C1BB1 /* G03F00S03TableViewCell.xib */; };
 		CF6FAE27216E396C001C1BB1 /* UpdateDailyReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FAE26216E396C001C1BB1 /* UpdateDailyReport.swift */; };
@@ -351,6 +360,15 @@
 		CF34E2572165C1B100872040 /* G03F00S01TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = G03F00S01TableViewCell.xib; sourceTree = "<group>"; };
 		CF48C968213D7CA70037C0AC /* GetDomainRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDomainRequest.swift; sourceTree = "<group>"; };
 		CF4EC31F211191AA00ABE693 /* Agent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
+		CF6797FC21A2E61B00B93B26 /* GetCustomerByQRCodeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCustomerByQRCodeRequest.swift; sourceTree = "<group>"; };
+		CF6797FE21A2E61B00B93B26 /* QRCodeMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeMainView.swift; sourceTree = "<group>"; };
+		CF6797FF21A2E61B00B93B26 /* G04F00S01VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G04F00S01VC.swift; sourceTree = "<group>"; };
+		CF67980021A2E61B00B93B26 /* QRCodeMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QRCodeMainView.xib; sourceTree = "<group>"; };
+		CF67980121A2E61B00B93B26 /* G04F00S02VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = G04F00S02VC.xib; sourceTree = "<group>"; };
+		CF67980221A2E61B00B93B26 /* G04F00S02VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G04F00S02VC.swift; sourceTree = "<group>"; };
+		CF67980321A2E61B00B93B26 /* G04F00S01VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = G04F00S01VC.xib; sourceTree = "<group>"; };
+		CF67980521A2E61B00B93B26 /* G04F01S01VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G04F01S01VC.swift; sourceTree = "<group>"; };
+		CF67980621A2E61B00B93B26 /* G04F01S01VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = G04F01S01VC.xib; sourceTree = "<group>"; };
 		CF6FAE20216C8258001C1BB1 /* G03F00S03TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G03F00S03TableViewCell.swift; sourceTree = "<group>"; };
 		CF6FAE21216C8258001C1BB1 /* G03F00S03TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = G03F00S03TableViewCell.xib; sourceTree = "<group>"; };
 		CF6FAE26216E396C001C1BB1 /* UpdateDailyReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDailyReport.swift; sourceTree = "<group>"; };
@@ -642,6 +660,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF6797FA21A2E61B00B93B26 /* G04 */ = {
+			isa = PBXGroup;
+			children = (
+				CF6797FB21A2E61B00B93B26 /* API */,
+				CF6797FD21A2E61B00B93B26 /* F00 */,
+				CF67980421A2E61B00B93B26 /* F01 */,
+			);
+			path = G04;
+			sourceTree = "<group>";
+		};
+		CF6797FB21A2E61B00B93B26 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CF6797FC21A2E61B00B93B26 /* GetCustomerByQRCodeRequest.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		CF6797FD21A2E61B00B93B26 /* F00 */ = {
+			isa = PBXGroup;
+			children = (
+				CF6797FE21A2E61B00B93B26 /* QRCodeMainView.swift */,
+				CF67980021A2E61B00B93B26 /* QRCodeMainView.xib */,
+				CF6797FF21A2E61B00B93B26 /* G04F00S01VC.swift */,
+				CF67980121A2E61B00B93B26 /* G04F00S02VC.xib */,
+				CF67980221A2E61B00B93B26 /* G04F00S02VC.swift */,
+				CF67980321A2E61B00B93B26 /* G04F00S01VC.xib */,
+			);
+			path = F00;
+			sourceTree = "<group>";
+		};
+		CF67980421A2E61B00B93B26 /* F01 */ = {
+			isa = PBXGroup;
+			children = (
+				CF67980521A2E61B00B93B26 /* G04F01S01VC.swift */,
+				CF67980621A2E61B00B93B26 /* G04F01S01VC.xib */,
+			);
+			path = F01;
+			sourceTree = "<group>";
+		};
 		CF6FAE25216C9D59001C1BB1 /* S03VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -904,6 +962,7 @@
 				D7C73AF6200512A8000B3CBC /* G00 */,
 				D7FF1FB62024218E00C2DF28 /* G01 */,
 				CF8646722164636700416DB8 /* G03 */,
+				CF6797FA21A2E61B00B93B26 /* G04 */,
 				D7C73AF12005122E000B3CBC /* Common */,
 				D7C73AD120050787000B3CBC /* AppDelegate.swift */,
 				D7C73AD320050787000B3CBC /* ViewController.swift */,
@@ -1423,6 +1482,7 @@
 				D7F4B209202B524F00EC7AB5 /* Trash.png in Resources */,
 				CFB31E8F21465BB3003E5FE9 /* DebtorListViewController.xib in Resources */,
 				D7F4B1FC202B524F00EC7AB5 /* GSelect.png in Resources */,
+				CF67980B21A2E61B00B93B26 /* QRCodeMainView.xib in Resources */,
 				CFB31E9621465BB3003E5FE9 /* StatisticsListHeaderView.xib in Resources */,
 				D7C73AD920050787000B3CBC /* Assets.xcassets in Resources */,
 				D7B43B3A2037739600F59945 /* SelectionVC.xib in Resources */,
@@ -1437,6 +1497,7 @@
 				D7F4B219202B524F00EC7AB5 /* GreenSwipeView.xib in Resources */,
 				D7F4B1FA202B524F00EC7AB5 /* GRight.png in Resources */,
 				D7F4B1F3202B524F00EC7AB5 /* GLogout.png in Resources */,
+				CF67981021A2E61B00B93B26 /* G04F01S01VC.xib in Resources */,
 				D7F4B1F7202B524F00EC7AB5 /* GPassword.png in Resources */,
 				D7F4B1FB202B524F00EC7AB5 /* GSearch.png in Resources */,
 				CFB31E9921465BB3003E5FE9 /* StatisticsListViewController.xib in Resources */,
@@ -1483,6 +1544,7 @@
 				90F2A33D20A14CCF004823B2 /* G01F01S03VC.xib in Resources */,
 				908CE2DB205E5A5E00798C6F /* G01F03S04ViewController.xib in Resources */,
 				D7F4B21B202B524F00EC7AB5 /* LandingView.xib in Resources */,
+				CF67980E21A2E61B00B93B26 /* G04F00S01VC.xib in Resources */,
 				D70BCB5C2016EF1A00BCD90B /* G00AccountEditVC.xib in Resources */,
 				D7F4B206202B524F00EC7AB5 /* Pause-100 (1).png in Resources */,
 				D7F4B1F1202B524F00EC7AB5 /* GLeaf.png in Resources */,
@@ -1507,6 +1569,7 @@
 				CFB31E9D21465BB3003E5FE9 /* DiscountListTableViewCell.xib in Resources */,
 				D7C73AFF200513F3000B3CBC /* MenuVC.xib in Resources */,
 				D7F4B1E8202B524F00EC7AB5 /* GCheck.png in Resources */,
+				CF67980C21A2E61B00B93B26 /* G04F00S02VC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1598,6 +1661,7 @@
 				D7F4B1CF202B524F00EC7AB5 /* GreenExtension+UIColor.swift in Sources */,
 				D7E413FE203CA51E002DBA96 /* G01F04S01VC.swift in Sources */,
 				CF48C969213D7CA70037C0AC /* GetDomainRequest.swift in Sources */,
+				CF67980A21A2E61B00B93B26 /* G04F00S01VC.swift in Sources */,
 				D70BCB5B2016EF1A00BCD90B /* G00AccountEditVC.swift in Sources */,
 				CFB31E9321465BB3003E5FE9 /* StatisticsDetailViewController.swift in Sources */,
 				D7F4B21A202B524F00EC7AB5 /* LandingView.swift in Sources */,
@@ -1608,6 +1672,7 @@
 				D7FF1FBB2024224400C2DF28 /* G01F00S01VC.swift in Sources */,
 				D7F4B1D8202B524F00EC7AB5 /* GreenExtention+UIView.swift in Sources */,
 				D7AAE671203802D7001C3847 /* TreatmentListRespBean.swift in Sources */,
+				CF67980821A2E61B00B93B26 /* GetCustomerByQRCodeRequest.swift in Sources */,
 				D706B048203AD504004AE6D7 /* G01F03S01VC.swift in Sources */,
 				D702C81A203904010075D40B /* G01F02S05VC.swift in Sources */,
 				D7F4B117202B2A9700EC7AB5 /* G00ConfigVC.swift in Sources */,
@@ -1651,6 +1716,7 @@
 				D706B042203AD2E8004AE6D7 /* G01F02S06VC.swift in Sources */,
 				90063CAA20A10FBB0025E09F /* G01F03S05VC.swift in Sources */,
 				D7F4B220202B524F00EC7AB5 /* CustomerList.swift in Sources */,
+				CF67980F21A2E61B00B93B26 /* G04F01S01VC.swift in Sources */,
 				CF87C25A2166681600318EBD /* G03F00S02VC.swift in Sources */,
 				903BD0AE215357DD00B5A6B9 /* MultiSelectionVC.swift in Sources */,
 				D7F4B221202B524F00EC7AB5 /* LoginUser.swift in Sources */,
@@ -1677,6 +1743,7 @@
 				D7B43B342036F82F00F59945 /* MedicalRecordUpdateRequest.swift in Sources */,
 				D7F4B1CA202B524F00EC7AB5 /* SingleLineTableViewCell.swift in Sources */,
 				D7F4B218202B524F00EC7AB5 /* GreenSwipeView.swift in Sources */,
+				CF67980D21A2E61B00B93B26 /* G04F00S02VC.swift in Sources */,
 				D706B04F203BCA6F004AE6D7 /* TreatmentScheduleDetailUpdateRequest.swift in Sources */,
 				CF4EC320211191AA00ABE693 /* Agent.swift in Sources */,
 				D7F4B21F202B524F00EC7AB5 /* CustomerInfo.swift in Sources */,
@@ -1706,6 +1773,7 @@
 				D7C92A3120397C5A002EF00D /* G01F00S03VC.swift in Sources */,
 				D7AAE6802038F82C001C3847 /* G01F02S03VC.swift in Sources */,
 				D7C73B0820052B7F000B3CBC /* LoginBean.swift in Sources */,
+				CF67980921A2E61B00B93B26 /* QRCodeMainView.swift in Sources */,
 				908CE2DE205E5A6E00798C6F /* CreateReceipt.swift in Sources */,
 				D79087B7203D7195000BD77E /* TreatmentScheduleProcessCreateRespBean.swift in Sources */,
 				D7C73B0A20052C94000B3CBC /* LoginRespBean.swift in Sources */,

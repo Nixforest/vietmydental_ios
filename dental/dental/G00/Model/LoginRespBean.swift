@@ -58,5 +58,6 @@ class LoginRespBean: BaseRespModel {
         LoginBean.shared.user_agents_id     = data.data.user_agents_id
         LoginBean.shared.app_page_size      = data.data.app_page_size
         LoginBean.shared.report_status_list = data.data.report_status_list
+        LoginBean.shared.role_id            = data.data.role_id
     }
 }

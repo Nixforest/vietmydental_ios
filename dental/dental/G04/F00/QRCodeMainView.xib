@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QRCodeMainView" customModule="dental" customModuleProvider="target">
+            <connections>
+                <outlet property="btnHistory" destination="quG-19-6Dk" id="E6o-MG-RTF"/>
+                <outlet property="btnOK" destination="m2h-Ne-ORd" id="WeT-jo-1pf"/>
+                <outlet property="btnScan" destination="hnM-hn-Ghw" id="Psw-OE-C5z"/>
+                <outlet property="tfCode" destination="bds-FI-O8s" id="8NA-ai-oMJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIn-MX-PXg">
+                    <rect key="frame" x="12" y="80" width="296" height="40"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mã bệnh nhân" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bds-FI-O8s">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="BZh-mP-baO"/>
+                                <constraint firstAttribute="width" constant="240" id="DzF-SG-Wk7"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnM-hn-Ghw">
+                            <rect key="frame" x="256" y="0.0" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Kfa-xN-u11"/>
+                                <constraint firstAttribute="width" constant="40" id="Mnq-bH-brB"/>
+                            </constraints>
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" image="ic_camera"/>
+                            <connections>
+                                <action selector="btnScanAction:" destination="-1" eventType="touchUpInside" id="E0v-kw-DGt"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="hnM-hn-Ghw" secondAttribute="bottom" id="Cxv-Pf-Nhr"/>
+                        <constraint firstAttribute="trailing" secondItem="hnM-hn-Ghw" secondAttribute="trailing" id="Qs8-g3-0e3"/>
+                        <constraint firstItem="hnM-hn-Ghw" firstAttribute="leading" secondItem="bds-FI-O8s" secondAttribute="trailing" constant="16" id="bQF-at-dEC"/>
+                        <constraint firstItem="bds-FI-O8s" firstAttribute="top" secondItem="tIn-MX-PXg" secondAttribute="top" id="lWr-RO-dfA"/>
+                        <constraint firstAttribute="bottom" secondItem="bds-FI-O8s" secondAttribute="bottom" id="rzQ-fY-vL1"/>
+                        <constraint firstItem="hnM-hn-Ghw" firstAttribute="top" secondItem="tIn-MX-PXg" secondAttribute="top" id="u27-3W-R4D"/>
+                        <constraint firstItem="bds-FI-O8s" firstAttribute="leading" secondItem="tIn-MX-PXg" secondAttribute="leading" id="uR9-BC-rqp"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2h-Ne-ORd">
+                    <rect key="frame" x="12" y="168" width="296" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="TA6-nJ-9Ku"/>
+                    </constraints>
+                    <state key="normal" title="OK">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="btnOKAction:" destination="-1" eventType="touchUpInside" id="Hni-ya-I5X"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quG-19-6Dk">
+                    <rect key="frame" x="12" y="232" width="296" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="mhe-n1-JQ6"/>
+                    </constraints>
+                    <state key="normal" title="Lịch sử">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="btnHistoryAction:" destination="-1" eventType="touchUpInside" id="Llz-fC-nv7"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="tIn-MX-PXg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="80" id="1Ql-r3-0m7"/>
+                <constraint firstItem="quG-19-6Dk" firstAttribute="width" secondItem="m2h-Ne-ORd" secondAttribute="width" id="8tp-kP-N5w"/>
+                <constraint firstItem="m2h-Ne-ORd" firstAttribute="top" secondItem="tIn-MX-PXg" secondAttribute="bottom" constant="48" id="IeM-sz-JAS"/>
+                <constraint firstItem="m2h-Ne-ORd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OYp-6t-E5w"/>
+                <constraint firstItem="m2h-Ne-ORd" firstAttribute="width" secondItem="tIn-MX-PXg" secondAttribute="width" id="bqr-wE-pRX"/>
+                <constraint firstItem="tIn-MX-PXg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tib-8k-YV7"/>
+                <constraint firstItem="quG-19-6Dk" firstAttribute="top" secondItem="m2h-Ne-ORd" secondAttribute="bottom" constant="24" id="w6v-sc-Hal"/>
+                <constraint firstItem="quG-19-6Dk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wvh-ho-Tn0"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_camera" width="48" height="48"/>
+    </resources>
+</document>

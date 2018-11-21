@@ -10,12 +10,23 @@
 import UIKit
 import harpyframework
 
+enum RoleEnum: String {
+    case customer = "3"
+    case employee = "4"
+    case director = "5"
+    case doctor = "6"
+    case receptionist = "8"
+    case saler = "9"
+}
+
 class G00HomeVC: BaseParentViewController {
     // MARK: Properties
     /** Logo */
     var imgLogo:        UIImageView = UIImageView()
+    /** qr code view*/
+    var qrCodeView: QRCodeMainView!
     /** Statistic Detail View*/
-    @IBOutlet weak var statisticDetailView: StatisticsDetailView!
+    var statisticDetailView: StatisticsDetailView!
     // MARK: Constant
     // Logo
     var LOGIN_LOGO_REAL_WIDTH_HD        = GlobalConst.LOGIN_LOGO_WIDTH * G00LoginExtVC.W_RATE_HD
@@ -42,7 +53,6 @@ class G00HomeVC: BaseParentViewController {
 
         // Do any additional setup after loading the view.
         self.createNavigationBar(title: DomainConst.CONTENT00571)
-        statisticDetailView.alpha = 0
         startLogic()
         NotificationCenter.default.addObserver(self, selector: #selector(shouldReload), name: NSNotification.Name.init("HOMEVC_SHOULD_RELOAD_LOGIC"), object: nil)
     }
@@ -100,6 +110,13 @@ class G00HomeVC: BaseParentViewController {
      */
     override func createChildrenViews() {
         super.createChildrenViews()
+        createLogo()
+    }
+    
+    /**
+     *  create logo image
+     */
+    func createLogo() {
         // Get current device type
         switch UIDevice.current.userInterfaceIdiom {
         case .phone:        // iPhone
@@ -122,7 +139,6 @@ class G00HomeVC: BaseParentViewController {
         
         self.view.addSubview(imgLogo)
     }
-    
     /**
      * Update children views
      */
@@ -235,8 +251,13 @@ class G00HomeVC: BaseParentViewController {
         let model = LoginRespBean(jsonString: data)
         if model.isSuccess() {
             LoginRespBean.saveConfigData(data: model)
-            /** Loading statistic content*/
-            self.loadStatisticContent()
+            if model.data.role_id == RoleEnum.receptionist.rawValue {
+                // Load qr code content
+                self.loadQRCodeContent()
+            } else {
+                // Load statistic content
+                self.loadStatisticContent()
+            }
         }
     }
     
@@ -309,31 +330,83 @@ class G00HomeVC: BaseParentViewController {
             view: self)
     }
 
-}
-
-//MARK: - Setting Statistic content
-extension G00HomeVC: StatisticsDetailViewDelegate {
-    /** API Get today statistic detail of user*/
+    /** BUG0099 ++ */
+    /** load qr code subview */
+    func loadQRCodeContent() {
+        imgLogo.alpha = 0
+        qrCodeView = QRCodeMainView()
+        qrCodeView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        self.view.addSubview(qrCodeView)
+        qrCodeView.delegate = self
+        self.view.bringSubview(toFront: qrCodeView)
+    }
+    /** API get user by qr code*/
+    func getUserByQRCode(_ code: String) {
+        LoadingView.shared.showOverlay(view: self.view, className: self.theClassName)
+        let param = GetCustomerByQRCodeRequest()
+        param.qr = code
+        serviceInstance.getCustomerByQRCode(param: param, success: { (response) in
+            LoadingView.shared.hideOverlayView(className: self.theClassName)
+            let vc = G01F00S02VC(nibName: G01F00S02VC.theClassName, bundle: nil)
+            vc.setId(id: response.customerID, code: code)
+            vc.shouldSaveCustomer = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }) { (error) in
+            LoadingView.shared.hideOverlayView(className: self.theClassName)
+            self.showAlert(message: error.message)
+        }
+    }
+    /** BUG0099 -- */
+    /** API Get today statistic detail of user */
     func getStatistics(param: GetStatisticsRequest) {
+        imgLogo.alpha = 0
         LoadingView.shared.showOverlay(view: self.view, className: self.theClassName)
         serviceInstance.getStatistics(req: param, success: { (resp) in
-            self.statisticDetailView.alpha = 1
             self.statisticDetailView.loadUI(statistic: resp)
             LoadingView.shared.hideOverlayView(className: self.theClassName)
             self.view.bringSubview(toFront: self.statisticDetailView)
         }) { (error) in
             LoadingView.shared.hideOverlayView(className: self.theClassName)
-            self.statisticDetailView.alpha = 0
             self.showAlert(message: error.message)
         }
     }
-    /** */
+    /** load statistic content subview */
     func loadStatisticContent() {
+        statisticDetailView = StatisticsDetailView()
+        statisticDetailView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        self.view.addSubview(statisticDetailView)
+        self.view.bringSubview(toFront: statisticDetailView)
         statisticDetailView.delegate = self
         self.statisticParam = statisticDetailView.getParamToday()
         statisticDetailView.param = self.statisticParam
         self.getStatistics(param: self.statisticParam)
     }
+}
+
+extension G00HomeVC: QRCodeMainViewDelegate {
+    func qRCodeMainViewDidSelectScan() {
+        let vc = G04F01S01VC()
+        vc.didGetCode { (code) in
+            self.qrCodeView.setCode(code)
+            self.qRCodeMainViewDidSelectOK(code: code)
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    func qRCodeMainViewDidSelectHistory() {
+        let vc = G04F00S02VC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    func qRCodeMainViewDidSelectOK(code: String) {
+        if code.count == 0 {
+            self.showAlert(message: "Vui lòng điền code cần tìm kiếm")
+            return
+        }
+        self.getUserByQRCode(code)
+    }
+}
+
+//MARK: - Setting Statistic content
+extension G00HomeVC: StatisticsDetailViewDelegate {
     func statisticsDetailViewDidSelectCollected() {
         self.receiptParam = GetListReceiptRequest()
         receiptParam.date_from = statisticParam.date_from

@@ -166,5 +166,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         vc.present(alert, animated: true, completion: nil)
     }
+    //MARK: - Save customer with qrcode
+    /**
+     *  Save customer with id, name and qr code
+     */
+    func saveCustomer(id: String, name: String, code: String) {
+        var arr = getListCustomer()
+        let dict = ["id": id, "name": name, "code": code]
+        arr.insert(dict, at: 0)
+        UserDefaults.standard.set(arr, forKey: "USER_WITH_QRCODE")
+    }
+    /**
+     *  get array customer list type [String: String]
+     */
+    func getListCustomer() -> [[String: String]] {
+        if let arr = UserDefaults.standard.object(forKey: "USER_WITH_QRCODE") as? [[String: String]] {
+            return arr
+        }
+        return [["": ""]]
+    }
 }
+
+
+
+
+
 

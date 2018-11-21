@@ -93,6 +93,8 @@ class LoginBean: ConfigBean {
         self.report_status_list.append(contentsOf: getListConfig(json: jsonData, key: DomainConst.KEY_DAILY_REPORT_STATUS))
         // App page size
         self.app_page_size = getString(json: jsonData, key: DomainConst.KEY_APP_API_LIST_PAGE_SIZE)
+        // Account role id
+        self.role_id = getString(json: jsonData, key: DomainConst.KEY_ROLE_ID)
     }
     
     /**

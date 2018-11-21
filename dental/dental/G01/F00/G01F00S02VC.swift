@@ -5,7 +5,6 @@
 //  Created by SPJ on 2/2/18.
 //  Copyright © 2018 SPJ. All rights reserved.
 //
-
 import UIKit
 import harpyframework
 
@@ -15,6 +14,10 @@ class G01F00S02VC: ChildExtViewController {
     var _data:              CustomerInfoRespBean    = CustomerInfoRespBean()
     /** Customer id */
     var _id:                String                  = DomainConst.BLANK
+    /** should save customer flag */
+    var shouldSaveCustomer: Bool                    = false
+    /** Customer qr code */
+    var _code:              String                  = DomainConst.BLANK
     /** Information table view */
     var _tblInfo:           UITableView             = UITableView()
     /** Refrest control */
@@ -34,12 +37,13 @@ class G01F00S02VC: ChildExtViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.createNavigationBar(title: DomainConst.CONTENT00543)
         createInfoTableView()
         self.view.addSubview(_tblInfo)
-        requestData()
+        
+//        requestData()  // requestData() call twice ??
     }
     
     /**
@@ -60,9 +64,26 @@ class G01F00S02VC: ChildExtViewController {
         if model.isSuccess() {
             _data = model
             _tblInfo.reloadData()
+            if shouldSaveCustomer {
+                self.saveCustomerQRCode()
+            }
         } else {
             showAlert(message: model.message)
         }
+    }
+    
+    func saveCustomerQRCode() {
+        var name = ""
+        for item in _data.data {
+            if item.id == "1" {
+                for child in item.data {
+                    if child.id == "1" {
+                        name = child.name
+                    }
+                }
+            }
+        }
+        app.saveCustomer(id: self._id, name: name, code: self._code)
     }
     
     // MARK: Logic
@@ -107,6 +128,14 @@ class G01F00S02VC: ChildExtViewController {
     public func setId(id: String) {
         self._id = id
     }
+    /**
+     * Set value of id and qr code
+     * - parameter id: Customer id, customer qr code
+     */
+    public func setId(id: String, code: String) {
+        _id = id
+        _code = code
+    }
     
     /**
      * Handle open Medical record info screen
@@ -122,14 +151,14 @@ class G01F00S02VC: ChildExtViewController {
             controller.navigationController?.pushViewController(view,
                                                                 animated: true)
         }
-//        let view = G01F01S01ExtVC(nibName: G01F01S01ExtVC.theClassName,
-//                               bundle: nil)
-//        view.setId(id: self._id)
-//        view.createNavigationBar(title: title)
-//        if let controller = BaseViewController.getCurrentViewController() {
-//            controller.navigationController?.pushViewController(view,
-//                                                                animated: true)
-//        }
+        //        let view = G01F01S01ExtVC(nibName: G01F01S01ExtVC.theClassName,
+        //                               bundle: nil)
+        //        view.setId(id: self._id)
+        //        view.createNavigationBar(title: title)
+        //        if let controller = BaseViewController.getCurrentViewController() {
+        //            controller.navigationController?.pushViewController(view,
+        //                                                                animated: true)
+        //        }
     }
     
     /**
@@ -140,7 +169,7 @@ class G01F00S02VC: ChildExtViewController {
         let view = G01F02S02VC(nibName: G01F02S02VC.theClassName,
                                bundle: nil)
         view.setId(id: id)
-//        view.createNavigationBar(title: title)
+        //        view.createNavigationBar(title: title)
         if let controller = BaseViewController.getCurrentViewController() {
             controller.navigationController?.pushViewController(view,
                                                                 animated: true)
@@ -266,7 +295,7 @@ extension G01F00S02VC: UITableViewDataSource {
             let image = ImageManager.getImage(named: imagePath,
                                               margin: imgMargin)
             switch data.id {
-            case DomainConst.ITEM_NAME:                
+            case DomainConst.ITEM_NAME:
                 let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
                 cell.textLabel?.text = data.name
                 cell.textLabel?.font = GlobalConst.BASE_FONT
@@ -275,7 +304,7 @@ extension G01F00S02VC: UITableViewDataSource {
                 cell.imageView?.image = image
                 cell.imageView?.contentMode = .scaleAspectFit
                 return cell
-            case DomainConst.ITEM_BIRTHDAY:                
+            case DomainConst.ITEM_BIRTHDAY:
                 let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
                 cell.textLabel?.text = data.name
                 cell.textLabel?.font = GlobalConst.BASE_FONT
@@ -284,7 +313,7 @@ extension G01F00S02VC: UITableViewDataSource {
                 cell.imageView?.image = image
                 cell.imageView?.contentMode = .scaleAspectFit
                 return cell
-            case DomainConst.ITEM_MEDICAL_HISTORY:                
+            case DomainConst.ITEM_MEDICAL_HISTORY:
                 let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
                 cell.textLabel?.text = data.name
                 cell.textLabel?.font = GlobalConst.BASE_FONT
@@ -292,7 +321,7 @@ extension G01F00S02VC: UITableViewDataSource {
                 cell.imageView?.contentMode = .scaleAspectFit
                 cell.accessoryType = .detailDisclosureButton
                 return cell
-            case DomainConst.ITEM_UPDATE_DATA:                
+            case DomainConst.ITEM_UPDATE_DATA:
                 let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
                 cell.textLabel?.text = data.name
                 cell.textLabel?.font = GlobalConst.BASE_FONT
@@ -366,7 +395,7 @@ extension G01F00S02VC: UITableViewDelegate {
                 addNewTreatmentSchedule()
                 break
             default:                                    // View detail info
-                openTreatmentDetail(id: data.id)        
+                openTreatmentDetail(id: data.id)
             }
             break
         default:
@@ -395,7 +424,7 @@ extension G01F00S02VC: UITableViewDelegate {
 }
 
 // MARK: Protocol - UITableViewDelegate
-extension G01F00S02VC: CustomerInfoHeaderViewDelegate {    
+extension G01F00S02VC: CustomerInfoHeaderViewDelegate {
     func customerInfoHeaderViewDidSelect(object: ConfigExtBean) {
         switch object.id {
         case DomainConst.GROUP_MEDICAL_RECORD:
