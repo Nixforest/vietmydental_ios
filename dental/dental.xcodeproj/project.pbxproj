@@ -51,6 +51,16 @@
 		CF6FAE22216C8258001C1BB1 /* G03F00S03TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FAE20216C8258001C1BB1 /* G03F00S03TableViewCell.swift */; };
 		CF6FAE23216C8258001C1BB1 /* G03F00S03TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF6FAE21216C8258001C1BB1 /* G03F00S03TableViewCell.xib */; };
 		CF6FAE27216E396C001C1BB1 /* UpdateDailyReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6FAE26216E396C001C1BB1 /* UpdateDailyReport.swift */; };
+		CF852C1221A6ED7300446598 /* CustomerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF852C0421A6ED7300446598 /* CustomerHomeView.swift */; };
+		CF852C1321A6ED7300446598 /* MakeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF852C0621A6ED7300446598 /* MakeSchedule.swift */; };
+		CF852C1421A6ED7300446598 /* CustomerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF852C0721A6ED7300446598 /* CustomerLogin.swift */; };
+		CF852C1521A6ED7300446598 /* CustomerHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF852C0821A6ED7300446598 /* CustomerHomeView.xib */; };
+		CF852C1621A6ED7300446598 /* G05F00S02VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF852C0A21A6ED7300446598 /* G05F00S02VC.xib */; };
+		CF852C1721A6ED7300446598 /* G05F00S02VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF852C0B21A6ED7300446598 /* G05F00S02VC.swift */; };
+		CF852C1821A6ED7300446598 /* G05F00S01VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF852C0C21A6ED7300446598 /* G05F00S01VC.xib */; };
+		CF852C1921A6ED7300446598 /* G05F00S01VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF852C0D21A6ED7300446598 /* G05F00S01VC.swift */; };
+		CF852C1A21A6ED7300446598 /* G05F01S01VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF852C0F21A6ED7300446598 /* G05F01S01VC.xib */; };
+		CF852C1B21A6ED7300446598 /* G05F01S01VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF852C1021A6ED7300446598 /* G05F01S01VC.swift */; };
 		CF864676216463A700416DB8 /* G03F00S01VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF864674216463A700416DB8 /* G03F00S01VC.swift */; };
 		CF864677216463A700416DB8 /* G03F00S01VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF864675216463A700416DB8 /* G03F00S01VC.xib */; };
 		CF86467B21646F0300416DB8 /* DailyReportList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF86467A21646F0300416DB8 /* DailyReportList.swift */; };
@@ -372,6 +382,16 @@
 		CF6FAE20216C8258001C1BB1 /* G03F00S03TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G03F00S03TableViewCell.swift; sourceTree = "<group>"; };
 		CF6FAE21216C8258001C1BB1 /* G03F00S03TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = G03F00S03TableViewCell.xib; sourceTree = "<group>"; };
 		CF6FAE26216E396C001C1BB1 /* UpdateDailyReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDailyReport.swift; sourceTree = "<group>"; };
+		CF852C0421A6ED7300446598 /* CustomerHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerHomeView.swift; sourceTree = "<group>"; };
+		CF852C0621A6ED7300446598 /* MakeSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeSchedule.swift; sourceTree = "<group>"; };
+		CF852C0721A6ED7300446598 /* CustomerLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerLogin.swift; sourceTree = "<group>"; };
+		CF852C0821A6ED7300446598 /* CustomerHomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerHomeView.xib; sourceTree = "<group>"; };
+		CF852C0A21A6ED7300446598 /* G05F00S02VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = G05F00S02VC.xib; sourceTree = "<group>"; };
+		CF852C0B21A6ED7300446598 /* G05F00S02VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G05F00S02VC.swift; sourceTree = "<group>"; };
+		CF852C0C21A6ED7300446598 /* G05F00S01VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = G05F00S01VC.xib; sourceTree = "<group>"; };
+		CF852C0D21A6ED7300446598 /* G05F00S01VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G05F00S01VC.swift; sourceTree = "<group>"; };
+		CF852C0F21A6ED7300446598 /* G05F01S01VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = G05F01S01VC.xib; sourceTree = "<group>"; };
+		CF852C1021A6ED7300446598 /* G05F01S01VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G05F01S01VC.swift; sourceTree = "<group>"; };
 		CF864674216463A700416DB8 /* G03F00S01VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = G03F00S01VC.swift; sourceTree = "<group>"; };
 		CF864675216463A700416DB8 /* G03F00S01VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = G03F00S01VC.xib; sourceTree = "<group>"; };
 		CF86467A21646F0300416DB8 /* DailyReportList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReportList.swift; sourceTree = "<group>"; };
@@ -711,6 +731,48 @@
 			path = S03VC;
 			sourceTree = "<group>";
 		};
+		CF852C0321A6ED7300446598 /* G05 */ = {
+			isa = PBXGroup;
+			children = (
+				CF852C0421A6ED7300446598 /* CustomerHomeView.swift */,
+				CF852C0821A6ED7300446598 /* CustomerHomeView.xib */,
+				CF852C0521A6ED7300446598 /* API */,
+				CF852C0921A6ED7300446598 /* F00 */,
+				CF852C0E21A6ED7300446598 /* F01 */,
+			);
+			name = G05;
+			path = ../../../../../Desktop/107_1/G05;
+			sourceTree = "<group>";
+		};
+		CF852C0521A6ED7300446598 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CF852C0621A6ED7300446598 /* MakeSchedule.swift */,
+				CF852C0721A6ED7300446598 /* CustomerLogin.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		CF852C0921A6ED7300446598 /* F00 */ = {
+			isa = PBXGroup;
+			children = (
+				CF852C0A21A6ED7300446598 /* G05F00S02VC.xib */,
+				CF852C0B21A6ED7300446598 /* G05F00S02VC.swift */,
+				CF852C0C21A6ED7300446598 /* G05F00S01VC.xib */,
+				CF852C0D21A6ED7300446598 /* G05F00S01VC.swift */,
+			);
+			path = F00;
+			sourceTree = "<group>";
+		};
+		CF852C0E21A6ED7300446598 /* F01 */ = {
+			isa = PBXGroup;
+			children = (
+				CF852C0F21A6ED7300446598 /* G05F01S01VC.xib */,
+				CF852C1021A6ED7300446598 /* G05F01S01VC.swift */,
+			);
+			path = F01;
+			sourceTree = "<group>";
+		};
 		CF8646722164636700416DB8 /* G03 */ = {
 			isa = PBXGroup;
 			children = (
@@ -963,6 +1025,7 @@
 				D7FF1FB62024218E00C2DF28 /* G01 */,
 				CF8646722164636700416DB8 /* G03 */,
 				CF6797FA21A2E61B00B93B26 /* G04 */,
+				CF852C0321A6ED7300446598 /* G05 */,
 				D7C73AF12005122E000B3CBC /* Common */,
 				D7C73AD120050787000B3CBC /* AppDelegate.swift */,
 				D7C73AD320050787000B3CBC /* ViewController.swift */,
@@ -1538,6 +1601,7 @@
 				CF063114219DC94E00EF60AE /* CustomerInfoTableViewCell.xib in Resources */,
 				D78CD1642024B5BA00C70FAE /* G01F00S02VC.xib in Resources */,
 				903BD0AF215357DD00B5A6B9 /* MultiSelectionVC.xib in Resources */,
+				CF852C1621A6ED7300446598 /* G05F00S02VC.xib in Resources */,
 				D70BCB5E2016EF1A00BCD90B /* G00AddressSelectVC.xib in Resources */,
 				CFE0CF6D21104FDB00635813 /* BorderSelectBox.xib in Resources */,
 				D7F4B1F8202B524F00EC7AB5 /* GPlus.png in Resources */,
@@ -1546,7 +1610,9 @@
 				D7F4B21B202B524F00EC7AB5 /* LandingView.xib in Resources */,
 				CF67980E21A2E61B00B93B26 /* G04F00S01VC.xib in Resources */,
 				D70BCB5C2016EF1A00BCD90B /* G00AccountEditVC.xib in Resources */,
+				CF852C1521A6ED7300446598 /* CustomerHomeView.xib in Resources */,
 				D7F4B206202B524F00EC7AB5 /* Pause-100 (1).png in Resources */,
+				CF852C1821A6ED7300446598 /* G05F00S01VC.xib in Resources */,
 				D7F4B1F1202B524F00EC7AB5 /* GLeaf.png in Resources */,
 				D7AAE6812038F82C001C3847 /* G01F02S03VC.xib in Resources */,
 				D7F4B21C202B524F00EC7AB5 /* 37x-Checkmark.png in Resources */,
@@ -1555,6 +1621,7 @@
 				D7F4B208202B524F00EC7AB5 /* Start.png in Resources */,
 				D7B43B322036F74100F59945 /* G01F01S02VC.xib in Resources */,
 				D7F4B1EF202B524F00EC7AB5 /* GGuita.png in Resources */,
+				CF852C1A21A6ED7300446598 /* G05F01S01VC.xib in Resources */,
 				D702C816203903CA0075D40B /* G01F02S04VC.xib in Resources */,
 				D7F4B20A202B524F00EC7AB5 /* WifiDisconnect.png in Resources */,
 				CF864677216463A700416DB8 /* G03F00S01VC.xib in Resources */,
@@ -1605,11 +1672,13 @@
 				"${SRCROOT}/dental/Pods/Target Support Files/Pods-dental/Pods-dental-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/BarcodeScanner/BarcodeScanner.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BarcodeScanner.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1647,6 +1716,7 @@
 				CFB31E9C21465BB3003E5FE9 /* StatisticsModel.swift in Sources */,
 				CFB31EA421465BB3003E5FE9 /* ListAgentTableViewCell.swift in Sources */,
 				CFB31E8A21465BB3003E5FE9 /* StatisticsViewController.swift in Sources */,
+				CF852C1221A6ED7300446598 /* CustomerHomeView.swift in Sources */,
 				D7A2AC94202B60EC008C8580 /* UserInstance.swift in Sources */,
 				D7F4B1C6202B524F00EC7AB5 /* HUDView.swift in Sources */,
 				D7AAE6742038683E001C3847 /* G01F02S02VC.swift in Sources */,
@@ -1671,6 +1741,7 @@
 				D7B43B2C2036914300F59945 /* MedicalRecordInfoRequest.swift in Sources */,
 				D7FF1FBB2024224400C2DF28 /* G01F00S01VC.swift in Sources */,
 				D7F4B1D8202B524F00EC7AB5 /* GreenExtention+UIView.swift in Sources */,
+				CF852C1421A6ED7300446598 /* CustomerLogin.swift in Sources */,
 				D7AAE671203802D7001C3847 /* TreatmentListRespBean.swift in Sources */,
 				CF67980821A2E61B00B93B26 /* GetCustomerByQRCodeRequest.swift in Sources */,
 				D706B048203AD504004AE6D7 /* G01F03S01VC.swift in Sources */,
@@ -1682,6 +1753,7 @@
 				CFB31EA121465BB3003E5FE9 /* ListAgencyViewController.swift in Sources */,
 				D7F4B223202B524F00EC7AB5 /* MasterObject.swift in Sources */,
 				D7C92A2D203967B2002EF00D /* TreatmentDetailBean.swift in Sources */,
+				CF852C1321A6ED7300446598 /* MakeSchedule.swift in Sources */,
 				D7C73AD420050787000B3CBC /* ViewController.swift in Sources */,
 				CFB31E9B21465BB3003E5FE9 /* StatisticsListViewController.swift in Sources */,
 				D7A2AC84202B59CC008C8580 /* Template.swift in Sources */,
@@ -1731,6 +1803,7 @@
 				D70BCB5D2016EF1A00BCD90B /* G00AddressSelectVC.swift in Sources */,
 				D7F4B225202B524F00EC7AB5 /* UpdateMedicalRecord.swift in Sources */,
 				D70D336D203C81B2008BE959 /* G01F03S02VC.swift in Sources */,
+				CF852C1921A6ED7300446598 /* G05F00S01VC.swift in Sources */,
 				D7F4B228202B524F00EC7AB5 /* ServiceFunctions.swift in Sources */,
 				D7F4B226202B524F00EC7AB5 /* Service.swift in Sources */,
 				D7FF1FCA202427AC00C2DF28 /* G01Const.swift in Sources */,
@@ -1782,12 +1855,14 @@
 				D7B43B312036F74100F59945 /* G01F01S02VC.swift in Sources */,
 				902E28A020A8411B0085AAF3 /* G01F03S06VC.swift in Sources */,
 				CF063113219DC94E00EF60AE /* CustomerInfoTableViewCell.swift in Sources */,
+				CF852C1721A6ED7300446598 /* G05F00S02VC.swift in Sources */,
 				D7FF1FBF2024228F00C2DF28 /* CustomerListRespBean.swift in Sources */,
 				CFD0062F216B697800B7593F /* G03F00S03VC.swift in Sources */,
 				D7F4B222202B524F00EC7AB5 /* MasterModel.swift in Sources */,
 				CFB31E9021465BB3003E5FE9 /* DebtorListTableViewCell.swift in Sources */,
 				D7AAE66D2037FF23001C3847 /* TreatmentListRequest.swift in Sources */,
 				D7F4B1D5202B524F00EC7AB5 /* GreenExtention+UITableView.swift in Sources */,
+				CF852C1B21A6ED7300446598 /* G05F01S01VC.swift in Sources */,
 				D7A2AC92202B6086008C8580 /* ItemIdConfig.swift in Sources */,
 				D7F4B1E1202B524F00EC7AB5 /* GreenDefine.swift in Sources */,
 				9018162820ABE72F000D69E2 /* DiagnosisCreateRequest.swift in Sources */,
@@ -1934,6 +2009,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: VIET MY MEDICAL EQUIPMENT - DENTAL COMPANY LIMITED (5P94AS4LX2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: VIET MY MEDICAL EQUIPMENT - DENTAL COMPANY LIMITED (5P94AS4LX2)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 5P94AS4LX2;
 				INFOPLIST_FILE = dental/Info.plist;

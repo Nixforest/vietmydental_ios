@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var HUD: MBProgressHUD?
     internal var rootNav: UINavigationController = UINavigationController()
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         SlideMenuOptions.leftViewWidth = GlobalConst.POPOVER_WIDTH

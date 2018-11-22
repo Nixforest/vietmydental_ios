@@ -62,6 +62,9 @@ class G00HomeVC: BaseParentViewController {
     }
     
     @objc func shouldReload() {
+        for v in self.view.subviews {
+            v.removeFromSuperview()
+        }
         startLogic()
     }
     
@@ -251,12 +254,16 @@ class G00HomeVC: BaseParentViewController {
         let model = LoginRespBean(jsonString: data)
         if model.isSuccess() {
             LoginRespBean.saveConfigData(data: model)
-            if model.data.role_id == RoleEnum.receptionist.rawValue {
-                // Load qr code content
-                self.loadQRCodeContent()
+            if model.data.role_id == RoleEnum.customer.rawValue {
+                loadCustomerView()
             } else {
-                // Load statistic content
-                self.loadStatisticContent()
+                if model.data.role_id == RoleEnum.receptionist.rawValue {
+                    // Load qr code content
+                    self.loadQRCodeContent()
+                } else {
+                    // Load statistic content
+                    self.loadStatisticContent()
+                }
             }
         }
     }
@@ -381,6 +388,19 @@ class G00HomeVC: BaseParentViewController {
         statisticDetailView.param = self.statisticParam
         self.getStatistics(param: self.statisticParam)
     }
+    /* BUG0107_1 ++ */
+    /**
+     *  Load customer view based on login type customer
+     */
+    func loadCustomerView() {
+        imgLogo.alpha = 0
+        let customerView = CustomerHomeView()
+        customerView.frame = self.view.frame
+        customerView.delegate = self
+        self.view.addSubview(customerView)
+        requestData()
+    }
+    /* BUG0107_1 -- */
 }
 
 extension G00HomeVC: QRCodeMainViewDelegate {
@@ -426,7 +446,42 @@ extension G00HomeVC: StatisticsDetailViewDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
-
+//MARK: - CustomerHomeViewDelegate
+extension G00HomeVC: CustomerHomeViewDelegate {
+    func customerHomeViewDidSelectMedicalRecord() {
+        let view = G01F00S02VC(nibName: G01F00S02VC.theClassName,
+                               bundle: nil)
+        view.setId(id: LoginBean.shared.customer_id)
+        if let controller = BaseViewController.getCurrentViewController() {
+            controller.navigationController?.pushViewController(view,
+                                                                animated: true)
+        }
+    }
+    func customerHomeViewDidSelectBooking() {
+        let vc = G05F01S01VC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    /**
+     *  get customer info
+     */
+    func requestData(isShowLoading: Bool = true) {
+        UserProfileRequest.requestUserProfile(
+            action: #selector(finishGetCustomerInfo(_:)), view: self,
+            isShowLoading: isShowLoading)
+    }
+    /**
+     * Set data
+     */
+    func finishGetCustomerInfo(_ notification: Notification) {
+        let data = (notification.object as! String)
+        let model = UserProfileRespModel(jsonString: data)
+        if model.isSuccess() {
+            BaseModel.shared.sharedString = model.data.getPhone()
+        } else {
+            showAlert(message: model.message)
+        }
+    }
+}
 
 
 
