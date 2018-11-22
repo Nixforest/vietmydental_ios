@@ -373,12 +373,12 @@ class G00LoginExtVC: ParentExtViewController {
         let data = (notification.object as! String)
         let model = LoginRespBean(jsonString: data)
         if model.isSuccess() {
-            app.isCustomer = false
             BaseModel.shared.loginSuccess(model.data.token)
             //            BaseModel.shared.saveTempData(loginModel: model)
             //            BaseModel.shared.setListMenu(listMenu: model.data.menu)
             LoginRespBean.saveConfigData(data: model)
             self.dismiss(animated: true, completion: finishDismissLogin)
+            NotificationCenter.default.post(name: NSNotification.Name.init("HOMEVC_SHOULD_RELOAD_LOGIC"), object: nil)
         } else {
             showAlert(message: model.message)
         }
