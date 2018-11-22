@@ -305,10 +305,14 @@ class G00HomeVC: BaseParentViewController {
      * Start normal logic
      */
     private func startNormalLogic() {
-        if BaseModel.shared.checkIsLogin() {
-            requestUpdateConfig()
+        if app.isCustomer {
+            loadCustomerView()
         } else {
-            openLogin()
+            if BaseModel.shared.checkIsLogin() {
+                requestUpdateConfig()
+            } else {
+                openLogin()
+            }
         }
     }
     
@@ -384,6 +388,17 @@ class G00HomeVC: BaseParentViewController {
         statisticDetailView.param = self.statisticParam
         self.getStatistics(param: self.statisticParam)
     }
+    /* BUG0107_1 ++ */
+    /**
+     *  Load customer view based on login type customer
+     */
+    func loadCustomerView() {
+        let customerView = CustomerHomeView()
+        customerView.frame = self.view.frame
+        customerView.delegate = self
+        self.view.addSubview(customerView)
+    }
+    /* BUG0107_1 -- */
 }
 
 extension G00HomeVC: QRCodeMainViewDelegate {
@@ -429,7 +444,16 @@ extension G00HomeVC: StatisticsDetailViewDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
-
+//MARK: - CustomerHomeViewDelegate
+extension G00HomeVC: CustomerHomeViewDelegate {
+    func customerHomeViewDidSelectMedicalRecord() {
+        
+    }
+    func customerHomeViewDidSelectBooking() {
+        let vc = G05F01S01VC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
 
 
 
