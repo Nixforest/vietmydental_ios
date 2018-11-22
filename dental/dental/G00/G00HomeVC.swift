@@ -62,6 +62,9 @@ class G00HomeVC: BaseParentViewController {
     }
     
     @objc func shouldReload() {
+        for v in self.view.subviews {
+            v.removeFromSuperview()
+        }
         startLogic()
     }
     
