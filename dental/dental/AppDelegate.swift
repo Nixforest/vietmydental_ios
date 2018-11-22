@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var HUD: MBProgressHUD?
     internal var rootNav: UINavigationController = UINavigationController()
-
+    /// flag to know is doctor acc logged in or customer acc logged in
+    var isCustomer: Bool = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

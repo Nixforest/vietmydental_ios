@@ -9,7 +9,7 @@
 import UIKit
 import harpyframework
 
-class G00LoginExtVC: ChildExtViewController {
+class G00LoginExtVC: ParentExtViewController {
     // MARK: Properties
     /** Logo */
     var imgLogo:        UIImageView = UIImageView()
@@ -65,23 +65,30 @@ class G00LoginExtVC: ChildExtViewController {
     var LOGIN_NEXT_BUTTON_REAL_SIZE_HD      = GlobalConst.LOGIN_NEXT_BUTTON_SIZE * G00LoginExtVC.H_RATE_HD
     var LOGIN_NEXT_BUTTON_REAL_SIZE_FHD     = GlobalConst.LOGIN_NEXT_BUTTON_SIZE * G00LoginExtVC.H_RATE_FHD
     var LOGIN_NEXT_BUTTON_REAL_SIZE_FHD_L   = GlobalConst.LOGIN_NEXT_BUTTON_SIZE * G00LoginExtVC.H_RATE_FHD_L
-
+    
     // MARK: Override methods
     /**
      * Called after the controller's view is loaded into memory.
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        createNavigationBar(title: "")
         setLocalData()
         self.view.makeComponentsColor()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     /**
      * Handle update constants
      */
-    override func updateConst() {        
+    override func updateConst() {
         // Login
         LOGIN_LOGO_REAL_WIDTH_HD        = GlobalConst.LOGIN_LOGO_WIDTH * G00LoginExtVC.W_RATE_HD
         LOGIN_LOGO_REAL_HEIGHT_HD       = GlobalConst.LOGIN_LOGO_HEIGHT * G00LoginExtVC.H_RATE_HD
@@ -114,25 +121,25 @@ class G00LoginExtVC: ChildExtViewController {
     /**
      * Handle set background image
      */
-//    override func setBackgroundImage() {
-//        switch UIDevice.current.userInterfaceIdiom {
-//        case .phone:
-//            self.updateBackground(bkg: DomainConst.LOGIN_BKG_IPHONE_IMG_NAME)
-//            break
-//        case .pad:
-//            switch UIApplication.shared.statusBarOrientation {
-//            case .portrait, .portraitUpsideDown:
-//                self.updateBackground(bkg: DomainConst.LOGIN_BKG_IPAD_IMG_NAME)
-//            case .landscapeLeft, .landscapeRight:
-//                self.updateBackground(bkg: DomainConst.LOGIN_BKG_IPAD_LANDSCAPE_IMG_NAME)
-//            default:
-//                self.updateBackground(bkg: DomainConst.LOGIN_BKG_IPAD_IMG_NAME)
-//            }
-//            break
-//        default:
-//            self.setBackground(bkg: DomainConst.LOGIN_BKG_IPAD_IMG_NAME)
-//        }
-//    }
+    //    override func setBackgroundImage() {
+    //        switch UIDevice.current.userInterfaceIdiom {
+    //        case .phone:
+    //            self.updateBackground(bkg: DomainConst.LOGIN_BKG_IPHONE_IMG_NAME)
+    //            break
+    //        case .pad:
+    //            switch UIApplication.shared.statusBarOrientation {
+    //            case .portrait, .portraitUpsideDown:
+    //                self.updateBackground(bkg: DomainConst.LOGIN_BKG_IPAD_IMG_NAME)
+    //            case .landscapeLeft, .landscapeRight:
+    //                self.updateBackground(bkg: DomainConst.LOGIN_BKG_IPAD_LANDSCAPE_IMG_NAME)
+    //            default:
+    //                self.updateBackground(bkg: DomainConst.LOGIN_BKG_IPAD_IMG_NAME)
+    //            }
+    //            break
+    //        default:
+    //            self.setBackground(bkg: DomainConst.LOGIN_BKG_IPAD_IMG_NAME)
+    //        }
+    //    }
     
     /**
      * Create children views
@@ -145,7 +152,7 @@ class G00LoginExtVC: ChildExtViewController {
             self.createLogoImgHD()
             self.createLoginLabel()
             self.createPhoneTextFieldHD()
-//            self.createNextBtnHD()
+            //            self.createNextBtnHD()
             self.createPasswordTextFieldHD()
             self.createORLabel()
             self.createFBBtnHD()
@@ -158,26 +165,26 @@ class G00LoginExtVC: ChildExtViewController {
                 self.createLogoImgFHD()
                 self.createLoginLabel()
                 self.createPhoneTextFieldFHD()
-//                self.createNextBtnFHD()
+                //                self.createNextBtnFHD()
                 self.createPasswordTextFieldFHD()
                 self.createORLabel()
                 self.createFBBtnFHD()
                 self.createZLBtnFHD()
                 //++ BUG0177-SPJ (NguyenPT 20171207) Add hotline in Login and Confirm code screen
                 self.createHotlineLabelFHD()
-                //-- BUG0177-SPJ (NguyenPT 20171207) Add hotline in Login and Confirm code screen
+            //-- BUG0177-SPJ (NguyenPT 20171207) Add hotline in Login and Confirm code screen
             case .landscapeLeft, .landscapeRight:       // Landscape
                 self.createLogoImgFHD_L()
                 self.createLoginLabel()
                 self.createPhoneTextFieldFHD_L()
-//                self.createNextBtnFHD_L()
+                //                self.createNextBtnFHD_L()
                 self.createPasswordTextFieldFHD_L()
                 self.createORLabel()
                 self.createFBBtnFHD_L()
                 self.createZLBtnFHD_L()
                 //++ BUG0177-SPJ (NguyenPT 20171207) Add hotline in Login and Confirm code screen
                 self.createHotlineLabelFHD_L()
-                //-- BUG0177-SPJ (NguyenPT 20171207) Add hotline in Login and Confirm code screen
+            //-- BUG0177-SPJ (NguyenPT 20171207) Add hotline in Login and Confirm code screen
             default:
                 break
             }
@@ -194,13 +201,13 @@ class G00LoginExtVC: ChildExtViewController {
         self.view.addSubview(lblLogin)
         self.view.addSubview(txtPhone)
         self.view.addSubview(txtPassword)
-//        self.view.addSubview(lblOr)
+        //        self.view.addSubview(lblOr)
         self.view.addSubview(btnFacebook)
-//        self.view.addSubview(btnZalo)
+        //        self.view.addSubview(btnZalo)
         
         //++ BUG0177-SPJ (NguyenPT 20171207) Add hotline in Login and Confirm code screen
-//        self.view.addSubview(lblHotline)
-//        self.view.addSubview(lblSupport)        
+        //        self.view.addSubview(lblHotline)
+        //        self.view.addSubview(lblSupport)
         //-- BUG0177-SPJ (NguyenPT 20171207) Add hotline in Login and Confirm code screen
     }
     
@@ -235,7 +242,7 @@ class G00LoginExtVC: ChildExtViewController {
                 self.updateZLBtnFHD()
                 //++ BUG0177-SPJ (NguyenPT 20171207) Add hotline in Login and Confirm code screen
                 self.updateHotlineLabelFHD()
-                //-- BUG0177-SPJ (NguyenPT 20171207) Add hotline in Login and Confirm code screen
+            //-- BUG0177-SPJ (NguyenPT 20171207) Add hotline in Login and Confirm code screen
             case .landscapeLeft, .landscapeRight:       // Landscape
                 self.createLogoImgFHD_L()
                 self.updateLoginLabel()
@@ -246,7 +253,7 @@ class G00LoginExtVC: ChildExtViewController {
                 self.updateZLBtnFHD_L()
                 //++ BUG0177-SPJ (NguyenPT 20171207) Add hotline in Login and Confirm code screen
                 self.updateHotlineLabelFHD_L()
-                //-- BUG0177-SPJ (NguyenPT 20171207) Add hotline in Login and Confirm code screen
+            //-- BUG0177-SPJ (NguyenPT 20171207) Add hotline in Login and Confirm code screen
             default:
                 break
             }
@@ -293,12 +300,12 @@ class G00LoginExtVC: ChildExtViewController {
      * Handle when finish dismiss login screen
      */
     internal func finishDismissLogin() -> Void {
-//        print("finishDismissLogin")
-//        let confirmCode = G00ConfirmCodeVC(nibName: G00ConfirmCodeVC.theClassName, bundle: nil)
-//        confirmCode.setData(phone: self.phone, token: self.token)
-//        if let controller = BaseViewController.getCurrentViewController() {
-//            controller.present(confirmCode, animated: true, completion: finishOpenConfirm)
-//        }
+        //        print("finishDismissLogin")
+        //        let confirmCode = G00ConfirmCodeVC(nibName: G00ConfirmCodeVC.theClassName, bundle: nil)
+        //        confirmCode.setData(phone: self.phone, token: self.token)
+        //        if let controller = BaseViewController.getCurrentViewController() {
+        //            controller.present(confirmCode, animated: true, completion: finishOpenConfirm)
+        //        }
     }
     
     /**
@@ -321,25 +328,25 @@ class G00LoginExtVC: ChildExtViewController {
      */
     func btnFacebookTapped(_ sender: AnyObject) {
         //++ BUG0157-SPJ (NguyenPT 20171004) Use facebook framework
-//        let loginManager = LoginManager()
-//        loginManager.logIn([.publicProfile, .email],
-//                           viewController: self,
-//                           completion: {
-//                            loginResult in
-//                            switch loginResult {
-//                            case .failed(let error):
-//                                self.showAlert(message: error.localizedDescription)
-//                                break
-//                            case .cancelled:
-//                                self.showAlert(message: DomainConst.CONTENT00511)
-//                                break
-//                                case .success(grantedPermissions: _,
-//                                              declinedPermissions: _,
-//                                              token: _):
-//                                    self.getDataFromFacebook()
-//                                break
-//                            }
-//        })
+        //        let loginManager = LoginManager()
+        //        loginManager.logIn([.publicProfile, .email],
+        //                           viewController: self,
+        //                           completion: {
+        //                            loginResult in
+        //                            switch loginResult {
+        //                            case .failed(let error):
+        //                                self.showAlert(message: error.localizedDescription)
+        //                                break
+        //                            case .cancelled:
+        //                                self.showAlert(message: DomainConst.CONTENT00511)
+        //                                break
+        //                                case .success(grantedPermissions: _,
+        //                                              declinedPermissions: _,
+        //                                              token: _):
+        //                                    self.getDataFromFacebook()
+        //                                break
+        //                            }
+        //        })
         //-- BUG0157-SPJ (NguyenPT 20171004) Use facebook framework
         if ((txtPhone.text?.isEmpty)! || (txtPassword.text?.isEmpty)!) {
             showAlert(message: DomainConst.CONTENT00023)
@@ -366,12 +373,12 @@ class G00LoginExtVC: ChildExtViewController {
         let data = (notification.object as! String)
         let model = LoginRespBean(jsonString: data)
         if model.isSuccess() {
+            app.isCustomer = false
             BaseModel.shared.loginSuccess(model.data.token)
-//            BaseModel.shared.saveTempData(loginModel: model)
-//            BaseModel.shared.setListMenu(listMenu: model.data.menu)
+            //            BaseModel.shared.saveTempData(loginModel: model)
+            //            BaseModel.shared.setListMenu(listMenu: model.data.menu)
             LoginRespBean.saveConfigData(data: model)
             self.dismiss(animated: true, completion: finishDismissLogin)
-            NotificationCenter.default.post(name: NSNotification.Name.init("HOMEVC_SHOULD_RELOAD_LOGIC"), object: nil)
         } else {
             showAlert(message: model.message)
         }
@@ -400,28 +407,28 @@ class G00LoginExtVC: ChildExtViewController {
      * Get data from facebook
      */
     internal func getDataFromFacebook() {
-//        if let token = AccessToken.current {
-//            let request = GraphRequest.init(
-//                graphPath: "me",
-//                parameters: ["fields": "id, name, first_name, email"],
-//                accessToken: token)
-//            request.start {
-//                (respond, result) -> Void in
-//                switch result {
-//                case .failed(let error):
-//                    self.showAlert(message: error.localizedDescription)
-//                    break
-//                case .success(response: _):
-////                    if let data = resp.dictionaryValue {
-////                        if let email = data["email"] {
-////                            self.txtPhone.text = email as? String
-////                        }
-////                    }
-//                    self.inputPhone()
-//                    break
-//                }
-//            }
-//        }
+        //        if let token = AccessToken.current {
+        //            let request = GraphRequest.init(
+        //                graphPath: "me",
+        //                parameters: ["fields": "id, name, first_name, email"],
+        //                accessToken: token)
+        //            request.start {
+        //                (respond, result) -> Void in
+        //                switch result {
+        //                case .failed(let error):
+        //                    self.showAlert(message: error.localizedDescription)
+        //                    break
+        //                case .success(response: _):
+        ////                    if let data = resp.dictionaryValue {
+        ////                        if let email = data["email"] {
+        ////                            self.txtPhone.text = email as? String
+        ////                        }
+        ////                    }
+        //                    self.inputPhone()
+        //                    break
+        //                }
+        //            }
+        //        }
     }
     
     /**
@@ -470,17 +477,17 @@ class G00LoginExtVC: ChildExtViewController {
     }
     //-- BUG0157-SPJ (NguyenPT 20171004) Use facebook framework
     
-//    /**
-//     * Update view position
-//     * - parameter view: View need to update
-//     * - parameter x: X position
-//     * - parameter y: Y position
-//     * - parameter w: Width of view
-//     * - parameter h: Height of view
-//     */
-//    private func updateViewPos(view: UIView, x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) {
-//        view.frame = CGRect(x: x, y: y, width: w, height: h)
-//    }
+    //    /**
+    //     * Update view position
+    //     * - parameter view: View need to update
+    //     * - parameter x: X position
+    //     * - parameter y: Y position
+    //     * - parameter w: Width of view
+    //     * - parameter h: Height of view
+    //     */
+    //    private func updateViewPos(view: UIView, x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) {
+    //        view.frame = CGRect(x: x, y: y, width: w, height: h)
+    //    }
     
     // MARK - Logo image
     /**
@@ -498,12 +505,12 @@ class G00LoginExtVC: ChildExtViewController {
         imgLogo.addGestureRecognizer(tappedRecog)
         imgLogo.contentMode = .scaleAspectFit
         
-//        createNextBtn()
+        //        createNextBtn()
         CommonProcess.updateViewPos(view: imgLogo,
-                      x: (UIScreen.main.bounds.width - w) / 2,
-                      y: yPos,
-                      w: w,
-                      h: h)
+                                    x: (UIScreen.main.bounds.width - w) / 2,
+                                    y: yPos,
+                                    w: w,
+                                    h: h)
     }
     
     /**
@@ -519,11 +526,11 @@ class G00LoginExtVC: ChildExtViewController {
      * Create logo image (in Full HD mode)
      */
     private func createLogoImgFHD() {
-//        updateViewPos(view: imgLogo,
-//                      x: (UIScreen.main.bounds.width - LOGIN_LOGO_REAL_WIDTH_FHD) / 2,
-//                      y: LOGIN_LOGO_REAL_Y_POS_FHD,
-//                      w: LOGIN_LOGO_REAL_WIDTH_FHD,
-//                      h: LOGIN_LOGO_REAL_HEIGHT_FHD)
+        //        updateViewPos(view: imgLogo,
+        //                      x: (UIScreen.main.bounds.width - LOGIN_LOGO_REAL_WIDTH_FHD) / 2,
+        //                      y: LOGIN_LOGO_REAL_Y_POS_FHD,
+        //                      w: LOGIN_LOGO_REAL_WIDTH_FHD,
+        //                      h: LOGIN_LOGO_REAL_HEIGHT_FHD)
         createLogoImg(yPos: LOGIN_LOGO_REAL_Y_POS_FHD,
                       w: LOGIN_LOGO_REAL_WIDTH_FHD,
                       h: LOGIN_LOGO_REAL_HEIGHT_FHD)
@@ -533,11 +540,11 @@ class G00LoginExtVC: ChildExtViewController {
      * Create logo image (in Full HD Landscape mode)
      */
     private func createLogoImgFHD_L() {
-//        updateViewPos(view: imgLogo,
-//                      x: (UIScreen.main.bounds.width  - LOGIN_LOGO_REAL_WIDTH_FHD_L) / 2,
-//                      y: LOGIN_LOGO_REAL_Y_POS_FHD_L,
-//                      w: LOGIN_LOGO_REAL_WIDTH_FHD_L,
-//                      h: LOGIN_LOGO_REAL_HEIGHT_FHD_L)
+        //        updateViewPos(view: imgLogo,
+        //                      x: (UIScreen.main.bounds.width  - LOGIN_LOGO_REAL_WIDTH_FHD_L) / 2,
+        //                      y: LOGIN_LOGO_REAL_Y_POS_FHD_L,
+        //                      w: LOGIN_LOGO_REAL_WIDTH_FHD_L,
+        //                      h: LOGIN_LOGO_REAL_HEIGHT_FHD_L)
         createLogoImg(yPos: LOGIN_LOGO_REAL_Y_POS_FHD_L,
                       w: LOGIN_LOGO_REAL_WIDTH_FHD_L,
                       h: LOGIN_LOGO_REAL_HEIGHT_FHD_L)
@@ -598,10 +605,10 @@ class G00LoginExtVC: ChildExtViewController {
      */
     private func updateLoginLabel() {
         CommonProcess.updateViewPos(view: lblLogin,
-                      x: 0,
-                      y: imgLogo.frame.maxY + GlobalConst.MARGIN,
-                      w: UIScreen.main.bounds.width,
-                      h: GlobalConst.LABEL_H)
+                                    x: 0,
+                                    y: imgLogo.frame.maxY + GlobalConst.MARGIN,
+                                    w: UIScreen.main.bounds.width,
+                                    h: GlobalConst.LABEL_H)
     }
     
     /**
@@ -660,10 +667,10 @@ class G00LoginExtVC: ChildExtViewController {
      */
     private func updatePhoneTextFieldHD() {
         CommonProcess.updateViewPos(view: txtPhone,
-            x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_HD) / 2,
-            y: lblLogin.frame.maxY + GlobalConst.MARGIN,
-            w: LOGIN_PHONE_REAL_WIDTH_HD,
-            h: LOGIN_PHONE_REAL_HEIGHT_HD)
+                                    x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_HD) / 2,
+                                    y: lblLogin.frame.maxY + GlobalConst.MARGIN,
+                                    w: LOGIN_PHONE_REAL_WIDTH_HD,
+                                    h: LOGIN_PHONE_REAL_HEIGHT_HD)
     }
     
     /**
@@ -671,10 +678,10 @@ class G00LoginExtVC: ChildExtViewController {
      */
     private func updatePhoneTextFieldFHD() {
         CommonProcess.updateViewPos(view: txtPhone,
-            x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_FHD) / 2,
-            y: lblLogin.frame.maxY + GlobalConst.MARGIN,
-            w: LOGIN_PHONE_REAL_WIDTH_FHD,
-            h: LOGIN_PHONE_REAL_HEIGHT_FHD)
+                                    x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_FHD) / 2,
+                                    y: lblLogin.frame.maxY + GlobalConst.MARGIN,
+                                    w: LOGIN_PHONE_REAL_WIDTH_FHD,
+                                    h: LOGIN_PHONE_REAL_HEIGHT_FHD)
     }
     
     /**
@@ -682,10 +689,10 @@ class G00LoginExtVC: ChildExtViewController {
      */
     private func updatePhoneTextFieldFHD_L() {
         CommonProcess.updateViewPos(view: txtPhone,
-            x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_FHD_L) / 2,
-            y: lblLogin.frame.maxY + GlobalConst.MARGIN,
-            w: LOGIN_PHONE_REAL_WIDTH_FHD_L,
-            h: LOGIN_PHONE_REAL_HEIGHT_FHD_L)
+                                    x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_FHD_L) / 2,
+                                    y: lblLogin.frame.maxY + GlobalConst.MARGIN,
+                                    w: LOGIN_PHONE_REAL_WIDTH_FHD_L,
+                                    h: LOGIN_PHONE_REAL_HEIGHT_FHD_L)
     }
     
     // MARK: Password textfield
@@ -791,10 +798,10 @@ class G00LoginExtVC: ChildExtViewController {
     private func createNextBtnHD() {
         createNextBtn()
         CommonProcess.updateViewPos(view: btnNext,
-                      x: CGFloat(txtPhone.frame.width - LOGIN_NEXT_BUTTON_REAL_SIZE_HD * 2),
-                      y: (txtPhone.frame.height - LOGIN_NEXT_BUTTON_REAL_SIZE_HD ) / 2,
-                      w: LOGIN_NEXT_BUTTON_REAL_SIZE_HD,
-                      h: LOGIN_NEXT_BUTTON_REAL_SIZE_HD)
+                                    x: CGFloat(txtPhone.frame.width - LOGIN_NEXT_BUTTON_REAL_SIZE_HD * 2),
+                                    y: (txtPhone.frame.height - LOGIN_NEXT_BUTTON_REAL_SIZE_HD ) / 2,
+                                    w: LOGIN_NEXT_BUTTON_REAL_SIZE_HD,
+                                    h: LOGIN_NEXT_BUTTON_REAL_SIZE_HD)
     }
     
     /**
@@ -803,10 +810,10 @@ class G00LoginExtVC: ChildExtViewController {
     private func createNextBtnFHD() {
         createNextBtn()
         CommonProcess.updateViewPos(view: btnNext,
-                      x: CGFloat(txtPhone.frame.width - LOGIN_NEXT_BUTTON_REAL_SIZE_FHD * 2),
-                      y: (txtPhone.frame.height - LOGIN_NEXT_BUTTON_REAL_SIZE_FHD ) / 2,
-                      w: LOGIN_NEXT_BUTTON_REAL_SIZE_FHD,
-                      h: LOGIN_NEXT_BUTTON_REAL_SIZE_FHD)
+                                    x: CGFloat(txtPhone.frame.width - LOGIN_NEXT_BUTTON_REAL_SIZE_FHD * 2),
+                                    y: (txtPhone.frame.height - LOGIN_NEXT_BUTTON_REAL_SIZE_FHD ) / 2,
+                                    w: LOGIN_NEXT_BUTTON_REAL_SIZE_FHD,
+                                    h: LOGIN_NEXT_BUTTON_REAL_SIZE_FHD)
     }
     
     /**
@@ -815,10 +822,10 @@ class G00LoginExtVC: ChildExtViewController {
     private func createNextBtnFHD_L() {
         createNextBtn()
         CommonProcess.updateViewPos(view: btnNext,
-                      x: CGFloat(txtPhone.frame.width - LOGIN_NEXT_BUTTON_REAL_SIZE_FHD_L * 2),
-                      y: (txtPhone.frame.height - LOGIN_NEXT_BUTTON_REAL_SIZE_FHD_L ) / 2,
-                      w: LOGIN_NEXT_BUTTON_REAL_SIZE_FHD_L,
-                      h: LOGIN_NEXT_BUTTON_REAL_SIZE_FHD_L)
+                                    x: CGFloat(txtPhone.frame.width - LOGIN_NEXT_BUTTON_REAL_SIZE_FHD_L * 2),
+                                    y: (txtPhone.frame.height - LOGIN_NEXT_BUTTON_REAL_SIZE_FHD_L ) / 2,
+                                    w: LOGIN_NEXT_BUTTON_REAL_SIZE_FHD_L,
+                                    h: LOGIN_NEXT_BUTTON_REAL_SIZE_FHD_L)
     }
     
     /**
@@ -826,9 +833,9 @@ class G00LoginExtVC: ChildExtViewController {
      */
     private func createORLabel() {
         lblOr.frame = CGRect(x: 0,
-                                y: txtPassword.frame.maxY + GlobalConst.MARGIN,
-                                width: UIScreen.main.bounds.width,
-                                height: GlobalConst.LABEL_H)
+                             y: txtPassword.frame.maxY + GlobalConst.MARGIN,
+                             width: UIScreen.main.bounds.width,
+                             height: GlobalConst.LABEL_H)
         lblOr.text              = DomainConst.CONTENT00472
         lblOr.textColor      = UIColor.black
         lblOr.font           = GlobalConst.BASE_FONT
@@ -840,10 +847,10 @@ class G00LoginExtVC: ChildExtViewController {
      */
     private func updateORLabel() {
         CommonProcess.updateViewPos(view: lblOr,
-                      x: 0,
-                      y: txtPassword.frame.maxY + GlobalConst.MARGIN,
-                      w: UIScreen.main.bounds.width,
-                      h: GlobalConst.LABEL_H)
+                                    x: 0,
+                                    y: txtPassword.frame.maxY + GlobalConst.MARGIN,
+                                    w: UIScreen.main.bounds.width,
+                                    h: GlobalConst.LABEL_H)
     }
     
     /**
@@ -857,13 +864,31 @@ class G00LoginExtVC: ChildExtViewController {
         btnFacebook.frame = CGRect(x: x, y: y, width: w, height: h)
         btnFacebook.setTitle(DomainConst.CONTENT00051, for: UIControlState())
         btnFacebook.setTitleColor(UIColor.white, for: UIControlState())
-//        btnFacebook.titleLabel?.font    = UIFont.systemFont(ofSize: GlobalConst.BUTTON_FONT_SIZE)
+        //        btnFacebook.titleLabel?.font    = UIFont.systemFont(ofSize: GlobalConst.BUTTON_FONT_SIZE)
         btnFacebook.backgroundColor     = GlobalConst.MAIN_COLOR_GAS_24H
         btnFacebook.layer.cornerRadius  = GlobalConst.BUTTON_CORNER_RADIUS_NEW
         btnFacebook.addTarget(self, action: #selector(btnFacebookTapped(_:)), for: .touchUpInside)
-//        btnFacebook.leftImage(image: ImageManager.getImage(named: DomainConst.LOGO_FACEBOOK_ICON_IMG_NAME)!)
-//        btnFacebook.imageView?.contentMode = .scaleAspectFit
-//        btnFacebook.contentEdgeInsets = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
+        //        btnFacebook.leftImage(image: ImageManager.getImage(named: DomainConst.LOGO_FACEBOOK_ICON_IMG_NAME)!)
+        //        btnFacebook.imageView?.contentMode = .scaleAspectFit
+        //        btnFacebook.contentEdgeInsets = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
+    }
+    
+    private func createCustomerButton(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) {
+        let btn = UIButton()
+        btn.frame = CGRect(x: x, y: y, width: w, height: h)
+        btn.setTitle("Dành cho bệnh nhân", for: UIControlState())
+        btn.setTitleColor(GlobalConst.MAIN_COLOR_GAS_24H, for: UIControlState())
+        btn.backgroundColor     = .white
+        btn.layer.cornerRadius  = GlobalConst.BUTTON_CORNER_RADIUS_NEW
+        btn.layer.borderWidth   = 0.5
+        btn.layer.borderColor   = GlobalConst.MAIN_COLOR_GAS_24H.cgColor
+        btn.addTarget(self, action: #selector(customerButtonAction), for: .touchUpInside)
+        self.view.addSubview(btn)
+    }
+    
+    @objc func customerButtonAction() {
+        let vc = G05F00S01VC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     /**
@@ -875,6 +900,7 @@ class G00LoginExtVC: ChildExtViewController {
             y: lblOr.frame.maxY + GlobalConst.MARGIN,
             w: LOGIN_PHONE_REAL_WIDTH_HD,
             h: LOGIN_PHONE_REAL_HEIGHT_HD)
+        self.createCustomerButton(x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_HD) / 2, y: btnFacebook.frame.maxY + GlobalConst.MARGIN*8, w: LOGIN_PHONE_REAL_WIDTH_HD, h: LOGIN_PHONE_REAL_HEIGHT_HD)
     }
     
     /**
@@ -904,10 +930,10 @@ class G00LoginExtVC: ChildExtViewController {
      */
     private func updateFBBtnHD() {
         CommonProcess.updateViewPos(view: btnFacebook,
-                      x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_HD) / 2,
-                      y: lblOr.frame.maxY + GlobalConst.MARGIN,
-                      w: LOGIN_PHONE_REAL_WIDTH_HD,
-                      h: LOGIN_PHONE_REAL_HEIGHT_HD)
+                                    x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_HD) / 2,
+                                    y: lblOr.frame.maxY + GlobalConst.MARGIN,
+                                    w: LOGIN_PHONE_REAL_WIDTH_HD,
+                                    h: LOGIN_PHONE_REAL_HEIGHT_HD)
     }
     
     /**
@@ -915,10 +941,10 @@ class G00LoginExtVC: ChildExtViewController {
      */
     private func updateFBBtnFHD() {
         CommonProcess.updateViewPos(view: btnFacebook,
-                      x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_FHD) / 2,
-                      y: lblOr.frame.maxY + GlobalConst.MARGIN,
-                      w: LOGIN_PHONE_REAL_WIDTH_FHD,
-                      h: LOGIN_PHONE_REAL_HEIGHT_FHD)
+                                    x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_FHD) / 2,
+                                    y: lblOr.frame.maxY + GlobalConst.MARGIN,
+                                    w: LOGIN_PHONE_REAL_WIDTH_FHD,
+                                    h: LOGIN_PHONE_REAL_HEIGHT_FHD)
     }
     
     /**
@@ -926,10 +952,10 @@ class G00LoginExtVC: ChildExtViewController {
      */
     private func updateFBBtnFHD_L() {
         CommonProcess.updateViewPos(view: btnFacebook,
-                      x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_FHD_L) / 2,
-                      y: lblOr.frame.maxY + GlobalConst.MARGIN,
-                      w: LOGIN_PHONE_REAL_WIDTH_FHD_L,
-                      h: LOGIN_PHONE_REAL_HEIGHT_FHD_L)
+                                    x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_FHD_L) / 2,
+                                    y: lblOr.frame.maxY + GlobalConst.MARGIN,
+                                    w: LOGIN_PHONE_REAL_WIDTH_FHD_L,
+                                    h: LOGIN_PHONE_REAL_HEIGHT_FHD_L)
     }
     
     /**
@@ -990,10 +1016,10 @@ class G00LoginExtVC: ChildExtViewController {
      */
     private func updateZLBtnHD() {
         CommonProcess.updateViewPos(view: btnZalo,
-                      x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_HD) / 2,
-                      y: btnFacebook.frame.maxY + GlobalConst.MARGIN,
-                      w: LOGIN_PHONE_REAL_WIDTH_HD,
-                      h: LOGIN_PHONE_REAL_HEIGHT_HD)
+                                    x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_HD) / 2,
+                                    y: btnFacebook.frame.maxY + GlobalConst.MARGIN,
+                                    w: LOGIN_PHONE_REAL_WIDTH_HD,
+                                    h: LOGIN_PHONE_REAL_HEIGHT_HD)
     }
     
     /**
@@ -1001,10 +1027,10 @@ class G00LoginExtVC: ChildExtViewController {
      */
     private func updateZLBtnFHD() {
         CommonProcess.updateViewPos(view: btnZalo,
-                      x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_FHD) / 2,
-                      y: btnFacebook.frame.maxY + GlobalConst.MARGIN,
-                      w: LOGIN_PHONE_REAL_WIDTH_FHD,
-                      h: LOGIN_PHONE_REAL_HEIGHT_FHD)
+                                    x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_FHD) / 2,
+                                    y: btnFacebook.frame.maxY + GlobalConst.MARGIN,
+                                    w: LOGIN_PHONE_REAL_WIDTH_FHD,
+                                    h: LOGIN_PHONE_REAL_HEIGHT_FHD)
     }
     
     /**
@@ -1012,22 +1038,22 @@ class G00LoginExtVC: ChildExtViewController {
      */
     private func updateZLBtnFHD_L() {
         CommonProcess.updateViewPos(view: btnZalo,
-                      x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_FHD_L) / 2,
-                      y: btnFacebook.frame.maxY + GlobalConst.MARGIN,
-                      w: LOGIN_PHONE_REAL_WIDTH_FHD_L,
-                      h: LOGIN_PHONE_REAL_HEIGHT_FHD_L)
+                                    x: (UIScreen.main.bounds.width - LOGIN_PHONE_REAL_WIDTH_FHD_L) / 2,
+                                    y: btnFacebook.frame.maxY + GlobalConst.MARGIN,
+                                    w: LOGIN_PHONE_REAL_WIDTH_FHD_L,
+                                    h: LOGIN_PHONE_REAL_HEIGHT_FHD_L)
     }
     
-    //++ BUG0177-SPJ (NguyenPT 20171207) Add hotline in Login and Confirm code screen    
+    //++ BUG0177-SPJ (NguyenPT 20171207) Add hotline in Login and Confirm code screen
     // MARK: Support label
     /**
      * Create support label
      */
     private func createSupportLabel() {
         lblSupport.frame = CGRect(x: 0,
-                             y: lblHotline.frame.minY - GlobalConst.LABEL_H,
-                             width: UIScreen.main.bounds.width,
-                             height: GlobalConst.LABEL_H)
+                                  y: lblHotline.frame.minY - GlobalConst.LABEL_H,
+                                  width: UIScreen.main.bounds.width,
+                                  height: GlobalConst.LABEL_H)
         lblSupport.text           = DomainConst.CONTENT00539
         lblSupport.textColor      = UIColor.black
         lblSupport.font           = GlobalConst.BASE_FONT
